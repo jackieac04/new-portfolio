@@ -197,7 +197,7 @@ export default function ResponsiveRedesign() {
         </div>
         <p>
           {" "}
-          And you can find it at{" "}
+          And you can find it at
           <a href="https://jackieac04.github.io/responsive-redesign/">
             this link.
           </a>
