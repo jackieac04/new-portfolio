@@ -1,4 +1,3 @@
-import React from "react";
 import "./uiux.css";
 import respred from "/respred.png";
 
