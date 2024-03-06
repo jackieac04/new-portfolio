@@ -34,7 +34,6 @@ function App() {
           <div className="cs-links"></div>
         </div>
 
-        {/* Render the Routes component here */}
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
