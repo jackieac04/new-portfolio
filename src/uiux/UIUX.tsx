@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import "./uiux.css";
 import respred from "/respred.png";
 
@@ -6,7 +7,7 @@ export default function UIUX() {
     <main>
       <h1>UIUX Projects</h1>
       <div className="box-grid">
-        <a href="/uiux/respred">
+        <Link to={"/uiux/respred"}>
           <div className="box">
             <div className="img-overlay">
               <img src={respred} alt="" />
@@ -14,7 +15,7 @@ export default function UIUX() {
 
             <p>Responsive Redesign</p>
           </div>
-        </a>
+        </Link>
       </div>
     </main>
   );
