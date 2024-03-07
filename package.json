@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jackieac04.github.io/",
+  "homepage": "https://jackieac04.github.io/new-portfolio/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
