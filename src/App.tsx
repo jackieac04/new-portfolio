@@ -38,10 +38,8 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/art" element={<Art />} />
-          <Route path="/uiux" element={<UIUX />}>
-            <Route path="/respred" element={<ResponsiveRedesign />} />
-          </Route>
-
+          <Route path="/uiux" element={<UIUX />}></Route>
+          <Route path="/respred" element={<ResponsiveRedesign />} />
           <Route path="/cs" element={<CS />} />
         </Routes>
       </article>
