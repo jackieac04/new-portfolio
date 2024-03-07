@@ -3,7 +3,7 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://jackieac04.github.io/new-portfolio/",
+  "homepage": "https://jackieac04.github.io/",
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
@@ -13,6 +13,8 @@
     "deploy": "gh-pages -d dist"
   },
   "devDependencies": {
+    "@types/react": "^18.2.64",
+    "@types/react-dom": "^18.2.21",
     "@typescript-eslint/eslint-plugin": "^7.0.2",
     "@typescript-eslint/parser": "^7.0.2",
     "@vitejs/plugin-react-swc": "^3.5.0",
