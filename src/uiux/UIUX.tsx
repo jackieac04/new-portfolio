@@ -7,7 +7,7 @@ export default function UIUX() {
     <main>
       <h1>UIUX Projects</h1>
       <div className="box-grid">
-        <Link to={"/uiux/respred"}>
+        <Link to={"/respred"}>
           <div className="box">
             <div className="img-overlay">
               <img src={respred} alt="" />
