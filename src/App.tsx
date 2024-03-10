@@ -2,6 +2,7 @@ import { Routes, Route, Link } from "react-router-dom";
 import Art from "./art/Art";
 import UIUX from "./uiux/UIUX";
 import ResponsiveRedesign from "./uiux/ResponsiveRedesign";
+import AB from "./uiux/AB";
 import CS from "./cs/CS";
 import "./App.css";
 
@@ -38,8 +39,11 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/art" element={<Art />} />
-          <Route path="/uiux" element={<UIUX />}></Route>
+          <Route path="/uiux" element={<UIUX />}>
+            <Route index element={<UIUX />} />
+          </Route>
           <Route path="/respred" element={<ResponsiveRedesign />} />
+          <Route path="/abtest" element={<AB />} />
           <Route path="/cs" element={<CS />} />
         </Routes>
       </article>

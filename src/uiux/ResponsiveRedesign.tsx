@@ -1,14 +1,14 @@
-import respred from "/respred.png";
-import amsog from "/amsog.png";
-import proglist from "/programlist.png";
-import blind from "/9blind.png";
-import mobile from "/mobile.png";
-import tablet from "/tablet.png";
-import desktop from "/desktop.png";
-import desktophifi from "/desktophifi.png";
-import tablethifi from "/tablethifi.png";
-import mobilehifi from "/mobilehifi.png";
-import designguide from "/designguide.png";
+import respred from "/respred/respred.png";
+import amsog from "/respred/amsog.png";
+import proglist from "/respred/programlist.png";
+import blind from "/respred/9blind.png";
+import mobile from "/respred/mobile.png";
+import tablet from "/respred/tablet.png";
+import desktop from "/respred/desktop.png";
+import desktophifi from "/respred/desktophifi.png";
+import tablethifi from "/respred/tablethifi.png";
+import mobilehifi from "/respred/mobilehifi.png";
+import designguide from "/respred/designguide.png";
 import "./uiux.css";
 
 export default function ResponsiveRedesign() {
@@ -163,12 +163,12 @@ export default function ResponsiveRedesign() {
             <img src={desktophifi} alt="desktop- hifi" />
             <img src={tablethifi} alt="tablet- hifi" />
           </div>
-          <p className="p">
+          <p className="btm">
             The three hifi prototypes resulting from the lofi mockups, with
             colors, borders, and fonts taken into consideration.
           </p>
 
-          <p className="p">
+          <p className="btm">
             These hifis were based on this <b>style guide:</b>{" "}
           </p>
           <div className="mockst">
@@ -197,20 +197,20 @@ export default function ResponsiveRedesign() {
         </div>
         <p>
           {" "}
-          And you can find it at
+          And you can find it at{" "}
           <a href="https://jackieac04.github.io/responsive-redesign/">
             this link.
           </a>
         </p>
         <h3>Final Thoughts</h3>
-        <p className="p">
+        <p className="btm">
           In summary, this project challenged me to think of every step of the
           design process, from the needs of the user (students and academics
           searching for mathematical opportunities) to accessibilty (the website
           looks the same for blue-weak colorblind folks!) to best layouting
           practices with CSS and even aesthetics.
         </p>
-        <p className="p">
+        <p className="btm">
           I had a lot of fun with it and I hope you liked looking at my
           redesign!
         </p>
