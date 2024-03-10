@@ -18,6 +18,7 @@
   transition: 0.5s;
   background-color: rgb(131, 119, 184, 0.5);
   padding-bottom: 0.5rem;
+  margin: 1rem;
 }
 
 .box:hover {
@@ -84,7 +85,8 @@ h3 {
 }
 
 .mocks,
-.mockst {
+.mockst,
+.mockss {
   display: flex;
   justify-content: space-around;
 }
@@ -102,12 +104,14 @@ h3 {
   margin-bottom: 2rem;
 }
 
-.mockt {
-  margin: 0.5rem 0;
+.mockss > img {
+  width: 25vw;
+  border: 10px solid var(--bg-color-dark);
+  margin-bottom: 2rem;
 }
 
-.p {
-  margin-bottom: 0.5rem;
+.mockt {
+  margin: 0.5rem 0;
 }
 
 .lofi {
@@ -143,4 +147,12 @@ h3 {
 #designg {
   width: 30rem;
   height: auto;
+}
+
+.btm {
+  margin-bottom: 1rem;
+}
+
+.none {
+  margin-bottom: 0;
 }

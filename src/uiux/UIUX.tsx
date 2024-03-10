@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import "./uiux.css";
-import respred from "/respred.png";
+import respred from "/respred/respred.png";
+import abtest from "/ab/bchange.png";
 
 export default function UIUX() {
   return (
@@ -14,6 +15,15 @@ export default function UIUX() {
             </div>
 
             <p>Responsive Redesign</p>
+          </div>
+        </Link>
+        <Link to={"/abtest"}>
+          <div className="box">
+            <div className="img-overlay">
+              <img src={abtest} alt="" />
+            </div>
+
+            <p>A/B Testing</p>
           </div>
         </Link>
       </div>
