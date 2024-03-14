@@ -26,7 +26,7 @@ export default function ResponsiveRedesign() {
       <div className="content">
         <h3>The Problem</h3>
         <p>
-          The <b>American Mathematical Society</b> is an association dedicated
+          The <b> American Mathematical Society </b> is an association dedicated
           to advancing research by providing various opportunities to
           mathemeticians and students alike.
         </p>
@@ -159,9 +159,9 @@ export default function ResponsiveRedesign() {
         </div>
         <div className="hifi">
           <div className="mockst">
-            <img src={mobilehifi} alt="mobile- hifi" />
-            <img src={desktophifi} alt="desktop- hifi" />
-            <img src={tablethifi} alt="tablet- hifi" />
+            <img id="hifiimg1" src={mobilehifi} alt="mobile- hifi" />
+            <img id="hifiimg2" src={desktophifi} alt="desktop- hifi" />
+            <img id="hifiimg3" src={tablethifi} alt="tablet- hifi" />
           </div>
           <p className="btm">
             The three hifi prototypes resulting from the lofi mockups, with

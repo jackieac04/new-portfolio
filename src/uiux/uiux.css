@@ -1,3 +1,11 @@
+* {
+  transition: 0.3s ease-in-out;
+}
+
+main {
+  max-width: 100%;
+}
+
 .box-grid {
   display: grid;
   width: 90vw;
@@ -82,6 +90,11 @@ h3 {
 .content {
   display: grid;
   margin: 0 1rem;
+  width: fit-content;
+  height: fit-content;
+  margin-right: 1rem;
+  align-items: center;
+  justify-content: center;
 }
 
 .mocks,
@@ -155,4 +168,65 @@ h3 {
 
 .none {
   margin-bottom: 0;
+}
+
+@media (max-width: 1300px) {
+  img {
+    width: 20vw;
+  }
+  .top > img {
+    width: 40vw;
+  }
+  .top > h1 {
+    font-size: 1.5rem;
+    margin-right: 1rem;
+    margin-left: 5rem;
+  }
+
+  .top {
+    margin: 1rem;
+  }
+
+  h3 {
+    font-size: 1rem;
+  }
+  p {
+    font-size: small;
+  }
+
+  .content {
+    width: fit-content;
+    /* margin-right: 1rem; */
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .content > p {
+    align-items: center;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .amsog {
+    max-width: 100%;
+  }
+
+  .mockst > img {
+    max-width: 100%;
+    height: auto;
+  }
+
+  #hifiimg1,
+  #hifiimg2,
+  #hifiimg3 {
+    max-height: 25vw;
+    width: auto;
+  }
+}
+
+@media (max-width: 500px) {
+  p {
+    font-size: xx-small;
+  }
 }
