@@ -225,6 +225,15 @@ h3 {
   }
 }
 
+#comp {
+  width: 80%;
+}
+
+h3,
+.btm {
+  align-self: flex-start;
+}
+
 @media (max-width: 500px) {
   p {
     font-size: xx-small;

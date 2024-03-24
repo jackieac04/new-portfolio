@@ -26,6 +26,11 @@
     "vite": "^5.1.4"
   },
   "dependencies": {
+    "@emotion/react": "^11.11.4",
+    "@emotion/styled": "^11.11.0",
+    "@mui/lab": "^5.0.0-alpha.168",
+    "@mui/material": "^5.15.13",
+    "mui": "^0.0.1",
     "react": "^17.0.2",
     "react-dom": "^17.0.2",
     "react-hook-form": "^7.51.0",
