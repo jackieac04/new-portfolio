@@ -5,6 +5,7 @@ import ResponsiveRedesign from "./uiux/ResponsiveRedesign";
 import AB from "./uiux/AB";
 import CS from "./cs/CS";
 import "./App.css";
+import Development from "./uiux/Development";
 
 function App() {
   return (
@@ -44,6 +45,7 @@ function App() {
           </Route>
           <Route path="/respred" element={<ResponsiveRedesign />} />
           <Route path="/abtest" element={<AB />} />
+          <Route path="/dev" element={<Development />} />
           <Route path="/cs" element={<CS />} />
         </Routes>
       </article>
