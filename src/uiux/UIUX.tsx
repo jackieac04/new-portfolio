@@ -11,29 +11,44 @@ export default function UIUX() {
       <div className="box-grid">
         <Link to={"/respred"}>
           <div className="box">
+            <p>Responsive Redesign</p>
             <div className="img-overlay">
               <img src={respred} alt="" />
+              <div className="skills">
+                <div className="skill sm HTML">HTML</div>
+                <div className="skill sm CSS">CSS</div>
+                <div className="skill sm Figma">Figma</div>
+                <div className="skill sm rr">Responsive Design</div>
+              </div>
             </div>
-
-            <p>Responsive Redesign</p>
           </div>
         </Link>
         <Link to={"/abtest"}>
           <div className="box">
+            <p>A/B Testing</p>
             <div className="img-overlay">
               <img src={abtest} alt="" />
+              <div className="skills">
+                <div className="skill sm HTML">HTML</div>
+                <div className="skill sm CSS">CSS</div>
+                <div className="skill sm rr">Responsive Design</div>
+              </div>
             </div>
-
-            <p>A/B Testing</p>
           </div>
         </Link>
         <Link to={"/dev"}>
           <div className="box">
+            <p>Development</p>
             <div className="img-overlay">
               <img src={dev} alt="" />
+              <div className="skills">
+                <div className="skill sm react">React</div>
+                <div className="skill sm HTML">HTML</div>
+                <div className="skill sm CSS">CSS</div>
+                <div className="skill sm Figma">Figma</div>
+                <div className="skill sm rr">Responsive Design</div>
+              </div>
             </div>
-
-            <p>Development</p>
           </div>
         </Link>
       </div>
