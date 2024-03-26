@@ -2,6 +2,17 @@ import dev from "/dev/dev.png";
 import companal from "/dev/companal.png";
 import hifi from "/dev/hifi.png";
 import "./uiux.css";
+import explore from "/dev/instagramexplore.png";
+import iglike from "/dev/instagramlike.png";
+import igsave from "/dev/instagramsave.png";
+
+import pinhome from "/dev/pinteresthome.png";
+import pinlike from "/dev/pinterestlike.png";
+import pinboard from "/dev/pinterestboard.png";
+
+import youhome from "/dev/youtubehome.png";
+import youvid from "/dev/youtubevid.png";
+import youliked from "/dev/youtubeliked.png";
 
 export default function Development() {
   return (
@@ -29,14 +40,22 @@ export default function Development() {
         <p className="btm">
           I first created a competitve analysis of some popular apps with
           similar favoriting and aggregating features:{" "}
-          <b>Instagram, Pinterest,</b> and <b>YouTube</b> to determine how these
-          features are typically handled in large, public settings. My findings
-          are displayed below:
+          <b>
+            <a href="https://instagram.com/">Instagram</a>,{" "}
+            <a href="https://www.pinterest.com/">Pinterest</a>,
+          </b>{" "}
+          and{" "}
+          <b>
+            <a href="https://www.youtube.com/">YouTube</a>
+          </b>{" "}
+          to determine how these features are typically handled in large, public
+          settings. My findings are displayed below:
         </p>
         <div className="mocks">
           <img id="comp" src={companal} alt="Competitive analysis chart" />
         </div>
       </div>
+
       <p className="btm">
         The simplicity of the like and save buttons for Instagram works well
         because they are intuitive- one measure of public support and one of
@@ -51,6 +70,29 @@ export default function Development() {
         is mixed; some use it as creators while others use it primarily to watch
         videos, and the reflection of its ability to create and customize
         playlists of liked content reflects this.
+      </p>
+      <div className="mockss">
+        <img src={explore} alt="" />
+        <img src={iglike} alt="" />
+        <img src={igsave} alt="" />
+      </div>
+      <p className="btm">Instagram</p>
+      <div className="mockss">
+        <img src={pinhome} alt="" />
+        <img src={pinlike} alt="" />
+        <img src={pinboard} alt="" />
+      </div>
+      <p className="btm">Pinterest</p>
+      <div className="mockss">
+        <img src={youhome} alt="" />
+        <img src={youvid} alt="" />
+        <img src={youliked} alt="" />
+      </div>
+      <p className="btm">YouTube</p>
+      <p className="btm">
+        Each of these image sequences shows the progression of getting to the
+        liked paged from the home pages of Instagram, Pinterest, and Youtube,
+        respectively.
       </p>
       <p className="btm">
         Given this information and the simple functionality of my app, I believe
