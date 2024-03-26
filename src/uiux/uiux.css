@@ -15,7 +15,7 @@ main {
 }
 
 .box {
-  height: auto;
+  height: 43vh;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -267,7 +267,7 @@ h3,
 .CSS {
   background-color: rgb(77, 73, 158);
 }
-.rr {
+.Responsive {
   background-color: rgb(143, 73, 158);
 }
 
@@ -283,6 +283,44 @@ h3,
   padding: 0.5rem;
   box-shadow: 2px 5px rgb(33, 15, 93, 0.8);
   margin-right: 0;
+}
+
+.link > img {
+  width: 100%;
+  box-shadow: none;
+  margin-bottom: 0;
+}
+
+.topbox {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.link {
+  box-shadow: none;
+  margin: 0.2rem;
+  align-self: flex-end;
+  width: 1rem;
+  transform: translateY(10%);
+}
+
+.bxtitle {
+  font-weight: 700;
+  margin-left: 0.5rem;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.innerbox {
+  display: flex;
+  width: fit-content;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  height: fit-content;
 }
 
 @media (max-width: 500px) {

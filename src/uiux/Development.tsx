@@ -29,7 +29,7 @@ export default function Development() {
           <div className="skill HTML">HTML</div>
           <div className="skill CSS">CSS</div>
           <div className="skill Figma">Figma</div>
-          <div className="skill rr">Responsive Design</div>
+          <div className="skill Responsive">Responsive Design</div>
         </div>
       </div>
       <div className="content">

@@ -25,7 +25,7 @@ export default function AB() {
         <div className="skills">
           <div className="skill HTML">HTML</div>
           <div className="skill CSS">CSS</div>
-          <div className="skill rr">Responsive Design</div>
+          <div className="skill Responsive">Responsive Design</div>
         </div>
       </div>
       <div className="content">
