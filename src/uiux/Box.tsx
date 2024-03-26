@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import link from "/main/link.svg";
 
 interface boxProps {
   outsidelink: string | null;
@@ -24,7 +25,7 @@ export default function Box({
             {outsidelink && (
               <Link className="link" to={outsidelink}>
                 {" "}
-                <img src="/link.svg" alt="" />
+                <img src={link} alt="" />
               </Link>
             )}
           </div>
