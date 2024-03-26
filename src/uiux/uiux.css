@@ -34,8 +34,15 @@ main {
   transition: 0.3s ease-in-out;
 }
 
+.box > p {
+  margin-top: 0.5rem;
+}
+
 p {
   font-size: large;
+}
+
+.content > p {
   align-self: flex-start;
 }
 
@@ -53,6 +60,9 @@ img {
   border-radius: 50%;
   padding: 1rem 0rem 0.5rem 0rem;
   width: fit-content;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 .top {
   display: grid;
@@ -63,8 +73,6 @@ img {
 .top > img {
   width: 100%;
   border: 10px solid var(--bg-color-dark);
-  /* box-shadow: none; */
-  /* border-radius: 0%; */
 }
 
 .top > h1 {
@@ -234,6 +242,47 @@ h3 {
 h3,
 .btm {
   align-self: flex-start;
+}
+
+.skills {
+  display: flex;
+}
+
+.skill {
+  margin: 0.5rem;
+  border-radius: 10px;
+  /* border: 4px solid var(--bg-color-dark); */
+  font-family: var(--sans);
+  padding: 0.8rem;
+  color: white;
+  box-shadow: 5px 10px rgb(33, 15, 93, 0.8);
+}
+.react {
+  background-color: rgb(138, 73, 158);
+}
+.HTML {
+  background-color: rgb(99, 73, 158);
+}
+
+.CSS {
+  background-color: rgb(77, 73, 158);
+}
+.rr {
+  background-color: rgb(143, 73, 158);
+}
+
+.Figma {
+  background-color: rgb(73, 101, 158);
+}
+
+.sm {
+  font-size: small;
+  font-weight: 400;
+  font-family: var(--sans);
+  width: fit-content;
+  padding: 0.5rem;
+  box-shadow: 2px 5px rgb(33, 15, 93, 0.8);
+  margin-right: 0;
 }
 
 @media (max-width: 500px) {
