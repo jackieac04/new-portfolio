@@ -26,6 +26,7 @@ export default function Development() {
         <div className=""></div>
         <div className="skills">
           <div className="skill React">React</div>
+          <div className="skill TypeScript">TypeScript</div>
           <div className="skill HTML">HTML</div>
           <div className="skill CSS">CSS</div>
           <div className="skill Figma">Figma</div>

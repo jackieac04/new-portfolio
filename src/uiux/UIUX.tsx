@@ -23,7 +23,14 @@ const projects = [
     title: "Development",
     outsidelink: "https://jackieac04.github.io/MyGarden/",
     insidelink: "/dev",
-    skills: ["React", "HTML", "CSS", "Figma", "Responsive Design"],
+    skills: [
+      "React",
+      "TypeScript",
+      "HTML",
+      "CSS",
+      "Figma",
+      "Responsive Design",
+    ],
     img: dev,
   },
 ];
