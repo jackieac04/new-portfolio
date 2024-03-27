@@ -10,12 +10,12 @@ main {
   display: grid;
   width: 90vw;
   grid-template-columns: 1fr 1fr 1fr;
-  justify-content: center;
-  align-items: center;
+  justify-content: start;
+  /* align-items: center; */
 }
 
 .box {
-  height: 43vh;
+  height: fit-content;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -246,6 +246,9 @@ h3,
 
 .skills {
   display: flex;
+  max-width: 100%;
+  flex-wrap: wrap;
+  justify-content: center;
 }
 
 .skill {
@@ -269,6 +272,11 @@ h3,
 }
 .Responsive {
   background-color: rgb(143, 73, 158);
+  font-size: x-small;
+}
+
+.TypeScript {
+  background-color: rgb(73, 76, 158);
 }
 
 .Figma {

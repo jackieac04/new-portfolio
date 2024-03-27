@@ -19,6 +19,11 @@ export default function Box({
   return (
     <>
       <div className="box">
+        <Link to={insidelink}>
+          <div className="img-overlay">
+            <img src={img} alt="" />
+          </div>
+        </Link>
         <div className="topbox">
           <div className="innerbox">
             <p className="bxtitle">{title}</p>
@@ -30,20 +35,15 @@ export default function Box({
             )}
           </div>
         </div>
-        <Link to={insidelink}>
-          <div className="img-overlay">
-            <img src={img} alt="" />
-            <div className="skills">
-              {skills.map((skill) => {
-                return (
-                  <div className={`skill sm ${skill}`} key={skill}>
-                    {skill}
-                  </div>
-                );
-              })}
-            </div>
-          </div>
-        </Link>
+        <div className="skills lil">
+          {skills.map((skill) => {
+            return (
+              <div className={`skill sm ${skill}`} key={skill}>
+                {skill}
+              </div>
+            );
+          })}
+        </div>
       </div>
     </>
   );
