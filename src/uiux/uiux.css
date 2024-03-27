@@ -272,7 +272,7 @@ h3,
 }
 .Responsive {
   background-color: rgb(143, 73, 158);
-  font-size: x-small;
+  /* font-size: x-small; */
 }
 
 .TypeScript {
