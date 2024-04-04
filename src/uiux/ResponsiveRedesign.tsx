@@ -18,16 +18,18 @@ export default function ResponsiveRedesign() {
         <h1>
           Responsive Redesign: American Mathematical Society Program Listings
         </h1>
-        <img
-          src={respred}
-          alt="An image of a redesigned page for the American Mathematical Society's Program Listings"
-        />
-        <div className=""></div>
-        <div className="skills">
-          <div className="skill HTML">HTML</div>
-          <div className="skill CSS">CSS</div>
-          <div className="skill Figma">Figma</div>
-          <div className="skill Responsive">Responsive Design</div>
+        <div className="skillswrap">
+          <img
+            src={respred}
+            alt="An image of a redesigned page for the American Mathematical Society's Program Listings"
+          />
+          <div className=""></div>
+          <div className="skills">
+            <div className="skill HTML">HTML</div>
+            <div className="skill CSS">CSS</div>
+            <div className="skill Figma">Figma</div>
+            <div className="skill Responsive">Responsive Design</div>
+          </div>
         </div>
       </div>
       <div className="content">

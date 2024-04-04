@@ -103,6 +103,7 @@ h1 {
   /*   align-items: center; */
   width: 95vw;
   text-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 p,
