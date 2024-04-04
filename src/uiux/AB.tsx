@@ -17,15 +17,17 @@ export default function AB() {
     <main>
       <div className="top">
         <h1>A/B Testing</h1>
-        <img
-          src={bchange}
-          alt="An image of the website after changes have been made."
-        />
-        <div className=""></div>
-        <div className="skills">
-          <div className="skill HTML">HTML</div>
-          <div className="skill CSS">CSS</div>
-          <div className="skill Responsive">Responsive Design</div>
+        <div className="skillwrap">
+          <img
+            src={bchange}
+            alt="An image of the website after changes have been made."
+          />
+          <div className=""></div>
+          <div className="skills">
+            <div className="skill HTML">HTML</div>
+            <div className="skill CSS">CSS</div>
+            <div className="skill Responsive">Responsive Design</div>
+          </div>
         </div>
       </div>
       <div className="content">

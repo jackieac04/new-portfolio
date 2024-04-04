@@ -47,7 +47,7 @@ p {
 }
 
 img {
-  width: 25vw;
+  max-width: 85%;
   border-radius: 10px;
   box-shadow: 7px 15px rgb(33, 15, 93, 0.8);
   margin-bottom: 1rem;
@@ -72,7 +72,7 @@ img {
 
 .top > img {
   width: 100%;
-  border: 10px solid var(--bg-color-dark);
+  /* border: 10px solid var(--bg-color-dark); */
 }
 
 .top > h1 {
@@ -93,7 +93,7 @@ h3 {
   margin-top: 1rem;
   justify-self: center;
   display: flex;
-  border: 10px solid var(--bg-color-dark);
+  /* border: 10px solid var(--bg-color-dark); */
 }
 
 .content {
@@ -115,20 +115,20 @@ h3 {
 
 .mockst > img {
   height: 55vh;
-  border: 10px solid var(--bg-color-dark);
+  /* border: 10px solid var(--bg-color-dark); */
   margin: 3rem 2rem;
   width: auto;
 }
 
 .mocks > img {
   width: 40vw;
-  border: 10px solid var(--bg-color-dark);
+  /* border: 10px solid var(--bg-color-dark); */
   margin-bottom: 2rem;
 }
 
 .mockss > img {
   width: 25vw;
-  border: 10px solid var(--bg-color-dark);
+  /* border: 10px solid var(--bg-color-dark); */
   margin-bottom: 2rem;
   margin-right: 1rem;
 }
@@ -181,12 +181,6 @@ h3 {
 }
 
 @media (max-width: 1300px) {
-  img {
-    width: 20vw;
-  }
-  .top > img {
-    width: 40vw;
-  }
   .top > h1 {
     font-size: 1.5rem;
     margin-right: 1rem;
@@ -223,15 +217,19 @@ h3 {
   }
 
   .mockst > img {
-    max-width: 100%;
+    max-width: 90%;
     height: auto;
   }
 
   #hifiimg1,
   #hifiimg2,
   #hifiimg3 {
-    max-height: 25vw;
+    max-height: 18rem;
+    height: max-content;
     width: auto;
+  }
+  .skill {
+    font-size: x-small;
   }
 }
 
@@ -244,19 +242,24 @@ h3,
   align-self: flex-start;
 }
 
+.skillswrap {
+  max-width: 100%;
+}
+
 .skills {
   display: flex;
   max-width: 100%;
   flex-wrap: wrap;
-  justify-content: center;
+  justify-content: flex-start;
 }
 
 .skill {
   margin: 0.5rem;
   border-radius: 10px;
+
   /* border: 4px solid var(--bg-color-dark); */
   font-family: var(--sans);
-  padding: 0.8rem;
+  padding: 2%;
   color: white;
   box-shadow: 5px 10px rgb(33, 15, 93, 0.8);
 }
@@ -329,6 +332,69 @@ h3,
   align-items: center;
   display: flex;
   height: fit-content;
+}
+
+.lil {
+  justify-content: center;
+}
+
+@media (max-width: 1000px) {
+  #hifiimg1,
+  #hifiimg2,
+  #hifiimg3 {
+    max-height: 13rem;
+    height: max-content;
+    width: auto;
+  }
+}
+
+@media (max-width: 800px) {
+  #hifiimg1,
+  #hifiimg2,
+  #hifiimg3 {
+    max-height: 10rem;
+    height: max-content;
+    width: auto;
+  }
+  .top > h1 {
+    font-size: 1.2rem;
+  }
+  .skill {
+    border-radius: 7px;
+  }
+  .box-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 700px) {
+  #hifiimg1,
+  #hifiimg2,
+  #hifiimg3 {
+    max-height: 8rem;
+    height: max-content;
+    width: auto;
+  }
+  .top > h1 {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #hifiimg1,
+  #hifiimg2,
+  #hifiimg3 {
+    max-height: 7rem;
+    height: max-content;
+    width: auto;
+  }
+  .box-grid {
+    display: grid;
+    width: 90vw;
+    grid-template-columns: 1fr;
+    justify-content: start;
+    /* align-items: center; */
+  }
 }
 
 @media (max-width: 500px) {
