@@ -15,7 +15,7 @@ export default function ResponsiveRedesign() {
   return (
     <main>
       <div className="top">
-        <h1>
+        <h1 className="text-5xl">
           Responsive Redesign: American Mathematical Society Program Listings
         </h1>
         <div className="skillswrap">

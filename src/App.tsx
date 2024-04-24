@@ -6,6 +6,7 @@ import AB from "./uiux/AB";
 import CS from "./cs/CS";
 import "./App.css";
 import Development from "./uiux/Development";
+import Iterative from "./uiux/Iterative";
 
 function App() {
   return (
@@ -47,6 +48,7 @@ function App() {
           <Route path="/abtest" element={<AB />} />
           <Route path="/dev" element={<Development />} />
           <Route path="/cs" element={<CS />} />
+          <Route path="/iter" element={<Iterative />} />
         </Routes>
       </article>
     </>
@@ -56,7 +58,7 @@ function App() {
 function Home() {
   return (
     <main>
-      <h1>Jaclyn Cohen</h1>
+      <h1 className="text-5xl">Jaclyn Cohen</h1>
       <h3>Insert actual content here, about me / my work </h3>
       <p>
         This website is still in progress :) I need to migrate all of my code

@@ -2,6 +2,7 @@ import "./uiux.css";
 import respred from "/respred/respred.png";
 import abtest from "/ab/bchange.png";
 import dev from "/dev/dev.png";
+import iter from "/iter/iter.png";
 import Box from "./Box";
 
 const projects = [
@@ -33,12 +34,19 @@ const projects = [
     ],
     img: dev,
   },
+  {
+    title: "Iterative Design: MiFonda Storefront",
+    outsidelink: null,
+    insidelink: "/iter",
+    skills: ["Figma", "Responsive Design"],
+    img: iter,
+  },
 ];
 
 export default function UIUX() {
   return (
     <main>
-      <h1>UIUX Projects</h1>
+      <h1 className="text-5xl">UIUX Projects</h1>
       <div className="box-grid">
         {projects.map((project) => {
           return (

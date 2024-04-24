@@ -16,7 +16,7 @@ export default function AB() {
   return (
     <main>
       <div className="top">
-        <h1>A/B Testing</h1>
+        <h1 className="text-5xl">A/B Testing</h1>
         <div className="skillwrap">
           <img
             src={bchange}
