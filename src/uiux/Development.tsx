@@ -18,7 +18,7 @@ export default function Development() {
   return (
     <main>
       <div className="top">
-        <h1>Development</h1>
+        <h1 className="text-5xl">Development</h1>
         <div className="skillswrap">
           <img
             src={dev}

@@ -39,15 +39,16 @@ main {
 }
 
 p {
-  font-size: large;
+  font-size: large !important;
 }
 
 .content > p {
   align-self: flex-start;
 }
 
-img {
-  max-width: 85%;
+img,
+video {
+  max-width: 85% !important;
   border-radius: 10px;
   box-shadow: 7px 15px rgb(33, 15, 93, 0.8);
   margin-bottom: 1rem;
@@ -84,8 +85,8 @@ img {
 }
 
 h3 {
-  font-size: 2rem;
-  margin-bottom: 1rem;
+  font-size: 2rem !important;
+  margin-bottom: 1rem !important;
 }
 
 .amsog {
@@ -182,7 +183,7 @@ h3 {
 
 @media (max-width: 1300px) {
   .top > h1 {
-    font-size: 1.5rem;
+    font-size: 1.5rem !important;
     margin-right: 1rem;
     margin-left: 5rem;
   }
@@ -192,10 +193,10 @@ h3 {
   }
 
   h3 {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
   p {
-    font-size: small;
+    font-size: small !important;
   }
 
   .content {
@@ -229,7 +230,7 @@ h3 {
     width: auto;
   }
   .skill {
-    font-size: x-small;
+    font-size: x-small !important;
   }
 }
 
@@ -287,7 +288,7 @@ h3,
 }
 
 .sm {
-  font-size: small;
+  font-size: small !important;
   font-weight: 400;
   font-family: var(--sans);
   width: fit-content;
@@ -357,7 +358,7 @@ h3,
     width: auto;
   }
   .top > h1 {
-    font-size: 1.2rem;
+    font-size: 1.2rem !important;
   }
   .skill {
     border-radius: 7px;
@@ -376,7 +377,7 @@ h3,
     width: auto;
   }
   .top > h1 {
-    font-size: 1rem;
+    font-size: 1rem !important;
   }
 }
 
@@ -399,6 +400,6 @@ h3,
 
 @media (max-width: 500px) {
   p {
-    font-size: xx-small;
+    font-size: xx-small !important;
   }
 }

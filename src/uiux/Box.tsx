@@ -28,10 +28,10 @@ export default function Box({
           <div className="innerbox">
             <p className="bxtitle">{title}</p>
             {outsidelink && (
-              <Link className="link" to={outsidelink}>
+              <a className="link" href={outsidelink}>
                 {" "}
                 <img src={link} alt="" />
-              </Link>
+              </a>
             )}
           </div>
         </div>
