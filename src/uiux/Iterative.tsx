@@ -1,4 +1,14 @@
 import iter from "/iter/iter.png";
+import sketches from "/iter/sketches.png";
+import designsys from "/iter/designsys.png";
+import desktop1 from "/iter/desktop1.png";
+import desktop2 from "/iter/desktop2.png";
+import desktophifi1 from "/iter/desktophifi1.png";
+import desktophifi2 from "/iter/desktophifi2.png";
+import mobile1 from "/iter/mobile1.png";
+import mobile2 from "/iter/mobile2.png";
+import mobilehifi1 from "/iter/mobilehifi1.png";
+import mobilehifi2 from "/iter/mobilehifi2.png";
 
 export default function Iterative() {
   return (
@@ -31,7 +41,7 @@ export default function Iterative() {
           sketches of our initial ideas for mobile and/or desktop flows.
         </p>
         <div className="mocks">
-          <img src="/iter/sketches.png" alt="" />
+          <img src={sketches} alt="" />
         </div>
         <p className="btm">
           Upper left: my sketches, upper right: Anna's sketches, bottom left:
@@ -39,8 +49,8 @@ export default function Iterative() {
         </p>
         <h3>First Wireframes</h3>
         <div className="mocks">
-          <img src="/iter/mobile1.png" alt="" />
-          <img src="/iter/desktop1.png" alt="" />
+          <img src={mobile1} alt="" />
+          <img src={desktop1} alt="" />
         </div>
         <p className="btm">
           After careful consideration, we combined the different sketches into
@@ -86,8 +96,8 @@ export default function Iterative() {
         <p>Given this feedback, we revised our wireframes accordingly:</p>
         <div className="mockst">
           {" "}
-          <img src="/iter/mobile2.png" alt="" />
-          <img src="/iter/desktop2.png" alt="" />
+          <img src={mobile2} alt="" />
+          <img src={desktop2} alt="" />
         </div>
         <p className="btm">
           We incorporated all of the feedback into our new designs; each page is
@@ -108,18 +118,18 @@ export default function Iterative() {
           high-contrast colors.{" "}
         </p>
         <div className="mocks">
-          <img src="/iter/designsys.png" alt="" />
+          <img src={designsys} alt="" />
         </div>
         <p>
           Based on their feedback, the design system, and our revised lofis, we
           created these mobile and desktop hifis:
         </p>
         <div className="mocks">
-          <img src="/iter/mobilehifi1.png" alt="" />
+          <img src={mobilehifi1} alt="" />
         </div>
         <div className="mocks">
           {" "}
-          <img src="/iter/desktophifi1.png" alt="" />
+          <img src={desktophifi1} alt="" />
         </div>
         <p className="btm">
           Our hifis are designed with similar food delivery platforms in mind,
@@ -146,11 +156,11 @@ export default function Iterative() {
           this:
         </p>
         <div className="mocks">
-          <img src="/iter/mobilehifi2.png" alt="" />
+          <img src={mobilehifi2} alt="" />
         </div>
         <div className="mocks">
           {" "}
-          <img src="/iter/desktophifi2.png" alt="" />
+          <img src={desktophifi2} alt="" />
         </div>
         <p className="btm">
           We made sure the meal plate was predominantly displayed in both
