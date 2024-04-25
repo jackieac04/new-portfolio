@@ -8,7 +8,7 @@ import { useState } from "react";
 export default function Art() {
   const [value, setValue] = useState<string>("0");
 
-  const handleChange = (event: React.SyntheticEvent, newValue: string) => {
+  const handleChange = (newValue: string) => {
     setValue(newValue);
   };
   return (
@@ -17,7 +17,7 @@ export default function Art() {
         <div className="flex w-[95vw] my-8">
           <TabContext value={value}>
             <TabList
-              onChange={handleChange}
+              onChange={() => handleChange}
               orientation="vertical"
               className="w-[1/5] mr-4"
             >
