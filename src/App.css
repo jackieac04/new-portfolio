@@ -45,6 +45,15 @@ h3 {
   font-style: italic;
 }
 
+@layer base {
+  ul,
+  ol {
+    list-style: revert-layer !important;
+    margin: auto !important;
+    padding-left: 2%;
+  }
+}
+
 .right-links {
   display: flex;
   width: fit-content;

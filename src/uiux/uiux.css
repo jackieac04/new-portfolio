@@ -26,7 +26,7 @@ main {
   transition: 0.5s;
   background-color: rgb(131, 119, 184, 0.5);
   padding-bottom: 0.5rem;
-  margin: 1rem;
+  margin: 1rem !important;
 }
 
 .box:hover {
@@ -35,7 +35,7 @@ main {
 }
 
 .box > p {
-  margin-top: 0.5rem;
+  margin-top: 0.5rem !important;
 }
 
 p {
@@ -51,7 +51,7 @@ video {
   max-width: 85% !important;
   border-radius: 10px;
   box-shadow: 7px 15px rgb(33, 15, 93, 0.8);
-  margin-bottom: 1rem;
+  margin-bottom: 1rem !important;
 }
 
 .img-overlay {
@@ -68,7 +68,7 @@ video {
 .top {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  margin: 2rem;
+  margin: 2rem !important;
 }
 
 .top > img {
@@ -81,7 +81,7 @@ video {
   justify-content: center;
   text-align: center;
   align-items: center;
-  margin: 2rem 5rem;
+  margin: 2rem 5rem !important;
 }
 
 h3 {
@@ -115,7 +115,7 @@ h3 {
 }
 
 .mockst > img {
-  height: 55vh;
+  height: 55vh !important;
   /* border: 10px solid var(--bg-color-dark); */
   margin: 3rem 2rem;
   width: auto;
@@ -124,7 +124,7 @@ h3 {
 .mocks > img {
   width: 40vw;
   /* border: 10px solid var(--bg-color-dark); */
-  margin-bottom: 2rem;
+  margin-bottom: 2rem !important;
 }
 
 .mockss > img {
@@ -218,7 +218,7 @@ h3 {
   }
 
   .mockst > img {
-    max-width: 90%;
+    max-width: 90% !important;
     height: auto;
   }
 

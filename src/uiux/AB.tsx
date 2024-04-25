@@ -60,7 +60,7 @@ export default function AB() {
         </div>
         <p>The site before and after changes were made.</p>
         <p>
-          <ul className="none">
+          <ul className="list-disc">
             Notable changes include:
             <li>
               Each appointment has more space and is delineated by a slight
