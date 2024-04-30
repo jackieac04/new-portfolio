@@ -4,8 +4,8 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --bg-color: rgb(204, 194, 226);
-  --bg-color-dark: rgb(33, 15, 93);
+  --bg-color: #7c6283;
+  --bg-color-dark: #1e1920;
   --quador: "quador", serif;
   --sans: "basic-sans", sans-serif;
   justify-content: center;
@@ -18,6 +18,10 @@ body {
   background-color: var(--bg-color);
 }
 
+.dark-mode {
+  background-color: #1e1920;
+}
+
 nav {
   display: flex;
   justify-content: space-between;
@@ -28,6 +32,27 @@ nav {
   width: 95vw;
   left: 5rem;
   z-index: 5;
+}
+
+.light h1,
+.light a,
+.light p {
+  color: var(--bg-color-dark);
+}
+
+/* Dark mode */
+.dark h1,
+.dark a,
+.dark p {
+  color: #edddfc;
+}
+
+.darkme {
+  background-color: #7c6283;
+}
+
+.lightme {
+  background-color: #cab4ce;
 }
 
 a,
@@ -123,4 +148,67 @@ p,
 p > a {
   margin: 0;
   font-family: var(--sans);
+}
+
+.darkbtn,
+.lightbtn {
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+.darkbtn {
+  background-image: url("/main/sun.svg");
+}
+
+.lightbtn {
+  background-image: url("/main/moon.svg");
+}
+
+.left-links {
+  width: 30%;
+}
+
+.imgtxt {
+  position: absolute;
+  font-size: 3rem;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  80% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 80%;
+  }
+}
+
+.custom-shape-divider-top-1714497700 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-top-1714497700 svg {
+  position: relative;
+  display: block;
+  width: calc(110% + 1.3px);
+  height: 116px;
+}
+
+.lightsvg {
+  fill: var(--bg-color);
+}
+
+.darksvg {
+  fill: var(--bg-color-dark);
+}
+
+footer {
+  background-color: #cab4ce;
 }
