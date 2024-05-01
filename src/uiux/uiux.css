@@ -347,6 +347,9 @@ h3,
     height: max-content;
     width: auto;
   }
+  .box-grid {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media (max-width: 800px) {
@@ -362,9 +365,6 @@ h3,
   }
   .skill {
     border-radius: 7px;
-  }
-  .box-grid {
-    grid-template-columns: 1fr 1fr;
   }
 }
 

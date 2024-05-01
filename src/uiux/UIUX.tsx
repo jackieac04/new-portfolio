@@ -1,4 +1,5 @@
 import "./uiux.css";
+import "../App.css";
 import respred from "/respred/respred.png";
 import abtest from "/ab/bchange.png";
 import dev from "/dev/dev.png";
@@ -46,12 +47,15 @@ const projects = [
 
 export default function UIUX() {
   return (
-    <main>
+    <main
+      className="relative w-screen h-fit"
+    >
       <h1 className="text-5xl">UIUX Projects</h1>
-      <div className="box-grid">
-        {projects.map((project) => {
+      <div className="box-grid h-fit">
+        {projects.map((project, indx) => {
           return (
             <Box
+              key={indx}
               outsidelink={project.outsidelink}
               insidelink={project.insidelink}
               skills={project.skills}
