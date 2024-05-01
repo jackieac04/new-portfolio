@@ -4,7 +4,8 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --bg-color: #7c6283;
+  --bg-color: #cab4ce;
+  --med-color: #7c6283;
   --bg-color-dark: #1e1920;
   --quador: "quador", serif;
   --sans: "basic-sans", sans-serif;
@@ -14,7 +15,9 @@
 }
 
 body {
-  margin: 1rem !important;
+  /* margin-left: 1rem !important;
+  margin-right: 1rem !important;
+  margin-top: 1rem !important; */
   background-color: var(--bg-color);
 }
 
@@ -45,6 +48,10 @@ nav {
 .dark a,
 .dark p {
   color: #edddfc;
+}
+
+.lighttop {
+  background-color: #7c6283;
 }
 
 .darkme {
@@ -93,7 +100,7 @@ h3 {
 main,
 .dropdowns {
   position: relative;
-  top: 5vh !important;
+  padding-top: 5vh !important;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -138,8 +145,7 @@ h1 {
   position: relative;
   display: flex;
   justify-content: center;
-  /*   align-items: center; */
-  width: 95vw;
+  top: 0;
   text-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -202,7 +208,7 @@ p > a {
 }
 
 .lightsvg {
-  fill: var(--bg-color);
+  fill: var(--med-color);
 }
 
 .darksvg {
@@ -211,4 +217,18 @@ p > a {
 
 footer {
   background-color: #cab4ce;
+}
+
+.d {
+  background-color: unset;
+  color: var(--bg-color);
+}
+
+.dex {
+  background-color: var(--med-color);
+  transform: translateY(4.9vh);
+}
+
+.lex {
+  opacity: 0;
 }
