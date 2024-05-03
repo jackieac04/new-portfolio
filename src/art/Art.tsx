@@ -12,7 +12,7 @@ export default function Art() {
     setValue(newValue);
   };
   return (
-    <main className="main">
+    <main className="main pt-[5vh]">
       <div className="left">
         <div className="flex w-[95vw] my-8">
           <TabContext value={value}>

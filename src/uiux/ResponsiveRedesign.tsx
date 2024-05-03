@@ -13,7 +13,7 @@ import "./uiux.css";
 
 export default function ResponsiveRedesign() {
   return (
-    <main>
+    <main className="pt-[5vh]">
       <div className="top">
         <h1 className="text-5xl">
           Responsive Redesign: American Mathematical Society Program Listings

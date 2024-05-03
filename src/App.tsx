@@ -44,15 +44,11 @@ function App() {
             <Link className="art" to={"/art"}>
               Art
             </Link>
+            <a href={"/main/JaclynCohenResume0224.pdf"} target="_blank">
+              Resumé
+            </a>
           </div>
         </nav>
-        <div className="dropdowns">
-          <div className="art-links"></div>
-          <div className="uiux-links">
-            <p>Responsive Redesign</p>
-          </div>
-          <div className="cs-links"></div>
-        </div>
 
         <Routes>
           <Route path="/" element={<Home dark={dark} />} />
@@ -70,13 +66,39 @@ function App() {
       </article>
       <footer
         className={
-          (dark ? "d" : "l") + " h-[5vh] px-[10%] m-0 flex justify-between"
+          (dark ? "d" : "l") +
+          " h-[5vh] py-[2vh] px-[10%] m-0 flex justify-between"
         }
       >
-        <div className="z-10 ">Links</div>
-        <div className="z-10 ">
-          {" "}
-          <p>Made with love</p>{" "}
+        <div
+          className="z-10 w-[25%] flex justify-between"
+          style={{ transform: "translateY(-25%)" }}
+        >
+          <Link to={"mailto: jaclyn_cohen@brown.edu"} target="_blank">
+            <div className={(dark ? "d" : "l") + "email w-10 h-10"} />
+          </Link>
+          <Link to={"https://github.com/jackieac04"} target="_blank">
+            <div className={(dark ? "d" : "l") + "git w-10 h-10"} />
+          </Link>
+          <Link
+            to={"https://www.linkedin.com/in/jaclyn-a-cohen/"}
+            target="_blank"
+          >
+            <div className={(dark ? "d" : "l") + "linked w-10 h-10"} />
+          </Link>
+          <Link
+            to={"https://discordapp.com/users/leafysheepy/"}
+            target="_blank"
+          >
+            <div className={(dark ? "d" : "l") + "discord w-10 h-10"} />
+          </Link>
+
+          <Link to={"https://instagram.com/leafysheepy/"} target="_blank">
+            <div className={(dark ? "d" : "l") + "inst w-10 h-10"} />
+          </Link>
+        </div>
+        <div className="z-10">
+          <p>Made with leafy sheepy</p>
         </div>
       </footer>
     </>
@@ -91,37 +113,34 @@ function Home({ dark }: HomeProps) {
   return (
     <>
       <main className={dark ? "darktop" : "lighttop"}>
-        <div className="h-[95vh] overflow-hidden w-screen relative grid">
+        <div
+          className="w-screen relative flex justify-center "
+          style={{ transform: "translateY(-8vh)" }}
+        >
           {dark ? (
-            <div className="w-screen max-h-full flex justify-center absolute">
-              <img
-                src={darkbg}
-                alt=""
-                className="w-[80%] object-cover shadow-none"
-              />
-            </div>
-          ) : (
-            <div className="w-screen max-h-full flex justify-center absolute">
-              <img
-                src={lightbg}
-                alt=""
-                className="w-[80%] object-cover shadow-none"
-              />
-            </div>
-          )}
-
-          <div className="w-screen max-h-full flex justify-center absolute">
             <img
-              src={main}
+              src={darkbg}
               alt=""
-              className="w-[80%] object-cover shadow-none"
+              className="mx-auto border-0 my-0 object-cover shadow-none w-[1100px] -top-10 "
             />
-          </div>
+          ) : (
+            <img
+              src={lightbg}
+              alt=""
+              className="mx-auto border-0 my-0 object-cover shadow-none w-[1100px] "
+            />
+          )}
+          <img
+            src={main}
+            alt=""
+            className="mx-auto border-0 my-0 w-[1100px] object-cover shadow-none absolute  left-0 right-0 bottom-0"
+          />
         </div>
+
         <Link
           className="imgtxt"
           style={{
-            transform: "translate(-180%, 50%)",
+            transform: "translate(-180%, 150%)",
             animation: "fadeIn .9s",
           }}
           to={"/art"}
@@ -131,7 +150,7 @@ function Home({ dark }: HomeProps) {
         <Link
           className="imgtxt"
           style={{
-            transform: "translate(200%, 250%)",
+            transform: "translate(200%, 350%)",
             animation: "fadeIn 1.8s",
           }}
           to={"/uiux"}
@@ -141,7 +160,7 @@ function Home({ dark }: HomeProps) {
         <Link
           className="imgtxt"
           style={{
-            transform: "translate(-170%, 450%)",
+            transform: "translate(-170%, 550%)",
             animation: "fadeIn 2.7s",
           }}
           to={"/cs"}
@@ -149,15 +168,20 @@ function Home({ dark }: HomeProps) {
           <h1>Developer</h1>
         </Link>
         <h1
-          className="absolute text-8xl justify-self-center opacity-80"
-          style={{ transform: "translateY(510%)", animation: "fadeIn 3.6s" }}
+          className="absolute justify-self-center opacity-90"
+          style={{
+            transform: "translateY(450%)",
+            animation: "fadeIn 3.6s",
+            fontSize: "6vw",
+          }}
         >
           Jaclyn Cohen
         </h1>
         {/* ABOUT ME */}
         <section
           className={
-            (dark ? "darkme" : "lightme") + " relative w-screen h-screen"
+            (dark ? "darkme" : "lightme") +
+            " relative w-screen min-h-[95vh] pb-[5vw]"
           }
         >
           <div
@@ -178,11 +202,16 @@ function Home({ dark }: HomeProps) {
               ></path>
             </svg>
           </div>
-          <div className="title mt-[5%] mb-[2%]">
-            <h1 className="text-6xl justify-self-left pl-[5%] ">About Me</h1>
+          <div className="title mt-[10vh] mb-[2%]">
+            <h1
+              className="justify-self-left pl-[5%] "
+              style={{ fontSize: "5vw" }}
+            >
+              About Me
+            </h1>
           </div>
           <div className="w-[60%]">
-            <p className="mx-[5%] text-large">
+            <p className="mx-[5%] text-[2.5vh]">
               Hi! My name is Jaclyn Cohen, I'm originally from South Florida but
               I'm currently a sophomore at <b> Brown University</b> studying{" "}
               <b>Computer Science </b> and <b>Visual Arts.</b> I love both
@@ -198,7 +227,7 @@ function Home({ dark }: HomeProps) {
       <footer
         className={
           (dark ? "dex" : "lex") +
-          " h-[5vh] px-[10%] m-0 flex absolute justify-between w-screen bottom-0"
+          " h-[8.1vh]  px-[10%] m-0 flex absolute justify-between w-screen bottom-0"
         }
       ></footer>
     </>
