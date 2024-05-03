@@ -14,7 +14,7 @@ import "./uiux.css";
 
 export default function AB() {
   return (
-    <main>
+    <main className="pt-[5vh]">
       <div className="top">
         <h1 className="text-5xl">A/B Testing</h1>
         <div className="skillwrap">

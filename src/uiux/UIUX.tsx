@@ -1,7 +1,7 @@
 import "./uiux.css";
 import "../App.css";
 import respred from "/respred/respred.png";
-import abtest from "/ab/bchange.png";
+// import abtest from "/ab/bchange.png";
 import dev from "/dev/dev.png";
 import iter from "/iter/iter.png";
 import Box from "./Box";
@@ -14,13 +14,13 @@ const projects = [
     skills: ["HTML", "CSS", "Figma", "Responsive Design"],
     img: respred,
   },
-  {
-    title: "A/B Testing",
-    outsidelink: null,
-    insidelink: "/abtest",
-    skills: ["HTML", "CSS", "Responsive Design"],
-    img: abtest,
-  },
+  // {
+  //   title: "A/B Testing",
+  //   outsidelink: null,
+  //   insidelink: "/abtest",
+  //   skills: ["HTML", "CSS", "Responsive Design"],
+  //   img: abtest,
+  // },
   {
     title: "Development",
     outsidelink: "https://jackieac04.github.io/MyGarden/",
@@ -47,9 +47,7 @@ const projects = [
 
 export default function UIUX() {
   return (
-    <main
-      className="relative w-screen h-fit"
-    >
+    <main className="relative w-screen h-fit pt-[5vh]">
       <h1 className="text-5xl">UIUX Projects</h1>
       <div className="box-grid h-fit">
         {projects.map((project, indx) => {

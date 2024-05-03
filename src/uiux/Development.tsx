@@ -16,7 +16,7 @@ import youliked from "/dev/youtubeliked.png";
 
 export default function Development() {
   return (
-    <main>
+    <main className="pt-[5vh]">
       <div className="top">
         <h1 className="text-5xl">Development</h1>
         <div className="skillswrap">

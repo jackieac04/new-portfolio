@@ -4,7 +4,7 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --bg-color: #cab4ce;
+  --bg-color: #ddddfd;
   --med-color: #7c6283;
   --bg-color-dark: #1e1920;
   --quador: "quador", serif;
@@ -22,7 +22,7 @@ body {
 }
 
 .dark-mode {
-  background-color: #1e1920;
+  background-color: var(--bg-color-dark);
 }
 
 nav {
@@ -47,19 +47,16 @@ nav {
 .dark h1,
 .dark a,
 .dark p {
-  color: #edddfc;
+  color: var(--bg-color);
 }
 
-.lighttop {
-  background-color: #7c6283;
-}
-
+.lighttop,
 .darkme {
-  background-color: #7c6283;
+  background-color: var(--med-color);
 }
 
 .lightme {
-  background-color: #cab4ce;
+  background-color: var(--bg-color);
 }
 
 a,
@@ -75,6 +72,10 @@ h3 {
   font-family: var(--quador);
   font-weight: 600 !important;
   font-style: italic;
+}
+
+.dark h3 {
+  color: var(--bg-color);
 }
 
 @layer base {
@@ -100,25 +101,10 @@ h3 {
 main,
 .dropdowns {
   position: relative;
-  padding-top: 5vh !important;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-.dropdowns {
-  position: absolute;
-  left: 86.5%;
-  background-color: var(--bg-color-dark);
-  color: var(--bg-color);
-  padding: 1rem;
-  justify-content: center;
-  align-items: center;
-  z-index: 2;
-  border-radius: 10px;
-  width: 3rem;
-  font-size: small;
-  display: none;
+  min-height: 95vh;
 }
 
 .art-links > p,
@@ -137,8 +123,8 @@ main,
 }
 
 h1 {
-  font-size: 3rem;
-  margin-top: 2rem !important;
+  font-size: 3vw;
+  margin-top: 2vh !important;
 }
 
 .route-content {
@@ -176,7 +162,7 @@ p > a {
 
 .imgtxt {
   position: absolute;
-  font-size: 3rem;
+  font-size: 4vw;
 }
 
 @keyframes fadeIn {
@@ -216,7 +202,8 @@ p > a {
 }
 
 footer {
-  background-color: #cab4ce;
+  background-color: var(--bg-color);
+  width: 100vw;
 }
 
 .d {
@@ -226,9 +213,66 @@ footer {
 
 .dex {
   background-color: var(--med-color);
-  transform: translateY(4.9vh);
+  transform: translateY(8vh);
 }
 
 .lex {
   opacity: 0;
+}
+
+a > img {
+  box-shadow: none;
+}
+
+.dinst {
+  background-image: url("/main/instagramlight.svg");
+}
+
+.dlinked {
+  background-image: url("/main/linkedinlight.svg");
+}
+
+.ddiscord {
+  background-image: url("/main/discordlight.svg");
+}
+
+.demail {
+  background-image: url("/main/emaillight.svg");
+}
+
+.dgit {
+  background-image: url("/main/githublight.svg");
+}
+
+.linst {
+  background-image: url("/main/instagram.svg");
+}
+
+.llinked {
+  background-image: url("/main/linkedin.svg");
+}
+
+.ldiscord {
+  background-image: url("/main/discord.svg");
+}
+
+.lemail {
+  background-image: url("/main/email.svg");
+}
+
+.lgit {
+  background-image: url("/main/github.svg");
+}
+
+.lgit,
+.linst,
+.lemail,
+.llinked,
+.ldiscord,
+.dgit,
+.dinst,
+.demail,
+.dlinked,
+.ddiscord {
+  background-size: contain;
 }

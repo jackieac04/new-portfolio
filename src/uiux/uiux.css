@@ -39,19 +39,29 @@ main {
 }
 
 p {
-  font-size: large !important;
+  font-size: 1rem;
 }
 
 .content > p {
   align-self: flex-start;
+}
+.dark > main > div > img,
+.dark > main > div > div > img,
+.dark > main > div > div > div > img {
+  border: 5px solid #ddddfd;
+}
+
+.light > main > div > img,
+.light > main > div > div > img,
+.light > main > div > div > div > img {
+  border: 5px solid rgb(33, 15, 93, 0.8);
 }
 
 img,
 video {
   max-width: 85% !important;
   border-radius: 10px;
-  box-shadow: 7px 15px rgb(33, 15, 93, 0.8);
-  margin-bottom: 1rem !important;
+  margin-bottom: 1rem;
 }
 
 .img-overlay {
@@ -196,7 +206,7 @@ h3 {
     font-size: 1rem !important;
   }
   p {
-    font-size: small !important;
+    font-size: small;
   }
 
   .content {
@@ -400,6 +410,6 @@ h3,
 
 @media (max-width: 500px) {
   p {
-    font-size: xx-small !important;
+    /* font-size: xx-small !important; */
   }
 }
