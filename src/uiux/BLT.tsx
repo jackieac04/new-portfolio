@@ -1,5 +1,10 @@
 import blt from "/blt/blt.png";
 import og from "/blt/devog.png";
+import homelofi from "/blt/homelofi.png";
+import partnerslofi from "/blt/partnerslofi.png";
+import homehifi from "/blt/homehifi.png";
+import partnershifi from "/blt/partnerhifi.png";
+import bltnews from "/blt/newsletter.png";
 
 export default function BLT() {
   return (
@@ -89,8 +94,8 @@ export default function BLT() {
             stage.
           </p>
           <div className="mocks">
-            <img src="/blt/homelofi.png" alt="" />
-            <img src="/blt/partnerslofi.png" alt="" />
+            <img src={homelofi} alt="" />
+            <img src={partnerslofi} alt="" />
           </div>
           <p className="btm">
             After making these I was still disatisfied. I felt like the site
@@ -118,8 +123,8 @@ export default function BLT() {
               href="https://www.figma.com/proto/5mJuDRxe0lTrI8aTfhqlNC/BLT?type=design&node-id=70-21&t=NGlf3pGD2SZvMrKK-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=70%3A21"
               target="_blank"
             >
-              <img className="!max-w-[40%]" src="/blt/homehifi.png" alt="" />
-              <img className="!max-w-[40%]" src="/blt/partnerhifi.png" alt="" />
+              <img className="!max-w-[40%]" src={homehifi} alt="" />
+              <img className="!max-w-[40%]" src={partnershifi} alt="" />
             </a>
           </div>
           <p className="btm">With this design system in mind:</p>
@@ -136,7 +141,7 @@ export default function BLT() {
               href="https://www.figma.com/file/5mJuDRxe0lTrI8aTfhqlNC/BLT?type=design&node-id=0-1&mode=design&t=NGlf3pGD2SZvMrKK-0"
               target="_blank"
             >
-              <img className="max-h-screen" src="/blt/newsletter.png" alt="" />
+              <img className="max-h-screen" src={bltnews} alt="" />
             </a>
           </div>
           <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh]">
