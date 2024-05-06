@@ -11,6 +11,7 @@ import { useState } from "react";
 import main from "/main/main.png";
 import darkbg from "/main/bgdark.png";
 import lightbg from "/main/bglight.png";
+import BLT from "./uiux/BLT";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -62,6 +63,7 @@ function App() {
           <Route path="/dev" element={<Development />} />
           <Route path="/cs" element={<CS />} />
           <Route path="/iter" element={<Iterative />} />
+          <Route path="/blt" element={<BLT />} />
         </Routes>
       </article>
       <footer

@@ -5,8 +5,25 @@ import respred from "/respred/respred.png";
 import dev from "/dev/dev.png";
 import iter from "/iter/iter.png";
 import Box from "./Box";
+import blt from "/blt/blt.png";
 
 const projects = [
+  {
+    title: "Iterative Design: MiFonda Storefront",
+    outsidelink:
+      "https://www.figma.com/file/iRwhq0w4NT9zuXu6B2jSnr/Iterative-Design?type=design&node-id=0%3A1&mode=design&t=yh6F5DzZbUdHwOFx-1",
+    insidelink: "/iter",
+    skills: ["Figma", "Responsive Design"],
+    img: iter,
+  },
+  {
+    title: "Brown Development Labs",
+    outsidelink:
+      "https://www.figma.com/file/iRwhq0w4NT9zuXu6B2jSnr/Iterative-Design?type=design&node-id=0%3A1&mode=design&t=yh6F5DzZbUdHwOFx-1https://www.figma.com/file/5mJuDRxe0lTrI8aTfhqlNC/BLT?type=design&node-id=0-1&mode=design&t=ENBatz69SPoOvabt-0",
+    insidelink: "/blt",
+    skills: ["Figma", "Responsive Design"],
+    img: blt,
+  },
   {
     title: "Responsive Redesign",
     outsidelink: "https://jackieac04.github.io/responsive-redesign/",
@@ -34,14 +51,6 @@ const projects = [
       "Responsive Design",
     ],
     img: dev,
-  },
-  {
-    title: "Iterative Design: MiFonda Storefront",
-    outsidelink:
-      "https://www.figma.com/file/iRwhq0w4NT9zuXu6B2jSnr/Iterative-Design?type=design&node-id=0%3A1&mode=design&t=yh6F5DzZbUdHwOFx-1",
-    insidelink: "/iter",
-    skills: ["Figma", "Responsive Design"],
-    img: iter,
   },
 ];
 
