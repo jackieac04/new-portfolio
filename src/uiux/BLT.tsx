@@ -5,6 +5,7 @@ import partnerslofi from "/blt/partnerslofi.png";
 import homehifi from "/blt/homehifi.png";
 import partnershifi from "/blt/partnerhifi.png";
 import bltnews from "/blt/newsletter.png";
+import designsys from "/blt/designsys.png";
 
 export default function BLT() {
   return (
@@ -129,7 +130,7 @@ export default function BLT() {
           </div>
           <p className="btm">With this design system in mind:</p>
           <div className="mocks">
-            <img src="/blt/designsys.png" alt="" />
+            <img src={designsys} alt="" />
           </div>
           <h3>Bonus Project</h3>
           <p className="btm">
