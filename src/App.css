@@ -142,6 +142,11 @@ p > a {
   font-family: var(--sans);
 }
 
+a :hover,
+Link :hover {
+  transform: scale(1.02);
+}
+
 .darkbtn,
 .lightbtn {
   background-repeat: no-repeat;
