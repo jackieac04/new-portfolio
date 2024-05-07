@@ -32,8 +32,8 @@ nav {
   /* background-color: var(--bg-color); */
   opacity: 0.8;
   position: fixed;
-  width: 95vw;
-  left: 5rem;
+  width: 97vw;
+  left: 2rem;
   z-index: 5;
 }
 
@@ -280,4 +280,22 @@ a > img {
 .dlinked,
 .ddiscord {
   background-size: contain;
+}
+
+.hoverimg {
+  background-image: url("/main/forgup.png");
+}
+
+.nothoverimg {
+  background-image: url("/main/forg.png");
+}
+
+.hoverimg,
+.nothoverimg {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-size: cover;
+  background-position: center;
 }

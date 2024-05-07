@@ -12,6 +12,7 @@ import main from "/main/main.png";
 import darkbg from "/main/bgdark.png";
 import lightbg from "/main/bglight.png";
 import BLT from "./uiux/BLT";
+import JAC from "/main/logo.png";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -24,10 +25,14 @@ function App() {
     <>
       <article className={`route-content h-fit ${dark ? "dark" : "light"}`}>
         <nav>
-          <div className="left-links">
-            {/* TODO replace with logo */}
-            <Link to={"/"} className=" mr-[2%]">
-              JAC
+          <div className="left-links grid grid-cols-2">
+            <Link to={"/"} className="grid mr-[2%]">
+              <img
+                className="justify-self-end self-start align-top !max-w-[100px]"
+                src={JAC}
+                alt=""
+                style={{ transform: " translateY(-35%)" }}
+              />
             </Link>
             <button
               className={(dark ? "darkbtn" : "lightbtn") + " w-6 h-6"}
@@ -73,30 +78,35 @@ function App() {
         }
       >
         <div
-          className="z-10 w-[25%] flex justify-between"
+          className="z-10 w-[25%] flex justify-between "
           style={{ transform: "translateY(-25%)" }}
         >
           <Link to={"mailto: jaclyn_cohen@brown.edu"} target="_blank">
-            <div className={(dark ? "d" : "l") + "email w-10 h-10"} />
+            <div className={(dark ? "d" : "l") + "email w-10 h-10 py-[1vh]"} />
           </Link>
           <Link to={"https://github.com/jackieac04"} target="_blank">
-            <div className={(dark ? "d" : "l") + "git w-10 h-10"} />
+            <div className={(dark ? "d" : "l") + "git w-10 h-10 py-[1vh]"} />
           </Link>
           <Link
             to={"https://www.linkedin.com/in/jaclyn-a-cohen/"}
             target="_blank"
           >
-            <div className={(dark ? "d" : "l") + "linked w-10 h-10"} />
+            <div
+              className={(dark ? "d" : "l") + "linked w-10 h-10"}
+              style={{ transform: "translateY(-.5vh)" }}
+            />
           </Link>
           <Link
             to={"https://discordapp.com/users/leafysheepy/"}
             target="_blank"
           >
-            <div className={(dark ? "d" : "l") + "discord w-10 h-10"} />
+            <div
+              className={(dark ? "d" : "l") + "discord w-10 h-10 py-[1vh]"}
+            />
           </Link>
 
           <Link to={"https://instagram.com/leafysheepy/"} target="_blank">
-            <div className={(dark ? "d" : "l") + "inst w-10 h-10"} />
+            <div className={(dark ? "d" : "l") + "inst w-10 h-10 py-[1vh]"} />
           </Link>
         </div>
         <div className="z-10">
@@ -112,6 +122,16 @@ interface HomeProps {
 }
 
 function Home({ dark }: HomeProps) {
+  const [hovered, setHovered] = useState(false);
+
+  const handleMouseEnter = () => {
+    setHovered(true);
+  };
+
+  const handleMouseLeave = () => {
+    setHovered(false);
+  };
+
   return (
     <>
       <main className={dark ? "darktop" : "lighttop"}>
@@ -182,8 +202,7 @@ function Home({ dark }: HomeProps) {
         {/* ABOUT ME */}
         <section
           className={
-            (dark ? "darkme" : "lightme") +
-            " relative w-screen min-h-[95vh] pb-[5vw]"
+            (dark ? "darkme" : "lightme") + " relative w-screen min-h-[90vh]"
           }
         >
           <div
@@ -204,25 +223,42 @@ function Home({ dark }: HomeProps) {
               ></path>
             </svg>
           </div>
-          <div className="title mt-[10vh] mb-[2%]">
-            <h1
-              className="justify-self-left pl-[5%] "
-              style={{ fontSize: "5vw" }}
-            >
-              About Me
-            </h1>
-          </div>
-          <div className="w-[60%]">
-            <p className="mx-[5%] text-[2.5vh]">
-              Hi! My name is Jaclyn Cohen, I'm originally from South Florida but
-              I'm currently a sophomore at <b> Brown University</b> studying{" "}
-              <b>Computer Science </b> and <b>Visual Arts.</b> I love both
-              topics seperately- having done my fair share of software projects
-              and traditional paintings, but I'm especially interested in
-              intersections between the two from <b>graphics</b> to{" "}
-              <b>computer vision </b>to <b>frontend development </b>
-              to <b>UIUX</b> and everything inbetween.
-            </p>
+          <div className="about w-full h-full grid grid-cols-2">
+            <div>
+              <div className="title mt-[10vh] mb-[2%]">
+                <h1
+                  className="justify-self-left pl-[5%] "
+                  style={{ fontSize: "5vw" }}
+                >
+                  About Me
+                </h1>
+              </div>
+
+              <p className="mx-[5%] text-[2.5vh] btm">
+                Hi! My name is Jaclyn Cohen, I'm originally from South Florida
+                but I'm currently a sophomore at <b> Brown University</b>{" "}
+                studying <b>Computer Science </b> and <b>Visual Arts.</b> I love
+                both topics seperately- having done my fair share of software
+                projects and traditional paintings, but I'm especially
+                interested in intersections between the two from <b>graphics</b>{" "}
+                to <b>computer vision </b>to <b>frontend development </b>
+                to <b>UIUX</b> and everything inbetween.
+              </p>
+              <p className="btm mx-[5%] text-[2.5vh]">
+                This summer I'll be working as a{" "}
+                <b>Frontend Engineering Intern</b> at{" "}
+                <b>Hexagon's Manufacturing Intelligence Division</b>, but I also
+                have experience as an undergraduate teaching assistant for
+                introductory computer science courses and as a research
+                assistant doing frontend and graphics work for{" "}
+                <b>The Brown Language and Thought Lab</b>.
+              </p>
+            </div>
+            <div
+              className={(hovered ? "hoverimg " : "nothoverimg ") + "relative"}
+              onMouseEnter={handleMouseEnter}
+              onMouseLeave={handleMouseLeave}
+            ></div>
           </div>
         </section>
       </main>
