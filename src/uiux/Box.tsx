@@ -26,7 +26,12 @@ export default function Box({
         </Link>
         <div className="topbox">
           <div className="innerbox">
-            <p className="bxtitle">{title}</p>
+            <h3
+              className="bxtitle !text-lg"
+              style={{ fontFamily: "var(--sans)", fontStyle: "normal" }}
+            >
+              {title}
+            </h3>
             {outsidelink && (
               <a className="link" href={outsidelink}>
                 {" "}

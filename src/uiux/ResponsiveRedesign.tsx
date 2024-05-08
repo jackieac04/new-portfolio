@@ -222,8 +222,9 @@ export default function ResponsiveRedesign() {
             </div>
           </div>
           <p className="btm">
-            The three hifi prototypes resulting from the lofi mockups, with
-            colors, borders, and fonts taken into consideration.
+            I wanted to make sure accessibilty was taken into account while
+            keeping the colors visually distinct, which is how I landed on the
+            blue and red combination, with clearly defined borders and sections.
           </p>
 
           <p className="btm">
