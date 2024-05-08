@@ -43,8 +43,8 @@ export default function BLT() {
           </svg>
         </div>
         <div className="text grid">
-          <div className="grid grid-cols-2 w-full justify-center text-center ml-[5vw]">
-            <div className="lef max-w-[40vw]">
+          <div className="grid grid-cols-2 w-full justify-center text-center">
+            <div className="lef max-w-[40vw] justify-self-center">
               <h3>The People</h3>
               <p className="btm">
                 The <b>Brown Development Labs</b> is a group of labs at Brown
@@ -59,7 +59,7 @@ export default function BLT() {
                 designer and frontend engineer for sites and studies.
               </p>
             </div>
-            <div className="righ max-w-[40vw]">
+            <div className="righ max-w-[40vw] justify-self-center">
               <h3>The Problem</h3>
               <p className="btm">
                 Much of the current site is out of date. Containing typos, old
