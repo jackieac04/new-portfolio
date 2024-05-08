@@ -326,7 +326,7 @@ h3,
 .link {
   box-shadow: none;
   margin: 0.2rem;
-  align-self: flex-end;
+  align-self: center;
   width: 1rem;
   transform: translateY(-100%);
 }

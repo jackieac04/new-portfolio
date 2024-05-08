@@ -33,7 +33,11 @@ export default function Box({
               {title}
             </h3>
             {outsidelink && (
-              <a className="link" href={outsidelink}>
+              <a
+                className="link"
+                href={outsidelink}
+                style={{ transform: "translateX(-70%)" }}
+              >
                 {" "}
                 <img src={link} alt="" />
               </a>
