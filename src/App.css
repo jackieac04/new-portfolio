@@ -67,6 +67,9 @@ h1 {
   font-style: italic;
   color: var(--bg-color-dark);
 }
+p {
+  font-size: 1.8vw;
+}
 
 h3 {
   font-family: var(--quador);

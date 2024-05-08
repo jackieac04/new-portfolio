@@ -45,8 +45,8 @@ export default function Iterative() {
           </svg>
         </div>
         <div className="text grid">
-          <div className="grid grid-cols-2 w-full justify-center text-center">
-            <div className="lef max-w-[40vw justify-self-center]">
+          <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
+            <div className="lef justify-self-end col-span-4 mb-[1vw]">
               <h3 className="justify-self-center">The People</h3>
               <p className="btm">
                 <a href="https://mifonda.io/">MiFonda</a> is a technology
@@ -55,7 +55,8 @@ export default function Iterative() {
                 and delivery service.
               </p>
             </div>
-            <div className="righ max-w-[40vw] justify-self-center">
+            <div></div>
+            <div className="righ justify-self-start col-span-4">
               <h3 className="justify-self-center">The Problem</h3>
               <p className="btm">
                 They tasked our group of four (myself,{" "}
@@ -79,6 +80,11 @@ export default function Iterative() {
             Upper left: my sketches, upper right: Anna's sketches, bottom left:
             Brooke's sketches, bottom right: Pranavi's sketches.
           </p>
+          <p className="btm">
+            The sketches helped us work through our initial ideas and see where
+            we had the most in common and the most different concepts for the
+            layout.
+          </p>
           <h3>First Wireframes</h3>
           <div className="mocks">
             <img src={mobile1} alt="" />
@@ -87,25 +93,26 @@ export default function Iterative() {
           <p className="btm">
             After careful consideration, we combined the different sketches into
             an initial wireframe. One of our primary goals was maintaining a
-            balance between visual creativity and an intuitive user experience.
-            We agreed the horizontal video carousels were a positive
-            media-centric implementation that wasn't visually overwhelming. We
-            also decided to pursue a liking system, and thought it was a great
-            way to engage users and promote interaction with the application,
-            alongside communicate popular orders. We used the idea of a meal
-            plate reward, as we wanted to fulfill the founder's requests for
-            gamification in a clear way that added to the design rather than
-            overcomplicated it. Pulling from the various designs for further
-            ideas of popups, symbols, sorting, and customization, we integrated
-            these into one low-fi prototype for evaluation.
+            balance between <b>visual creativity</b> and an{" "}
+            <b>intuitive user experience</b>. We agreed the{" "}
+            <b>horizontal video carousels</b> were a positive media-centric
+            implementation that wasn't visually overwhelming. We also decided to
+            pursue a <b>liking system</b>, and thought it was a great way to
+            engage users and promote interaction with the application, alongside
+            communicate popular orders. We used the idea of a{" "}
+            <b>meal plate reward</b>, as we wanted to fulfill the founder's
+            requests for gamification in a clear way that added to the design
+            rather than overcomplicated it. Pulling from the various designs for
+            further ideas of popups, symbols, sorting, and customization, we
+            integrated these into one low-fi prototype for evaluation.
           </p>
           <h3>Initial Feedback</h3>
           <p className="btm">
             In a round of critique with our peers, the main area noted for
             improvement was in ensuring consistent design across our mobile and
             desktop platforms. We wanted to ensure, moving forward, that the two
-            versions were aligned for memorability and unification. Peers also
-            encouraged us to think carefully about what elements were truly
+            versions were aligned for <b>memorability and unification</b>. Peers
+            also encouraged us to think carefully about what elements were truly
             necessary, how the video carousel might operate with autoplay or
             pausing, and where we place certain features in relation to the
             purchase and checkout processes.
@@ -120,7 +127,7 @@ export default function Iterative() {
                 instead just focusing on one restaurant,
               </li>
               <li>Make the featured foods carosel specifc to a restaurant,</li>
-              <li>Change the "category" label to say modifier, and </li>
+              <li>Change the "category" label to say "modifier", and </li>
               <li>
                 Accomodate the feautured items and menu on a single screen
               </li>
@@ -137,7 +144,7 @@ export default function Iterative() {
           </div>
           <p className="btm">
             We incorporated all of the feedback into our new designs; each page
-            is specific to a store, their is more consideration of similar
+            is specific to a store, there is more consideration of similar
             placement between the mobile and desktop versions, and the unique
             features were displayed prominently, among other smaller changes.
           </p>
@@ -150,8 +157,8 @@ export default function Iterative() {
             palette to work with. The founders gave us free reign over any style
             guide edits, so we also developed various elements and symbols,
             including the drop-down menus, buttons, and banners. We also wanted
-            to ensure accessibility in the usage of keyboard-navigable features
-            and high-contrast colors.{" "}
+            to ensure <b>accessibility</b> in the usage of keyboard-navigable
+            features and high-contrast colors.{" "}
           </p>
           <div className="mocks">
             <img src={designsys} alt="" />
@@ -188,18 +195,18 @@ export default function Iterative() {
           <h3>Founder Feedback</h3>
           <p className="btm">
             The founders expressed a lot of positive feedback! They praised our
-            design as “super innovative” and appreciated the visual-forward
-            implementation, especially the videos. We discussed a few scenarios
-            that might stretch the limitations of our design, such as multiple
-            promo codes, or the potential of longer videos such as hearing from
-            chefs. While they liked the meal plan feature, we talked through its
-            status then as only on the desktop feature and agreed that
-            consistency across versions was more important than the potential
-            crowding of information, so we have since updated the mobile version
-            to include the meal plate. Overall, it was valuable to work with and
-            hear from founders in a startup environment, and we are all
-            extremely appreciative of the opportunity to practice our design and
-            development skills in a more professional setting.
+            design as <b>“super innovative”</b> and appreciated the
+            visual-forward implementation, especially the videos. We discussed a
+            few scenarios that might stretch the limitations of our design, such
+            as multiple promo codes, or the potential of longer videos such as
+            hearing from chefs. While they liked the meal plan feature, we
+            talked through its status then as only on the desktop feature and
+            agreed that consistency across versions was more important than the
+            potential crowding of information, so we have since updated the
+            mobile version to include the meal plate. Overall, it was valuable
+            to work with and hear from founders in a startup environment, and we
+            are all extremely appreciative of the opportunity to practice our
+            design and development skills in a more professional setting.
           </p>
           <p className="btm">
             Because of their feedback, we revised our hifis again to look like
