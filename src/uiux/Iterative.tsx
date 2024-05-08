@@ -15,7 +15,7 @@ export default function Iterative() {
     <main className="pt-[5vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-5xl">Iterative Design: MiFonda Storefront</h1>
+          <h1 className="text-5xl">MiFonda Storefront</h1>
           <div className="skillswrap">
             <img src={iter} alt="An image of the final hifi desktop." />
             <div className=""></div>
@@ -45,8 +45,8 @@ export default function Iterative() {
           </svg>
         </div>
         <div className="text grid">
-          <div className="grid grid-cols-2 w-full justify-center text-center ml-[5vw]">
-            <div className="lef max-w-[40vw]">
+          <div className="grid grid-cols-2 w-full justify-center text-center">
+            <div className="lef max-w-[40vw justify-self-center]">
               <h3 className="justify-self-center">The People</h3>
               <p className="btm">
                 <a href="https://mifonda.io/">MiFonda</a> is a technology
@@ -55,7 +55,7 @@ export default function Iterative() {
                 and delivery service.
               </p>
             </div>
-            <div className="righ max-w-[40vw]">
+            <div className="righ max-w-[40vw] justify-self-center">
               <h3 className="justify-self-center">The Problem</h3>
               <p className="btm">
                 They tasked our group of four (myself,{" "}
@@ -131,6 +131,8 @@ export default function Iterative() {
           <div className="mockst">
             {" "}
             <img src={mobile2} alt="" />
+          </div>
+          <div className="mockst">
             <img src={desktop2} alt="" />
           </div>
           <p className="btm">

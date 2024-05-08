@@ -9,7 +9,7 @@ import blt from "/blt/blt.png";
 
 const projects = [
   {
-    title: "Iterative Design: MiFonda Storefront",
+    title: "MiFonda Storefront",
     outsidelink:
       "https://www.figma.com/file/iRwhq0w4NT9zuXu6B2jSnr/Iterative-Design?type=design&node-id=0%3A1&mode=design&t=yh6F5DzZbUdHwOFx-1",
     insidelink: "/iter",

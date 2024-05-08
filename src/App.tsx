@@ -25,18 +25,21 @@ function App() {
     <>
       <article className={`route-content h-fit ${dark ? "dark" : "light"}`}>
         <nav>
-          <div className="left-links grid grid-cols-2">
-            <Link to={"/"} className="grid mr-[2%]">
+          <div className="left-links grid grid-cols-2 relative">
+            <Link to={"/"} className="flex mr-[2%] w-[20%] absolute">
               <img
-                className="justify-self-end self-start align-top !max-w-[100px]"
+                className="justify-self-start self-start align-top !max-w-[100px]"
                 src={JAC}
                 alt=""
-                style={{ transform: " translateY(-35%)" }}
+                style={{ transform: " translate(-30%, -35%)" }}
               />
             </Link>
             <button
-              className={(dark ? "darkbtn" : "lightbtn") + " w-6 h-6"}
-              style={{ transform: "translateY(20%)" }}
+              className={
+                (dark ? "darkbtn" : "lightbtn") +
+                " absolute w-6 h-6 justify-self-start"
+              }
+              style={{ transform: "translate(220%, 20%)" }}
               onClick={toggleDarkMode}
             />
           </div>
@@ -136,8 +139,8 @@ function Home({ dark }: HomeProps) {
     <>
       <main className={dark ? "darktop" : "lighttop"}>
         <div
-          className="w-screen relative flex justify-center "
-          style={{ transform: "translateY(-8vh)" }}
+          className="w-screen relative flex justify-center flex-column "
+          style={{ transform: "translateY(-4vh)" }}
         >
           {dark ? (
             <img
@@ -192,7 +195,7 @@ function Home({ dark }: HomeProps) {
         <h1
           className="absolute justify-self-center opacity-90"
           style={{
-            transform: "translateY(450%)",
+            transform: "translateY(500%)",
             animation: "fadeIn 3.6s",
             fontSize: "6vw",
           }}
@@ -202,7 +205,7 @@ function Home({ dark }: HomeProps) {
         {/* ABOUT ME */}
         <section
           className={
-            (dark ? "darkme" : "lightme") + " relative w-screen min-h-[90vh]"
+            (dark ? "darkme" : "lightme") + " relative w-screen h-fit-content"
           }
         >
           <div
@@ -223,8 +226,8 @@ function Home({ dark }: HomeProps) {
               ></path>
             </svg>
           </div>
-          <div className="about w-full h-full grid grid-cols-2">
-            <div>
+          <div className="about w-full h-full flex flex-row">
+            <div className=" max-w-[50%]">
               <div className="title mt-[10vh] mb-[2%]">
                 <h1
                   className="justify-self-left pl-[5%] "
@@ -234,7 +237,7 @@ function Home({ dark }: HomeProps) {
                 </h1>
               </div>
 
-              <p className="mx-[5%] text-[2.5vh] btm">
+              <p className="mx-[5%] text-[1.8vw] btm">
                 Hi! My name is Jaclyn Cohen, I'm originally from South Florida
                 but I'm currently a sophomore at <b> Brown University</b>{" "}
                 studying <b>Computer Science </b> and <b>Visual Arts.</b> I love
@@ -244,7 +247,7 @@ function Home({ dark }: HomeProps) {
                 to <b>computer vision </b>to <b>frontend development </b>
                 to <b>UIUX</b> and everything inbetween.
               </p>
-              <p className="btm mx-[5%] text-[2.5vh]">
+              <p className="btm mx-[5%] text-[1.8vw]">
                 This summer I'll be working as a{" "}
                 <b>Frontend Engineering Intern</b> at{" "}
                 <b>Hexagon's Manufacturing Intelligence Division</b>, but I also
@@ -255,7 +258,9 @@ function Home({ dark }: HomeProps) {
               </p>
             </div>
             <div
-              className={(hovered ? "hoverimg " : "nothoverimg ") + "relative"}
+              className={
+                (hovered ? "hoverimg " : "nothoverimg ") + "relative w-50%"
+              }
               onMouseEnter={handleMouseEnter}
               onMouseLeave={handleMouseLeave}
             ></div>

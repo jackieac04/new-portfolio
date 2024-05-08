@@ -53,8 +53,8 @@ export default function ResponsiveRedesign() {
           </svg>
         </div>
         <div className="text grid">
-          <div className="grid grid-cols-2 w-full justify-center text-center ml-[5vw]">
-            <div className="lef max-w-[40vw]">
+          <div className="grid grid-cols-2 w-full justify-center text-center">
+            <div className="lef max-w-[40vw] justify-self-center">
               <h3>The People</h3>
               <p>
                 The <b> American Mathematical Society </b> is an association
@@ -62,7 +62,7 @@ export default function ResponsiveRedesign() {
                 opportunities to mathemeticians and students alike.
               </p>
             </div>
-            <div className="righ max-w-[40vw]">
+            <div className="righ max-w-[40vw] justify-self-center">
               <h3>The Problem</h3>
               <p className="btm">
                 An issue evident from their listings page is that the website is
@@ -200,10 +200,18 @@ export default function ResponsiveRedesign() {
             </p>
           </div>
           <div className="hifi">
-            <div className="mockst">
+            <div className="mockst max-w-screen">
               <img id="hifiimg1" src={mobilehifi} alt="mobile- hifi" />
-              <img id="hifiimg2" src={desktophifi} alt="desktop- hifi" />
+
               <img id="hifiimg3" src={tablethifi} alt="tablet- hifi" />
+            </div>
+            <div className="mockts flex justify-center ">
+              <img
+                className="!max-w-[70vw] mr-[1vw]"
+                id="hifiimg2 "
+                src={desktophifi}
+                alt="desktop- hifi"
+              />
             </div>
             <p className="btm">
               The three hifi prototypes resulting from the lofi mockups, with
