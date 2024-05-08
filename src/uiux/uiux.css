@@ -43,10 +43,6 @@ main {
   margin-top: 0.5rem !important;
 }
 
-p {
-  font-size: 1.5vw;
-}
-
 .content > p {
   align-self: flex-start;
 }
@@ -134,9 +130,8 @@ h3 {
 }
 
 .mockst > img {
-  max-height: 75vh !important;
-
-  margin: 3rem 2rem;
+  /* max-height: 75vh !important; */
+  margin: 3vw 2vh;
 }
 
 .mocks > img {
@@ -209,10 +204,6 @@ h3 {
     margin: 1rem;
   }
 
-  p {
-    font-size: 1.5vw;
-  }
-
   .content {
     width: fit-content;
     align-items: center;
@@ -233,7 +224,7 @@ h3 {
   #hifiimg1,
   #hifiimg2,
   #hifiimg3 {
-    /* max-height: 18rem; */
+    max-height: 80vh;
     /* height: max-content; */
     width: auto;
   }
@@ -379,9 +370,9 @@ h3,
   #hifiimg1,
   #hifiimg2,
   #hifiimg3 {
-    max-height: 10rem;
+    /* max-height: 10rem;
     height: max-content;
-    width: auto;
+    width: auto; */
   }
 
   .skill {
@@ -393,9 +384,9 @@ h3,
   #hifiimg1,
   #hifiimg2,
   #hifiimg3 {
-    max-height: 8rem;
+    /* max-height: 8rem;
     height: max-content;
-    width: auto;
+    width: auto; */
   }
   .top > h1 {
     font-size: 1rem !important;

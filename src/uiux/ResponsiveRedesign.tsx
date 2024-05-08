@@ -53,8 +53,8 @@ export default function ResponsiveRedesign() {
           </svg>
         </div>
         <div className="text grid">
-          <div className="grid grid-cols-2 w-full justify-center text-center">
-            <div className="lef max-w-[40vw] justify-self-center">
+          <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
+            <div className="lef mb-[2vw] col-span-4 justify-self-center">
               <h3>The People</h3>
               <p>
                 The <b> American Mathematical Society </b> is an association
@@ -62,7 +62,8 @@ export default function ResponsiveRedesign() {
                 opportunities to mathemeticians and students alike.
               </p>
             </div>
-            <div className="righ max-w-[40vw] justify-self-center">
+            <div></div>
+            <div className="righ  col-span-4 justify-self-center">
               <h3>The Problem</h3>
               <p className="btm">
                 An issue evident from their listings page is that the website is
@@ -199,11 +200,17 @@ export default function ResponsiveRedesign() {
               </ul>
             </p>
           </div>
-          <div className="hifi">
-            <div className="mockst max-w-screen">
-              <img id="hifiimg1" src={mobilehifi} alt="mobile- hifi" />
-
-              <img id="hifiimg3" src={tablethifi} alt="tablet- hifi" />
+          <div className="hifi flex flex-col items-center">
+            <div className="mockst max-w-[25vw]">
+              <img src={mobilehifi} alt="mobile- hifi" />
+            </div>
+            <div className="mockst max-w-[35vw]">
+              <img
+                id="hifiimg3"
+                // className="max-w-1/2"
+                src={tablethifi}
+                alt="tablet- hifi"
+              />
             </div>
             <div className="mockts flex justify-center ">
               <img
@@ -213,26 +220,26 @@ export default function ResponsiveRedesign() {
                 alt="desktop- hifi"
               />
             </div>
-            <p className="btm">
-              The three hifi prototypes resulting from the lofi mockups, with
-              colors, borders, and fonts taken into consideration.
-            </p>
-
-            <p className="btm">
-              These hifis were based on this <b>style guide:</b>{" "}
-            </p>
-            <div className="mockst">
-              <img
-                id="designg"
-                src={designguide}
-                alt="the style guide, with each component laid out"
-              />
-            </div>
-            <p>
-              Which details the different font sizes, colors, and components
-              that make up the webpage.
-            </p>
           </div>
+          <p className="btm">
+            The three hifi prototypes resulting from the lofi mockups, with
+            colors, borders, and fonts taken into consideration.
+          </p>
+
+          <p className="btm">
+            These hifis were based on this <b>style guide:</b>{" "}
+          </p>
+          <div className="mockst">
+            <img
+              id="designg"
+              src={designguide}
+              alt="the style guide, with each component laid out"
+            />
+          </div>
+          <p>
+            Which details the different font sizes, colors, and components that
+            make up the webpage.
+          </p>
           <h3>Part Three: Making The Webpage</h3>
           <p>
             The final project was made purely in <b>HTML and CSS,</b> with no
@@ -243,6 +250,7 @@ export default function ResponsiveRedesign() {
             <a
               className="grid"
               href="https://jackieac04.github.io/responsive-redesign/"
+              target="_blank"
             >
               <img
                 className="max-h-[90vh] justify-self-center py-[4vh]"
