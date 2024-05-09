@@ -374,27 +374,12 @@ h3,
 }
 
 @media (max-width: 800px) {
-  #hifiimg1,
-  #hifiimg2,
-  #hifiimg3 {
-    /* max-height: 10rem;
-    height: max-content;
-    width: auto; */
-  }
-
   .skill {
     border-radius: 7px;
   }
 }
 
 @media (max-width: 700px) {
-  #hifiimg1,
-  #hifiimg2,
-  #hifiimg3 {
-    /* max-height: 8rem;
-    height: max-content;
-    width: auto; */
-  }
   .top > h1 {
     font-size: 1rem !important;
   }
