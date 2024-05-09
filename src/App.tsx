@@ -13,6 +13,8 @@ import darkbg from "/main/bgdark.png";
 import lightbg from "/main/bglight.png";
 import BLT from "./uiux/BLT";
 import JAC from "/main/logo.png";
+import Bathrooms from "./cs/Bathrooms";
+import Pab from "./cs/Pab";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -72,6 +74,8 @@ function App() {
           <Route path="/cs" element={<CS />} />
           <Route path="/iter" element={<Iterative />} />
           <Route path="/blt" element={<BLT />} />
+          <Route path="/bath" element={<Bathrooms />} />
+          <Route path="/pab" element={<Pab />} />
         </Routes>
       </article>
       <footer
@@ -241,7 +245,7 @@ function Home({ dark }: HomeProps) {
                 Hi! My name is Jaclyn Cohen, I'm originally from South Florida
                 but I'm currently a sophomore at <b> Brown University</b>{" "}
                 studying <b>Computer Science </b> and <b>Visual Arts.</b> I love
-                both topics seperately- having done my fair share of software
+                both topics separately- having done my fair share of software
                 projects and traditional paintings, but I'm especially
                 interested in intersections between the two from <b>graphics</b>{" "}
                 to <b>computer vision </b>to <b>frontend development </b>

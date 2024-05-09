@@ -102,7 +102,7 @@ video {
 }
 
 h3 {
-  font-size: medium !important;
+  font-size: xx-large !important;
   margin: 1rem !important;
 }
 
@@ -264,22 +264,29 @@ h3,
   box-shadow: 5px 10px rgb(33, 15, 93, 0.8);
 }
 .React,
-.Responsive {
+.Responsive,
+.MongoDB {
   background-color: rgb(139, 20, 175);
 }
-.HTML {
+.HTML,
+.Frontend {
   background-color: rgb(87, 54, 162);
 }
 
-.CSS {
+.CSS,
+.MapBox {
   background-color: rgb(60, 54, 172);
 }
 
-.TypeScript {
+.TypeScript,
+.Java {
   background-color: rgb(56, 60, 176);
 }
 
-.Figma {
+.Figma,
+.SpringBoot,
+.APIs,
+.Fullstack {
   background-color: rgb(47, 86, 165);
 }
 
