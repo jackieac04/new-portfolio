@@ -1,3 +1,53 @@
+import Box from "../uiux/Box";
+import bathrooms from "/cs/bathrooms.png";
+import pab from "/cs/pabhome.png";
+
+const projects = [
+  {
+    title: "Posters@Brown",
+    outsidelink: null,
+    insidelink: "/pab",
+    skills: [
+      "Java",
+      "SpringBoot",
+      "MongoDB",
+      "APIs",
+      "TypeScript",
+      "React",
+      "MapBox",
+      "Fullstack Development",
+      "Responsive Design",
+    ],
+    img: pab,
+  },
+  {
+    title: "Bathrooms@Brown",
+    outsidelink: "https://devpost.com/software/bathrooms-brown",
+    insidelink: "/bath",
+    skills: ["TypeScript", "React", "MapBox", "Frontend Development"],
+    img: bathrooms,
+  },
+];
+
 export default function CS() {
-  return <main className="pt-[5vh]">CS</main>;
+  return (
+    <main className="relative w-screen min-h-[93vh] pt-[5vh]">
+      <h1 className="text-5xl">CS Projects</h1>
+      <div className="box-grid h-fit">
+        {" "}
+        {projects.map((project, indx) => {
+          return (
+            <Box
+              key={indx}
+              outsidelink={project.outsidelink}
+              insidelink={project.insidelink}
+              skills={project.skills}
+              img={project.img}
+              title={project.title}
+            />
+          );
+        })}
+      </div>
+    </main>
+  );
 }
