@@ -3,7 +3,6 @@ import Art from "./art/Art";
 import UIUX from "./uiux/UIUX";
 import ResponsiveRedesign from "./uiux/ResponsiveRedesign";
 import AB from "./uiux/AB";
-import AB from "./uiux/AB";
 import CS from "./cs/CS";
 import "./App.css";
 import Development from "./uiux/Development";
@@ -26,34 +25,10 @@ function App() {
     setDark((prev) => !prev);
     document.body.classList.toggle("dark-mode", !dark);
   };
-  const [dark, setDark] = useState<boolean>(false);
-
-  const toggleDarkMode = () => {
-    setDark((prev) => !prev);
-    document.body.classList.toggle("dark-mode", !dark);
-  };
   return (
     <>
       <article className={`route-content h-fit ${dark ? "dark" : "light"}`}>
-      <article className={`route-content h-fit ${dark ? "dark" : "light"}`}>
         <nav>
-          <div className="left-links grid grid-cols-2 relative">
-            <Link to={"/"} className="flex mr-[2%] w-[20%] absolute">
-              <img
-                className="justify-self-start self-start align-top !max-w-[100px]"
-                src={JAC}
-                alt=""
-                style={{ transform: " translate(-30%, -35%)" }}
-              />
-            </Link>
-            <button
-              className={
-                (dark ? "darkbtn" : "lightbtn") +
-                " absolute w-6 h-6 justify-self-start"
-              }
-              style={{ transform: "translate(220%, 20%)" }}
-              onClick={toggleDarkMode}
-            />
           <div className="left-links grid grid-cols-2 relative">
             <Link to={"/"} className="flex mr-[2%] w-[20%] absolute">
               <img
@@ -85,15 +60,10 @@ function App() {
             <a href={resume} target="_blank">
               Resumé
             </a>
-            <a href={resume} target="_blank">
-              Resumé
-            </a>
           </div>
         </nav>
 
-
         <Routes>
-          <Route path="/" element={<Home dark={dark} />} />
           <Route path="/" element={<Home dark={dark} />} />
           <Route path="*" element={<NotFound />} />
           <Route path="/art" element={<Art dark={dark} />} />
