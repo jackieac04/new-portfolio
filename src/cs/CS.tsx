@@ -3,6 +3,7 @@ import bathrooms from "/cs/bathrooms.png";
 import pab from "/cs/pabhome.png";
 import dream from "/cs/dream.png";
 
+
 const projects = [
   {
     title: "Posters@Brown",
@@ -28,6 +29,7 @@ const projects = [
     skills: ["TypeScript", "React", "MapBox", "Frontend Development"],
     img: bathrooms,
   },
+
   {
     title: "Dreamweaver",
     outsidelink: "https://dreamweaver-ten.vercel.app/",
