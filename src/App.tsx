@@ -16,6 +16,7 @@ import JAC from "/main/logo.png";
 import Bathrooms from "./cs/Bathrooms";
 import Pab from "./cs/Pab";
 import resume from "/main/JaclynCohenResume0224.pdf";
+import Dreamweaver from "./cs/Dreamweaver";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -65,7 +66,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home dark={dark} />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/art" element={<Art dark={dark}/>} />
+          <Route path="/art" element={<Art dark={dark} />} />
           <Route path="/uiux" element={<UIUX />}>
             <Route index element={<UIUX />} />
           </Route>
@@ -77,6 +78,7 @@ function App() {
           <Route path="/blt" element={<BLT />} />
           <Route path="/bath" element={<Bathrooms />} />
           <Route path="/pab" element={<Pab />} />
+          <Route path="/dream" element={<Dreamweaver />} />
         </Routes>
       </article>
       <footer
@@ -90,17 +92,25 @@ function App() {
           style={{ transform: "translateY(-25%)" }}
         >
           <Link to={"mailto: jaclyn_cohen@brown.edu"} target="_blank">
-            <div className={(dark ? "d" : "l") + "email w-10 h-10 py-[1vh]"} />
+            <div
+              className={
+                (dark ? "d" : "l") + "email w-[3.5vw] h-[3.5vw] py-[1vh]"
+              }
+            />
           </Link>
           <Link to={"https://github.com/jackieac04"} target="_blank">
-            <div className={(dark ? "d" : "l") + "git w-10 h-10 py-[1vh]"} />
+            <div
+              className={
+                (dark ? "d" : "l") + "git w-[3.5vw] h-[3.5vw] py-[1vh]"
+              }
+            />
           </Link>
           <Link
             to={"https://www.linkedin.com/in/jaclyn-a-cohen/"}
             target="_blank"
           >
             <div
-              className={(dark ? "d" : "l") + "linked w-10 h-10"}
+              className={(dark ? "d" : "l") + "linked w-[3.5vw] h-[3.5vw]"}
               style={{ transform: "translateY(-.5vh)" }}
             />
           </Link>
@@ -109,12 +119,18 @@ function App() {
             target="_blank"
           >
             <div
-              className={(dark ? "d" : "l") + "discord w-10 h-10 py-[1vh]"}
+              className={
+                (dark ? "d" : "l") + "discord w-[3.5vw] h-[3.5vw] py-[1vh]"
+              }
             />
           </Link>
 
           <Link to={"https://instagram.com/leafysheepy/"} target="_blank">
-            <div className={(dark ? "d" : "l") + "inst w-10 h-10 py-[1vh]"} />
+            <div
+              className={
+                (dark ? "d" : "l") + "inst w-[3.5vw] h-[3.5vw] py-[1vh]"
+              }
+            />
           </Link>
         </div>
         <div className="z-10">

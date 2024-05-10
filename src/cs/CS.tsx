@@ -1,6 +1,7 @@
 import Box from "../uiux/Box";
 import bathrooms from "/cs/bathrooms.png";
 import pab from "/cs/pabhome.png";
+import dream from "/cs/dream.png";
 
 const projects = [
   {
@@ -26,6 +27,13 @@ const projects = [
     insidelink: "/bath",
     skills: ["TypeScript", "React", "MapBox", "Frontend Development"],
     img: bathrooms,
+  },
+  {
+    title: "Dreamweaver",
+    outsidelink: "https://dreamweaver-ten.vercel.app/",
+    insidelink: "/dream",
+    skills: ["TypeScript", "React", "Frontend Development", "APIs"],
+    img: dream,
   },
 ];
 
