@@ -56,10 +56,16 @@ export default function ResponsiveRedesign() {
           <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
             <div className="lef mb-[2vw] col-span-4 justify-self-center">
               <h3>The People</h3>
-              <p>
+              <p className="btm">
                 The <b> American Mathematical Society </b> is an association
                 dedicated to advancing research by providing various
                 opportunities to mathemeticians and students alike.
+              </p>
+              <p>
+                REUs (Research Experiences for Undergrads) are important avenues
+                for many students looking to gain valuable experience in a
+                potential career and get their foot in the door with big names
+                in academia.
               </p>
             </div>
             <div></div>
@@ -67,19 +73,26 @@ export default function ResponsiveRedesign() {
               <h3>The Problem</h3>
               <p className="btm">
                 An issue evident from their listings page is that the website is
-                inacessible and hard to navigate, with unintuitively placed
-                elements, and unclear distinctions between sections.
+                <b> inacessible</b> and hard to navigate, with unintuitively
+                placed elements, and unclear distinctions between sections.
+              </p>
+              <p>
+                This causes distress for students and researchers alike when
+                trying to find and apply for positions; in inspecting the site
+                myself, I accidentally applied to a role!
               </p>
             </div>
           </div>
           <h3>Issues</h3>
 
-          <div className="mocks">
-            <img
-              className="amsog"
-              src={amsog}
-              alt="The original AMS program listings page."
-            />
+          <div className="mockss">
+            <a href="https://www.mathprograms.org/db/program" className="grid">
+              <img
+                className="max-h-[70vh] justify-self-center"
+                src={amsog}
+                alt="The original AMS program listings page."
+              />
+            </a>
           </div>
 
           <p>
@@ -232,7 +245,7 @@ export default function ResponsiveRedesign() {
           </p>
           <div className="mockst">
             <img
-              id="designg"
+              className="!max-h-[80vh]"
               src={designguide}
               alt="the style guide, with each component laid out"
             />

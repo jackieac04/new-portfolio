@@ -73,7 +73,7 @@ export default function Iterative() {
             Each member of our four person group seperately began by completing
             sketches of our initial ideas for mobile and/or desktop flows.
           </p>
-          <div className="mocks">
+          <div className="mockst">
             <img src={sketches} alt="" />
           </div>
           <p className="btm">
@@ -86,7 +86,7 @@ export default function Iterative() {
             layout.
           </p>
           <h3>First Wireframes</h3>
-          <div className="mocks">
+          <div className="mockst flex flex-col justify-center items-center">
             <img src={mobile1} alt="" />
             <img src={desktop1} alt="" />
           </div>
@@ -251,6 +251,13 @@ export default function Iterative() {
               involved. Each designer pitched some great ideas that came
               together to create the final product, contributing to a
               synchronous design in both aesthetics and functionality.
+            </p>
+            <p>
+              Personally, I put the most effort into the initial mobile lofis,
+              round 2 of the desktop lofis, and the desktop hifis. Working on
+              each of these different components allowed me to get a taste for
+              different aspects of the design process, while also considering
+              what needs fit best for others.
             </p>
           </div>
         </div>
