@@ -106,14 +106,6 @@ h3 {
   margin: 1rem !important;
 }
 
-.amsog {
-  width: 46vw;
-  margin-top: 1rem;
-  justify-self: center;
-  display: flex;
-  /* border: 10px solid var(--bg-color-dark); */
-}
-
 .content {
   display: grid;
   width: fit-content;
@@ -179,11 +171,6 @@ h3 {
 
 .lofi > p {
   align-self: left;
-}
-
-#designg {
-  width: 30rem;
-  height: auto;
 }
 
 .btm {

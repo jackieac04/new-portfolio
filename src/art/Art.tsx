@@ -2,6 +2,7 @@ import "./art.css";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import smallred from "/artport/smallred.jpg";
+import bigred from "/artport/bigred.jpg";
 import birb from "/artport/birb.jpg";
 import crane from "/artport/crane.png";
 import cranes from "/artport/cranes.png";
@@ -17,102 +18,170 @@ import meweb from "/artport/meweb.jpg";
 import oranges from "/artport/oranges.png";
 import rgb from "/artport/rbgportrait.jpg";
 import reflect from "/artport/reflection.png";
-export default function Art() {
-  const art = [
-    {
-      img: smallred,
-      title: "Cycle of Rebirth",
-      date: "May 2021",
-      media: "Mixed Media",
-    },
-    {
-      img: birb,
-      title: "Finch in the Park",
-      date: "February 2024",
-      media: "Linocut",
-    },
-    { img: crane, title: "Heron", date: "June 2023", media: "Acrylic" },
-    {
-      img: cranes,
-      title: "(F)light",
-      date: "March 2023",
-      media: "Acrylic Glass",
-    },
-    {
-      img: fanny,
-      title: "Fanny and Luca",
-      date: "January 2024",
-      media: "Digital",
-    },
-    {
-      img: jack,
-      title: "Jack and Zoe",
-      date: "November 2023",
-      media: "Lithography",
-    },
-    { img: leaf, title: "Leafysheepy", date: "August 2022", media: "Digital" },
-    {
-      img: trees,
-      title: "In the Forest",
-      date: "October 2023",
-      media: "Lithography",
-    },
-    {
-      img: lil,
-      title: "Little Things I Love About People",
-      date: "April 2023",
-      media: "Mixed Media",
-    },
-    {
-      img: marble,
-      title: "CU9 Advertisement",
-      date: "July 2023",
-      media: "Digital",
-    },
-    {
-      img: metrad,
-      title: "Self-Portrait, Traditional",
-      date: "June 2023",
-      media: "Acrylic",
-    },
-    {
-      img: mefirst,
-      title: "Self-Portrait, Digital",
-      date: "July 2023",
-      media: "Digital",
-    },
-    {
-      img: meweb,
-      title: "Original Website Homepage",
-      date: "August 2023",
-      media: "Digital",
-    },
-    { img: oranges, title: "Oranges", date: "June 2023", media: "Acrylic" },
-    {
-      img: rgb,
-      title: "RGB Portrait",
-      date: "February 2023",
-      media: "Photoshop",
-    },
-    {
-      img: reflect,
-      title: "Reflection",
-      date: "January 2024",
-      media: "Digital",
-    },
-  ];
+import { useState } from "react";
+import Modal from "./Modal";
+
+const art = [
+  {
+    imgs: [smallred, bigred],
+    title: "Cycle of Rebirth",
+    date: "May 2021",
+    media: "Mixed Media",
+    awards:
+      "Gold Key, American Visions Nomination, Scholastic Art And Writing Awards 2022",
+    desc: " In this piece, the old self falls from the new self as one not only understands themselves now but who they want to become. While a rebirth can feel like a religious experience, people go through many cycles of realization and remake themselves through a lifetime, which is why the composition and flying birds encircle the figure. The process of rebirth is ongoing, and so is the piece.",
+  },
+  {
+    imgs: [birb],
+    title: "Finch in the Park",
+    date: "February 2024",
+    media: "Linocut",
+    desc: "This piece began with a person in mind and slowly expanded to be about many people, prompting imagery of many places and symbols I and my friends hold dear such as the tree that is at Prospect Terrace Park.",
+  },
+  {
+    imgs: [crane],
+    title: "Heron",
+    date: "June 2023",
+    media: "Acrylic",
+    desc: "A simple painting of a beautiful creature in a somewhat natural habitat. Inspired by the local nature of my hometown in South Florida.",
+  },
+  {
+    imgs: [cranes],
+    title: "(F)light",
+    date: "March 2023",
+    media: "Acrylic Glass",
+    desc: "An experiment with the lasercutter to create a work that floats and filters natural light.",
+  },
+  {
+    imgs: [fanny],
+    title: "Fanny and Luca",
+    date: "January 2024",
+    media: "Digital",
+    desc: "A tender, simple moment of affection between two close friends.",
+  },
+  {
+    imgs: [jack],
+    title: "Jack and Zoe",
+    date: "November 2023",
+    media: "Lithography",
+    desc: "A gentle moment in sleep, on delicate paper and with an involved process, this piece considers the value in life's quiet moments.",
+  },
+  {
+    imgs: [leaf],
+    title: "Leafysheepy",
+    date: "August 2022",
+    media: "Digital",
+    desc: "The origin of my branding, based on a literal representation of the leaf sheep sea slug.",
+  },
+  {
+    imgs: [trees],
+    title: "In the Forest",
+    date: "October 2023",
+    media: "Lithography",
+    desc: "A wooded area I stumbled into on a trip to Ireland as a teen.",
+  },
+  {
+    imgs: [lil],
+    secimgs: [],
+    title: "Little Things I Love About Humans",
+    date: "April 2023",
+    media: "Mixed Media",
+    desc: "Based on a notes app list of the same name, 'Little Things I Love About Humans' was an initial effort to improve my outlook on life during a time when I was consistently anxious, but became my primary method of appreciation for those around me. Each painted paper slip describes an item on the list, contained by the lasercut masonite heart. ",
+  },
+  {
+    imgs: [marble],
+    title: "CU9 Advertisement",
+    date: "July 2023",
+    media: "Digital",
+    desc: "An animated advertisement created for the Brown Language and Thought Lab to attract participants to sign up for studies.",
+  },
+  {
+    imgs: [metrad],
+    title: "Self-Portrait, Traditional",
+    date: "June 2023",
+    media: "Acrylic",
+    desc: "A monochromatic self-portrait painted after the end of my freshman year of college.",
+  },
+  {
+    imgs: [mefirst],
+    title: "Self-Portrait, Digital",
+    date: "July 2023",
+    media: "Digital",
+    desc: "The first digital painting I ever created using Procreate, after buying an iPad with my first substantial paycheck.",
+  },
+  {
+    imgs: [meweb],
+    title: "Original Website Homepage",
+    date: "August 2023",
+    media: "Digital",
+    desc: "The top portion of the homepage to my old website, containing tons of hidden plants and animals throughout the scene.",
+  },
+  {
+    imgs: [oranges],
+    title: "Oranges",
+    date: "June 2023",
+    media: "Acrylic",
+    desc: "A painting of oranges, created as an exercise to paint orange without using the color orange.",
+  },
+  {
+    imgs: [rgb],
+    title: "RGB Portrait",
+    date: "February 2023",
+    media: "Photoshop",
+    desc: "A multi-layer, distorted image meant to push the bounds of Photoshop tools.",
+  },
+  {
+    imgs: [reflect],
+    title: "Reflection",
+    date: "January 2024",
+    media: "Digital",
+    desc: "A fairly normal portrait with a slightly off-putting reflection...",
+  },
+];
+
+interface ModalProps {
+  title: string;
+  imgs: string[];
+  date: string;
+  media: string;
+  awards: string | undefined;
+  desc: string;
+}
+
+interface ArtProps {
+  dark: boolean;
+}
+export default function Art({ dark }: ArtProps) {
+  const [modalOpen, setModalOpen] = useState<boolean>(false);
+  const [attributes, setAttributes] = useState<ModalProps>();
+  const onClick = (piece: Partial<ModalProps>) => {
+    // open modal
+    setModalOpen((prev) => !prev);
+    setAttributes({
+      title: piece.title || "",
+      imgs: piece.imgs || [],
+      date: piece.date || "",
+      media: piece.media || "",
+      awards: piece.awards || "",
+      desc: piece.desc || "",
+    });
+  };
 
   return (
     <main className="main pt-[5vh] min-h-[95vh]">
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-        className="w-screen ml-[2vw]"
+        className="w-full ml-[2vw]"
       >
         <Masonry>
           {art.map((piece, ind) => {
             return (
-              <div className="relative w-fit" key={ind}>
-                <img className="w-full !m-[1vw]" src={piece.img} alt="" />
+              <div
+                className="relative w-fit"
+                key={ind}
+                onClick={() => onClick(piece)}
+              >
+                <img className="w-full !m-[1vw]" src={piece.imgs[0]} alt="" />
                 <div className="absolute top-0 overlay w-[90%] h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
                   <h1 className="!text-white opacity-100 text-[3vw] z-3 text-center">
                     {piece.title}
@@ -131,6 +200,18 @@ export default function Art() {
           })}
         </Masonry>
       </ResponsiveMasonry>
+      {modalOpen && (
+        <Modal
+          title={attributes!.title}
+          imgs={attributes!.imgs}
+          date={attributes!.date}
+          media={attributes!.media}
+          awards={attributes?.awards}
+          desc={attributes!.desc}
+          setModalOpen={setModalOpen}
+          dark={dark}
+        />
+      )}
     </main>
   );
 }

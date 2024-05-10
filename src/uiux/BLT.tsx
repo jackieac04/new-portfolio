@@ -6,6 +6,7 @@ import homehifi from "/blt/homehifi.png";
 import partnershifi from "/blt/partnerhifi.png";
 import bltnews from "/blt/newsletter.png";
 import designsys from "/blt/designsys.png";
+import pin from "/blt/pinterest.png";
 
 export default function BLT() {
   return (
@@ -68,9 +69,10 @@ export default function BLT() {
                 who are no longer affiliated with the Development Labs.
               </p>
               <p className="btm">
-                So my task was to give the site a <b>fresh, new look</b>, and
-                create a sample partnerships page that doesn't currently have a
-                home on the site.
+                As the sole designer among a cohort of researchers and
+                engineers, my task was to give the site a <b>fresh, new look</b>
+                , and create a sample partnerships page that doesn't currently
+                have a home on the site.
               </p>
             </div>
           </div>
@@ -88,6 +90,21 @@ export default function BLT() {
             also not particularily inviting or visually appealing, given that
             much of the research is done for children, it should reflect that in
             its design.
+          </p>
+          <h3>Research and Inspiration</h3>
+          <p className="btm">
+            To get a sense for some popular design styles in this area, I
+            searched for UI of sites with similar purposes. Pictured are some of
+            the many sites I used for inspiration.{" "}
+          </p>
+          <div className="mockst">
+            <img src={pin} alt="" />
+          </div>
+          <p className="btm">
+            These examples helped me get a sense for the style I was going for:
+            a <b>clean, colorful,</b> and <b>simple</b> design, with{" "}
+            <b>rounded elements</b> and{" "}
+            <b>friendly, eye-catching text and images.</b>
           </p>
           <h3>Lofi Prototypes</h3>
           <p className="btm">
@@ -108,15 +125,9 @@ export default function BLT() {
           </p>
           <h3>Hifi Protoype</h3>
           <p className="btm">
-            After some thinking and inspiration gathering from{" "}
-            <a
-              href="https://www.pinterest.com/search/pins/?q=child%20lab%20website%20ui&rs=typed"
-              target="_blank"
-            >
-              this Pinterest search
-            </a>
-            , I came up with these hifis, which I feel reflect the goals of the
-            project more.
+            After some thinking and inspiration gathering from the
+            aforementioned research, I came up with these hifis, which I feel
+            reflect the goals of the project more.
           </p>
           <p className="btm">I then used this to make this final prototype.</p>
           <div className="mockst">
@@ -150,8 +161,11 @@ export default function BLT() {
             <h3 className="justify-self-center">Lessons Learned</h3>
             <p className="btm">
               Through completing this project, I learned how to design for a
-              group of people, all with similar but not exactly the same needs
-              in a professional setting.{" "}
+              group of people, all with similar (but not exactly the same needs)
+              in a professional setting. The aesthetics of the UI were just as
+              important as the textual information for the lab to look appealing
+              to potential participants, so developing effective branding was
+              crucial.
             </p>
           </div>
         </div>

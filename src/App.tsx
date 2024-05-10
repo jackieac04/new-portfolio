@@ -15,6 +15,7 @@ import BLT from "./uiux/BLT";
 import JAC from "/main/logo.png";
 import Bathrooms from "./cs/Bathrooms";
 import Pab from "./cs/Pab";
+import resume from "/main/JaclynCohenResume0224.pdf";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -55,7 +56,7 @@ function App() {
             <Link className="art" to={"/art"}>
               Art
             </Link>
-            <a href={"/main/JaclynCohenResume0224.pdf"} target="_blank">
+            <a href={resume} target="_blank">
               Resumé
             </a>
           </div>
@@ -64,7 +65,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home dark={dark} />} />
           <Route path="*" element={<NotFound />} />
-          <Route path="/art" element={<Art />} />
+          <Route path="/art" element={<Art dark={dark}/>} />
           <Route path="/uiux" element={<UIUX />}>
             <Route index element={<UIUX />} />
           </Route>
