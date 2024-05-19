@@ -57,7 +57,6 @@ const art = [
     desc: " In this piece, the old self falls from the new self as one not only understands themselves now but who they want to become. While a rebirth can feel like a religious experience, people go through many cycles of realization and remake themselves through a lifetime, which is why the composition and flying birds encircle the figure. The process of rebirth is ongoing, and so is the piece.",
   },
   {
-
     imgs: [birb, birbs],
 
     title: "Finch in the Park",
@@ -66,7 +65,6 @@ const art = [
     desc: "This piece began with a person in mind and slowly expanded to be about many people, prompting imagery of many places and symbols I and my friends hold dear such as the tree that is at Prospect Terrace Park.",
   },
   {
-
     imgs: [biga, bigl],
     title: "The Big Print",
     date: "May 2024",
@@ -81,7 +79,6 @@ const art = [
     desc: "A simple painting of a beautiful creature in a somewhat natural habitat. Inspired by the local nature of my hometown in South Florida.",
   },
   {
-
     imgs: [mur, murl, murr],
     title: "Love Comes Naturally",
     date: "March 2021",
@@ -249,9 +246,8 @@ export default function Art({ dark }: ArtProps) {
                 onClick={() => onClick(piece)}
               >
                 <img className="w-full !m-[1vw]" src={piece.imgs[0]} alt="" />
-                <div className="absolute top-0 overlay w-[95%] h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
-                  <h1 className="!text-white opacity-100 text-[3vw] z-3 text-center !m-0">
-
+                <div className="absolute top-0 overlay w-[90%] h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
+                  <h1 className="!text-white opacity-100 text-[2.8vw] z-3 text-center !m-0">
                     {piece.title}
                   </h1>
                   <div className="flex w-full bottom-0 absolute justify-between">
