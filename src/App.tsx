@@ -226,7 +226,7 @@ function Home({ dark }: HomeProps) {
         {/* ABOUT ME */}
         <section
           className={
-            (dark ? "darkme" : "lightme") + " relative w-screen h-fit-content"
+            (dark ? "darkme" : "lightme") + " relative w-screen h-fit-content "
           }
         >
           <div
@@ -247,7 +247,7 @@ function Home({ dark }: HomeProps) {
               ></path>
             </svg>
           </div>
-          <div className="about w-full h-full flex flex-row">
+          <div className="about w-full h-full flex flex-row pt-[5%]">
             <div className=" max-w-[50%]">
               <div className="title mt-[10vh] mb-[2%]">
                 <h1

@@ -187,7 +187,8 @@ Link :hover {
 
 .custom-shape-divider-top-1714497700 {
   position: absolute;
-  top: 0;
+  /* top: 0; */
+  transform: translateY(-1%);
   left: 0;
   width: 100%;
   line-height: 0;

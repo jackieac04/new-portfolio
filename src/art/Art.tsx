@@ -143,6 +143,8 @@ const art = [
     date: "October 2023",
     media: "Lithography",
     desc: "A wooded area I stumbled into on a trip to Ireland as a teen.",
+    awards:
+      "Exhibited at the 46th Annual Student Art Exhibition, Granoff Center",
   },
   {
     imgs: [lil],
