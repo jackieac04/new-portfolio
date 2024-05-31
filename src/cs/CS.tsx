@@ -3,7 +3,6 @@ import bathrooms from "/cs/bathrooms.png";
 import pab from "/cs/pabhome.png";
 import dream from "/cs/dream.png";
 
-
 const projects = [
   {
     title: "Posters@Brown",
@@ -14,11 +13,10 @@ const projects = [
       "SpringBoot",
       "MongoDB",
       "APIs",
+      "Responsive Design",
       "TypeScript",
       "React",
-      "MapBox",
       "Fullstack Development",
-      "Responsive Design",
     ],
     img: pab,
   },

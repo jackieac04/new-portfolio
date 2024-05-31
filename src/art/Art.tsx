@@ -39,9 +39,9 @@ import rems11 from "/artport/rems11.jpg";
 import rems12 from "/artport/rems12.jpg";
 import rems13 from "/artport/rems13.jpg";
 import rems14 from "/artport/rems14.jpg";
-// import big from "/artport/bigvid.gif";
 import biga from "/artport/bigangle.jpg";
 import bigl from "/artport/biglong.jpg";
+import cats from "/artport/cats.jpg";
 
 import { useState } from "react";
 import Modal from "./Modal";
@@ -63,6 +63,13 @@ const art = [
     date: "February 2024",
     media: "Linocut",
     desc: "This piece began with a person in mind and slowly expanded to be about many people, prompting imagery of many places and symbols I and my friends hold dear such as the tree that is at Prospect Terrace Park.",
+  },
+  {
+    imgs: [cats],
+    title: "Cats Cuddling",
+    date: "May 2024",
+    media: "Digital",
+    desc: "A warm painting of two cats, cuddling.",
   },
   {
     imgs: [biga, bigl],
