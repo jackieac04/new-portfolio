@@ -131,6 +131,7 @@ h1 {
 }
 
 .route-content {
+  width: 100vw;
   position: relative;
   display: flex;
   justify-content: center;
@@ -210,7 +211,7 @@ Link :hover {
 }
 
 footer {
-  background-color: var(--bg-color);
+  /* background-color: var(--bg-color); */
   width: 100vw;
 }
 
@@ -303,4 +304,12 @@ a > img {
   background-repeat: no-repeat;
   background-position: center;
   width: 50vw;
+}
+
+.darktop > .bgimg {
+  background-image: url("/main/newmaindark.png");
+}
+
+.lighttop > .bgimg {
+  background-image: url("/main/newmainlight2.png");
 }

@@ -8,15 +8,14 @@ import "./App.css";
 import Development from "./uiux/Development";
 import Iterative from "./uiux/Iterative";
 import { useState } from "react";
-import main from "/main/main.png";
-import darkbg from "/main/bgdark.png";
-import lightbg from "/main/bglight.png";
+import face from "/main/newface.png";
 import BLT from "./uiux/BLT";
 import JAC from "/main/logo.png";
 import Bathrooms from "./cs/Bathrooms";
 import Pab from "./cs/Pab";
 import resume from "/main/JaclynCohenResume0224.pdf";
 import Dreamweaver from "./cs/Dreamweaver";
+import Footer from "./Footer";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -81,85 +80,154 @@ function App() {
           <Route path="/dream" element={<Dreamweaver />} />
         </Routes>
       </article>
-      <footer
-        className={
-          (dark ? "d" : "l") +
-          " h-[5vh] py-[2vh] px-[10%] m-0 flex justify-between"
-        }
-      >
-        <div
-          className="z-10 w-[25%] flex justify-between "
-          style={{ transform: "translateY(-25%)" }}
-        >
-          <Link to={"mailto: jaclyn_cohen@brown.edu"} target="_blank">
-            <div
-              className={
-                (dark ? "d" : "l") + "email w-[3.5vw] h-[3.5vw] py-[1vh]"
-              }
-            />
-          </Link>
-          <Link to={"https://github.com/jackieac04"} target="_blank">
-            <div
-              className={
-                (dark ? "d" : "l") + "git w-[3.5vw] h-[3.5vw] py-[1vh]"
-              }
-            />
-          </Link>
-          <Link
-            to={"https://www.linkedin.com/in/jaclyn-a-cohen/"}
-            target="_blank"
-          >
-            <div
-              className={(dark ? "d" : "l") + "linked w-[3.5vw] h-[3.5vw]"}
-              style={{ transform: "translateY(-.5vh)" }}
-            />
-          </Link>
-          <Link
-            to={"https://discordapp.com/users/leafysheepy/"}
-            target="_blank"
-          >
-            <div
-              className={
-                (dark ? "d" : "l") + "discord w-[3.5vw] h-[3.5vw] py-[1vh]"
-              }
-            />
-          </Link>
-
-          <Link to={"https://instagram.com/leafysheepy/"} target="_blank">
-            <div
-              className={
-                (dark ? "d" : "l") + "inst w-[3.5vw] h-[3.5vw] py-[1vh]"
-              }
-            />
-          </Link>
-        </div>
-        <div className="z-10">
-          <p>Made with leafy sheepy</p>
-        </div>
-      </footer>
     </>
   );
 }
+
+const csskills: string[] = [
+  "TypeScript",
+  "Python",
+  "Java",
+  "HTML",
+  "CSS",
+  "Git/GitHub",
+  "Azure",
+  "MongoDB",
+  "APIs",
+  "React",
+  "Fullstack Development",
+];
+const designskills: string[] = [
+  "Figma",
+  "Responsive Design",
+  "Personas",
+  "A/B Testing",
+  "UX research",
+  "Adobe Indesign",
+];
+
+const artskills: string[] = [
+  "Acrylic Painting",
+  "Digital Illustration",
+  "Lithography",
+  "Linocut",
+  "Bookarts",
+  "Mural Painting",
+  "Oil Painting",
+  "Lasercutter",
+  "Graphic Design",
+  "Woodblock Printing",
+  "Adobe Illustrator",
+  "Adobe Photoshop",
+];
 
 interface HomeProps {
   dark: boolean;
 }
 
 function Home({ dark }: HomeProps) {
-  const [hovered, setHovered] = useState(false);
+  // const [hovered, setHovered] = useState(false);
 
-  const handleMouseEnter = () => {
-    setHovered(true);
-  };
+  // const handleMouseEnter = () => {
+  //   setHovered(true);
+  // };
 
-  const handleMouseLeave = () => {
-    setHovered(false);
-  };
+  // const handleMouseLeave = () => {
+  //   setHovered(false);
+  // };
 
   return (
     <>
-      <main className={dark ? "darktop" : "lighttop"}>
-        <div
+      <main className={dark ? "darktop relative" : "lighttop relative"}>
+        <div className="bgimg w-screen min-h-[333vh] bg-cover bg-no-repeat grid grid-rows-3">
+          <div className="pink w-full flex flex-col lg:flex-row justify-start items-center lg:justify-between">
+            <div className="flex flex-col mt-[5vh] lg:mt-0">
+              {" "}
+              <h1 className="text-6xl pl-[4vw] lg:!mt-[5vh] ">Jaclyn Cohen</h1>
+              <h3 className="lg:block hidden pl-[3vw]">
+                Artist, Designer, Developer
+              </h3>
+            </div>
+
+            <div className="face w-full lg:w-[65vw] lg:self-start lg-translate-[4vh]">
+              <img src={face} alt="" className="w-full" />
+            </div>
+            <h3 className="block lg:hidden pl-[3vw] self-center">
+              Artist, Designer, Developer
+            </h3>
+          </div>
+          <div className="orange flex flex-col lg:flex-row">
+            <div className=" lg:max-w-[45%] bg-orange-200/20 rounded mx-[2.5%] mt-[5vh]">
+              <div className="title mt-[5vh] mb-[2%]">
+                <h1
+                  className="justify-self-left pl-[5%] "
+                  style={{ fontSize: "5vw" }}
+                >
+                  About Me
+                </h1>
+              </div>
+
+              <p className="mx-[5%] text-[3vw] md:text-[2.5vw] lg:text-[1.8vw] btm">
+                Hi! My name is Jaclyn Cohen, I'm a junior at{" "}
+                <b> Brown University</b> (but originally from South Florida!)
+                studying <b>Computer Science </b> and <b>Visual Arts.</b> I love
+                both topics separately- having done my fair share of software
+                projects and paintings, but I'm especially interested in
+                intersections between the two from <b>graphics</b> to{" "}
+                <b>computer vision </b>to <b>frontend development </b>
+                to <b>UIUX</b> and everything inbetween.
+              </p>
+              <p className="btm mx-[5%] text-[3vw] md:text-[2.5vw] lg:text-[1.8vw]">
+                This summer I'm a <b>Frontend Engineering Intern</b> at{" "}
+                <b>Hexagon's Manufacturing Intelligence Division</b>, but I also
+                have experience as an undergraduate teaching assistant for
+                introductory computer science courses and as a research
+                assistant doing frontend and graphic design work for{" "}
+                <b>The Brown Language and Thought Lab</b>.
+              </p>
+            </div>
+            <div className="  lg:max-w-[45%] bg-orange-200/20 rounded mx-[2.5%] mt-[5vh] px-[2.5%]">
+              <div className="title mt-[5vh] mb-[2%]">
+                <h1 className="justify-self-left " style={{ fontSize: "5vw" }}>
+                  Skills
+                </h1>
+              </div>
+              <h3>Computer Science</h3>
+              <div className="skills lil">
+                {csskills.map((skill) => {
+                  return (
+                    <div className={`skill sm ${skill}`} key={skill}>
+                      {skill}
+                    </div>
+                  );
+                })}
+              </div>
+              <h3>Design</h3>
+              <div className="skills lil">
+                {designskills.map((skill) => {
+                  return (
+                    <div className={`skill sm ${skill}`} key={skill}>
+                      {skill}
+                    </div>
+                  );
+                })}
+              </div>
+              <h3>Visual Arts</h3>
+              <div className="skills lil">
+                {artskills.map((skill) => {
+                  return (
+                    <div className={`skill sm ${skill}`} key={skill}>
+                      {skill}
+                    </div>
+                  );
+                })}
+              </div>
+            </div>
+          </div>
+          <div className="yellow"></div>
+        </div>
+        <Footer dark={dark} />
+        {/* <div
           className="w-screen relative flex justify-center flex-column "
           style={{ transform: "translateY(-4vh)" }}
         >
@@ -223,7 +291,7 @@ function Home({ dark }: HomeProps) {
         >
           Jaclyn Cohen
         </h1>
-        {/* ABOUT ME */}
+        {/* ABOUT ME 
         <section
           className={
             (dark ? "darkme" : "lightme") + " relative w-screen h-fit-content "
@@ -249,35 +317,7 @@ function Home({ dark }: HomeProps) {
           </div>
           <div className="about w-full h-full flex flex-row pt-[5%]">
             <div className=" max-w-[50%]">
-              <div className="title mt-[10vh] mb-[2%]">
-                <h1
-                  className="justify-self-left pl-[5%] "
-                  style={{ fontSize: "5vw" }}
-                >
-                  About Me
-                </h1>
-              </div>
-
-              <p className="mx-[5%] text-[1.8vw] btm">
-                Hi! My name is Jaclyn Cohen, I'm originally from South Florida
-                but I'm currently a sophomore at <b> Brown University</b>{" "}
-                studying <b>Computer Science </b> and <b>Visual Arts.</b> I love
-                both topics separately- having done my fair share of software
-                projects and traditional paintings, but I'm especially
-                interested in intersections between the two from <b>graphics</b>{" "}
-                to <b>computer vision </b>to <b>frontend development </b>
-                to <b>UIUX</b> and everything inbetween.
-              </p>
-              <p className="btm mx-[5%] text-[1.8vw]">
-                This summer I'll be working as a{" "}
-                <b>Frontend Engineering Intern</b> at{" "}
-                <b>Hexagon's Manufacturing Intelligence Division</b>, but I also
-                have experience as an undergraduate teaching assistant for
-                introductory computer science courses and as a research
-                assistant doing frontend and graphics work for{" "}
-                <b>The Brown Language and Thought Lab</b>.
-              </p>
-            </div>
+            
             <div
               className={
                 (hovered ? "hoverimg " : "nothoverimg ") + "relative w-50%"
@@ -286,14 +326,14 @@ function Home({ dark }: HomeProps) {
               onMouseLeave={handleMouseLeave}
             ></div>
           </div>
-        </section>
+        </section> */}
       </main>
-      <footer
+      {/* <footer
         className={
           (dark ? "dex" : "lex") +
           " h-[8.1vh]  px-[10%] m-0 flex absolute justify-between w-screen bottom-0"
         }
-      ></footer>
+      ></footer> */}
     </>
   );
 }
