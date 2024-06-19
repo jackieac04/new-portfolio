@@ -29,8 +29,8 @@ export default function Modal({
         className="top-0 w-full h-screen  bg-black opacity-60 fixed z-5"
         onClick={() => setModalOpen(false)}
       ></div>
-      <div className="grid grid-cols-2  w-[80vw] h-[80vh] rounded-lg mx-[10vw] my-[10vh] fixed">
-        <div className=" self-center w-[40vw] flex flex-col justify-center ">
+      <div className="flex flex-col md:grid md:grid-cols-2  w-[80vw] h-[80vh] rounded-lg mx-[10vw] my-[10vh] fixed">
+        <div className=" self-center flex flex-col justify-center max-h-[60vh] md:max-h-screen md:w-[40vw] ">
           <img src={mainimg} className="!max-w-[75%] max-h-full " alt="" />{" "}
           <div className="w-[30vw] h-[5vw] flex overflow-x-scroll">
             {imgs.length > 1 &&
@@ -50,18 +50,18 @@ export default function Modal({
         <div
           className={
             (dark ? "dark" : "light") +
-            " flex self-center w-[40vw] h-fit max-h-[80vh] overflow-y-scroll rounded-lg justify-self-end fixed p-[2vw]"
+            " flex self-center w-[80vw] md:w-[40vw] md:fixed h-fit max-h-[80vh] overflow-y-scroll rounded-lg justify-self-end  p-[2vw] modal"
           }
         >
           <div className="right w-full flex flex-col">
             <h1 className="text-[3vw] z-3 text-center justify-self-center mb-[1vh]">
               {title}
             </h1>
-            <div className=" flex justify-between mb-[2vh]">
+            <div className=" flex justify-between mb-[2vh] !text-[1.8vw]  ">
               <p>{date}</p> <p>{media}</p>
             </div>
             <div className="">
-              <p className="!text-[1.5vw] my-[1vh]">{desc}</p>
+              <p className="!text-[2vw] md:!text-[1.5vw] my-[1vh]">{desc}</p>
               <p className=" !text-[1.2vw]"> {awards}</p>
             </div>
           </div>

@@ -56,7 +56,7 @@ const projects = [
 
 export default function UIUX() {
   return (
-    <main className="relative w-screen h-fit pt-[5vh]">
+    <main className="relative w-screen h-fit pt-[5vh] pb-[12vh]">
       <h1 className="text-5xl">UIUX Projects</h1>
       <div className="box-grid h-fit">
         {projects.map((project, indx) => {

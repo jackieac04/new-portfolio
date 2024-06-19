@@ -7,7 +7,7 @@ import dreamentry from "/cs/dreamentry.png";
 
 export default function Dreamweaver() {
   return (
-    <main className="min-h-screen pt-[5vh]">
+    <main className="min-h-screen pt-[5vh] pb-[7vh]">
       <div className="outer">
         <div className="top">
           <h1 className="text-5xl">Dreamweaver</h1>

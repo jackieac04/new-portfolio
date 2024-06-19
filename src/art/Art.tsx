@@ -241,7 +241,7 @@ export default function Art({ dark }: ArtProps) {
   };
 
   return (
-    <main className="main pt-[5vh] min-h-[95vh]">
+    <main className="main pt-[5vh] min-h-[95vh] pb-[9vh]">
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
         className="w-full ml-[2vw]"

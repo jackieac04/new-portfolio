@@ -4,25 +4,14 @@
 @import "tailwindcss/utilities";
 
 :root {
-  --bg-color: #ddddfd;
-  --med-color: #7c6283;
+  --bg-color: #f9c1fc;
+  --med-color: #ba1a7a;
   --bg-color-dark: #1e1920;
   --quador: "quador", serif;
   --sans: "basic-sans", sans-serif;
   justify-content: center;
   display: flex;
   color: var(--bg-color-dark);
-}
-
-body {
-  /* margin-left: 1rem !important;
-  margin-right: 1rem !important;
-  margin-top: 1rem !important; */
-  background-color: var(--bg-color);
-}
-
-.dark-mode {
-  background-color: var(--bg-color-dark);
 }
 
 nav {
@@ -68,9 +57,13 @@ h1 {
   color: var(--bg-color-dark);
 }
 p {
-  font-size: 1.8vw;
+  font-size: 3vw;
 }
-
+@media (min-width: 1000px) {
+  p {
+    font-size: 1.8vw;
+  }
+}
 h3 {
   font-family: var(--quador);
   font-weight: 600 !important;
@@ -306,10 +299,96 @@ a > img {
   width: 50vw;
 }
 
-.darktop > .bgimg {
-  background-image: url("/main/newmaindark.png");
+.darktop > .bgimg > .pink {
+  background-image: url("/main/darkpink.png");
 }
 
-.lighttop > .bgimg {
-  background-image: url("/main/newmainlight2.png");
+.lighttop > .bgimg > .pink {
+  background-image: url("/main/lightpink.png");
+}
+
+.lighttop > .bgimg,
+body {
+  background: #f579bb;
+  background: -moz-linear-gradient(top, #f579bb 30%, #ffc364 97%, #ffdf1c 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #f579bb 30%,
+    #ffc364 97%,
+    #ffdf1c 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    #f579bb 30%,
+    #ffc364 97%,
+    #ffdf1c 100%
+  );
+}
+
+.darktop > .bgimg,
+.dark-mode {
+  background: #4c012f;
+  background: -moz-linear-gradient(top, #4c012f 30%, #835b00 97%, #7f8300 100%);
+  background: -webkit-linear-gradient(
+    top,
+    #4c012f 30%,
+    #835b00 97%,
+    #836900 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    #4c012f 30%,
+    #835b00 97%,
+    #837200 100%
+  );
+}
+
+.lighttop > .bgimg > .pink > .gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: #7AA3F5; */
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    #f579bb 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 90%,
+    #f579bb 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 90%,
+    #f579bb 100%
+  );
+  pointer-events: none; /* This ensures the gradient overlay doesn't interfere with interacting with other elements inside the div */
+}
+
+.darktop > .bgimg > .pink > .gradient-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  /* background: #7AA3F5; */
+  background: -moz-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 0%,
+    #4c012f 100%
+  );
+  background: -webkit-linear-gradient(
+    top,
+    rgba(255, 255, 255, 0) 90%,
+    #4c012f 100%
+  );
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0) 90%,
+    #4c012f 100%
+  );
+  pointer-events: none; /* This ensures the gradient overlay doesn't interfere with interacting with other elements inside the div */
 }

@@ -39,7 +39,7 @@ const projects = [
 
 export default function CS() {
   return (
-    <main className="relative w-screen min-h-[93vh] pt-[5vh]">
+    <main className="relative w-screen pt-[5vh] pb-[8vh]">
       <h1 className="text-5xl">CS Projects</h1>
       <div className="box-grid h-fit">
         {" "}

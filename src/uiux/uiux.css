@@ -1,9 +1,9 @@
 * {
   transition: 0.3s ease-in-out;
-  --bg-color: #ddddfd;
-  --med-color: #7c6283;
-  --bg-color-dark: #1e1920;
-  --shadow: rgb(50, 29, 119);
+  --bg-color: #f7c7e8;
+  --med-color: #ffa4db;
+  --bg-color-dark: #4d334d;
+  --shadow: rgb(119, 29, 100);
 }
 
 main {
@@ -248,33 +248,51 @@ h3,
   font-family: var(--sans);
   padding: 2%;
   color: white;
-  box-shadow: 5px 10px rgb(33, 15, 93, 0.8);
+  box-shadow: 5px 10px var(--bg-color-dark);
 }
 .React,
 .Responsive,
-.MongoDB {
-  background-color: rgb(139, 20, 175);
+.MongoDB,
+.Acrylic,
+.Adobe,
+.Lasercutter,
+.AB {
+  background-color: rgb(175, 20, 121);
 }
 .HTML,
-.Frontend {
-  background-color: rgb(87, 54, 162);
+.Frontend,
+.Linocut,
+.Illustrator,
+.Azure {
+  background-color: rgb(110, 54, 162);
 }
 
 .CSS,
-.MapBox {
-  background-color: rgb(60, 54, 172);
-}
-
+.MapBox,
+.Graphic,
+.Digital,
 .TypeScript,
 .Java {
-  background-color: rgb(56, 60, 176);
+  background-color: rgb(60, 54, 172);
 }
 
 .Figma,
 .SpringBoot,
 .APIs,
-.Fullstack {
+.Fullstack,
+.Lithography,
+.Personas,
+.Git {
   background-color: rgb(47, 86, 165);
+}
+
+.Python,
+.UX,
+.Woodblock,
+.Bookarts,
+.Mural,
+.Git {
+  background-color: rgb(226, 98, 63);
 }
 
 .sm {
@@ -283,7 +301,7 @@ h3,
   font-family: var(--sans);
   width: fit-content;
   padding: 0.5rem;
-  box-shadow: 2px 5px rgb(33, 15, 93, 0.8);
+  box-shadow: 2px 5px var(--bg-color-dark);
   margin-right: 0;
 }
 
@@ -303,12 +321,12 @@ h3,
 .dark > main > div > div > div > .lef,
 .dark > main > div > div > div > .righ,
 .dark > main > div > div > .bottom {
-  background-color: #3e3543;
+  background-color: var(--bg-color-dark);
 }
 .light > main > div > div > div > .lef,
 .light > main > div > div > div > .righ,
 .light > main > div > div > .bottom {
-  background-color: #b5b5dc;
+  background-color: var(--bg-color);
 }
 
 .topbox {
@@ -368,7 +386,7 @@ h3,
 
 @media (max-width: 700px) {
   .top > h1 {
-    font-size: 1rem !important;
+    font-size: 2rem !important;
   }
 }
 

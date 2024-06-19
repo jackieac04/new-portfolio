@@ -12,7 +12,7 @@ import mobilehifi2 from "/iter/mobilehifi2.png";
 
 export default function Iterative() {
   return (
-    <main className="pt-[5vh]">
+    <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
           <h1 className="text-5xl">MiFonda Storefront</h1>

@@ -10,7 +10,7 @@ import pin from "/blt/pinterest.png";
 
 export default function BLT() {
   return (
-    <main className="pt-[5vh]">
+    <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
           {" "}

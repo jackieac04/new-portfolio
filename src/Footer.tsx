@@ -7,7 +7,7 @@ export default function Footer({ dark }: HomeProps) {
     <footer
       className={
         (dark ? "d" : "l") +
-        " h-[5vh] py-[2vh] px-[10%] m-0 flex justify-between absolute top-[95%]"
+        " h-[5vh]  px-[10%] m-0 flex justify-between absolute bottom-[5vh]"
       }
     >
       <div

@@ -26,7 +26,9 @@ function App() {
   };
   return (
     <>
-      <article className={`route-content h-fit ${dark ? "dark" : "light"}`}>
+      <article
+        className={`route-content min-h-[105vh] ${dark ? "dark" : "light"}`}
+      >
         <nav>
           <div className="left-links grid grid-cols-2 relative">
             <Link to={"/"} className="flex mr-[2%] w-[20%] absolute">
@@ -79,6 +81,7 @@ function App() {
           <Route path="/pab" element={<Pab />} />
           <Route path="/dream" element={<Dreamweaver />} />
         </Routes>
+        <Footer dark={dark} />
       </article>
     </>
   );
@@ -90,20 +93,19 @@ const csskills: string[] = [
   "Java",
   "HTML",
   "CSS",
-  "Git/GitHub",
+  "Git + GitHub",
   "Azure",
   "MongoDB",
   "APIs",
   "React",
-  "Fullstack Development",
+  "Fullstack",
 ];
 const designskills: string[] = [
   "Figma",
   "Responsive Design",
   "Personas",
-  "A/B Testing",
+  "AB Testing",
   "UX research",
-  "Adobe Indesign",
 ];
 
 const artskills: string[] = [
@@ -113,12 +115,10 @@ const artskills: string[] = [
   "Linocut",
   "Bookarts",
   "Mural Painting",
-  "Oil Painting",
   "Lasercutter",
   "Graphic Design",
   "Woodblock Printing",
   "Adobe Illustrator",
-  "Adobe Photoshop",
 ];
 
 interface HomeProps {
@@ -138,51 +138,53 @@ function Home({ dark }: HomeProps) {
 
   return (
     <>
-      <main className={dark ? "darktop relative" : "lighttop relative"}>
-        <div className="bgimg w-screen min-h-[333vh] bg-cover bg-no-repeat grid grid-rows-3">
-          <div className="pink w-full flex flex-col lg:flex-row justify-start items-center lg:justify-between">
+      <main
+        className={dark ? "darktop relative h-fit" : "lighttop relative h-fit"}
+      >
+        <div className="bgimg w-screen h-fit bg-cover bg-no-repeat flex flex-col">
+          <div className="pink relative w-full flex flex-col lg:flex-row justify-start items-center lg:justify-between bg-cover bg-no-repeat h-fit relative">
             <div className="flex flex-col mt-[5vh] lg:mt-0">
-              {" "}
               <h1 className="text-6xl pl-[4vw] lg:!mt-[5vh] ">Jaclyn Cohen</h1>
               <h3 className="lg:block hidden pl-[3vw]">
                 Artist, Designer, Developer
               </h3>
             </div>
 
-            <div className="face w-full lg:w-[65vw] lg:self-start lg-translate-[4vh]">
+            <div className="face w-[95%] lg:w-[65vw] lg:self-start lg-translate-[4vh]">
               <img src={face} alt="" className="w-full" />
             </div>
-            <h3 className="block lg:hidden pl-[3vw] self-center">
+            <h3 className="block lg:hidden pl-[3vw] self-center pb-[4vw]">
               Artist, Designer, Developer
             </h3>
+
+            <div className="gradient-overlay"></div>
           </div>
-          <div className="orange flex flex-col lg:flex-row">
-            <div className=" lg:max-w-[45%] bg-orange-200/20 rounded mx-[2.5%] mt-[5vh]">
+
+          <div className="orange flex flex-col md:flex-row h-fit">
+            <div className=" md:max-w-[45%] bg-orange-200/20 rounded mx-[2.5%] mt-[5vh]">
               <div className="title mt-[5vh] mb-[2%]">
                 <h1
                   className="justify-self-left pl-[5%] "
-                  style={{ fontSize: "5vw" }}
+                  style={{ fontSize: "6vw" }}
                 >
                   About Me
                 </h1>
               </div>
 
-              <p className="mx-[5%] text-[3vw] md:text-[2.5vw] lg:text-[1.8vw] btm">
+              <p className="mx-[5%] text-[4vw] md:text-[3vw] lg:text-[1.8vw] btm">
                 Hi! My name is Jaclyn Cohen, I'm a junior at{" "}
-                <b> Brown University</b> (but originally from South Florida!)
+                <b> Brown University</b> (originally from South Florida!)
                 studying <b>Computer Science </b> and <b>Visual Arts.</b> I love
-                both topics separately- having done my fair share of software
-                projects and paintings, but I'm especially interested in
-                intersections between the two from <b>graphics</b> to{" "}
-                <b>computer vision </b>to <b>frontend development </b>
+                both topics individually but I'm especially interested in
+                intersections between the two from <b>graphics</b> to to{" "}
+                <b>frontend development </b>
                 to <b>UIUX</b> and everything inbetween.
               </p>
-              <p className="btm mx-[5%] text-[3vw] md:text-[2.5vw] lg:text-[1.8vw]">
+              <p className="btm mx-[5%] text-[4vw] md:text-[3vw] lg:text-[1.8vw]">
                 This summer I'm a <b>Frontend Engineering Intern</b> at{" "}
                 <b>Hexagon's Manufacturing Intelligence Division</b>, but I also
-                have experience as an undergraduate teaching assistant for
-                introductory computer science courses and as a research
-                assistant doing frontend and graphic design work for{" "}
+                have experience as an undergraduate teaching assistant for CSCI
+                0150 and as a research assistant for{" "}
                 <b>The Brown Language and Thought Lab</b>.
               </p>
             </div>
@@ -192,31 +194,40 @@ function Home({ dark }: HomeProps) {
                   Skills
                 </h1>
               </div>
-              <h3>Computer Science</h3>
+              <h1 style={{ fontSize: "3vw" }}>Computer Science</h1>
               <div className="skills lil">
                 {csskills.map((skill) => {
                   return (
-                    <div className={`skill sm ${skill}`} key={skill}>
+                    <div
+                      className={`skill sm ${skill} text-[4vw] md:text-[3vw] lg:text-[1.8vw] `}
+                      key={skill}
+                    >
                       {skill}
                     </div>
                   );
                 })}
               </div>
-              <h3>Design</h3>
+              <h1 style={{ fontSize: "3vw" }}>Design</h1>
               <div className="skills lil">
                 {designskills.map((skill) => {
                   return (
-                    <div className={`skill sm ${skill}`} key={skill}>
+                    <div
+                      className={`skill sm ${skill} text-[4vw] md:text-[3vw] lg:text-[1.8vw] `}
+                      key={skill}
+                    >
                       {skill}
                     </div>
                   );
                 })}
               </div>
-              <h3>Visual Arts</h3>
+              <h1 style={{ fontSize: "3vw" }}>Visual Arts</h1>
               <div className="skills lil">
                 {artskills.map((skill) => {
                   return (
-                    <div className={`skill sm ${skill}`} key={skill}>
+                    <div
+                      className={`skill sm ${skill} text-[4vw] md:text-[3vw] lg:text-[1.8vw] `}
+                      key={skill}
+                    >
                       {skill}
                     </div>
                   );
@@ -224,116 +235,9 @@ function Home({ dark }: HomeProps) {
               </div>
             </div>
           </div>
-          <div className="yellow"></div>
+          <div className="yellow min-h-[30vh]"></div>
         </div>
-        <Footer dark={dark} />
-        {/* <div
-          className="w-screen relative flex justify-center flex-column "
-          style={{ transform: "translateY(-4vh)" }}
-        >
-          {dark ? (
-            <img
-              src={darkbg}
-              alt=""
-              className="mx-auto border-0 my-0 object-cover shadow-none w-[1100px] -top-10 "
-            />
-          ) : (
-            <img
-              src={lightbg}
-              alt=""
-              className="mx-auto border-0 my-0 object-cover shadow-none w-[1100px] "
-            />
-          )}
-          <img
-            src={main}
-            alt=""
-            className="mx-auto border-0 my-0 w-[1100px] object-cover shadow-none absolute  left-0 right-0 bottom-0"
-          />
-        </div>
-
-        <Link
-          className="imgtxt"
-          style={{
-            transform: "translate(-180%, 150%)",
-            animation: "fadeIn .9s",
-          }}
-          to={"/art"}
-        >
-          <h1>Artist</h1>
-        </Link>
-        <Link
-          className="imgtxt"
-          style={{
-            transform: "translate(200%, 350%)",
-            animation: "fadeIn 1.8s",
-          }}
-          to={"/uiux"}
-        >
-          <h1>Designer</h1>
-        </Link>
-        <Link
-          className="imgtxt"
-          style={{
-            transform: "translate(-170%, 550%)",
-            animation: "fadeIn 2.7s",
-          }}
-          to={"/cs"}
-        >
-          <h1>Developer</h1>
-        </Link>
-        <h1
-          className="absolute justify-self-center opacity-90"
-          style={{
-            transform: "translateY(500%)",
-            animation: "fadeIn 3.6s",
-            fontSize: "6vw",
-          }}
-        >
-          Jaclyn Cohen
-        </h1>
-        {/* ABOUT ME 
-        <section
-          className={
-            (dark ? "darkme" : "lightme") + " relative w-screen h-fit-content "
-          }
-        >
-          <div
-            className={
-              (dark ? "darksvg" : "lightsvg") +
-              " custom-shape-divider-top-1714497700"
-            }
-          >
-            <svg
-              data-name="Layer 1"
-              xmlns="http://www.w3.org/2000/svg"
-              viewBox="0 0 1200 120"
-              preserveAspectRatio="none"
-            >
-              <path
-                d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-                className={(dark ? "darksvg" : "lightsvg") + " shape-fill"}
-              ></path>
-            </svg>
-          </div>
-          <div className="about w-full h-full flex flex-row pt-[5%]">
-            <div className=" max-w-[50%]">
-            
-            <div
-              className={
-                (hovered ? "hoverimg " : "nothoverimg ") + "relative w-50%"
-              }
-              onMouseEnter={handleMouseEnter}
-              onMouseLeave={handleMouseLeave}
-            ></div>
-          </div>
-        </section> */}
       </main>
-      {/* <footer
-        className={
-          (dark ? "dex" : "lex") +
-          " h-[8.1vh]  px-[10%] m-0 flex absolute justify-between w-screen bottom-0"
-        }
-      ></footer> */}
     </>
   );
 }

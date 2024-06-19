@@ -13,7 +13,7 @@ import "./uiux.css";
 
 export default function ResponsiveRedesign() {
   return (
-    <main className="pt-[5vh]">
+    <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
           <h1 className="text-5xl">

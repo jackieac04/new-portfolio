@@ -1,3 +1,11 @@
+* {
+  transition: 0.3s ease-in-out;
+  --bg-color: #f7c7e8;
+  --med-color: #ffa4db;
+  --bg-color-dark: #4d334d;
+  --shadow: rgb(119, 29, 100);
+}
+
 .main {
   display: flex;
   width: 100%;
@@ -23,16 +31,19 @@
   justify-content: left;
 }
 
-.tab,
-.dark {
+.tab {
   background-color: var(--bg-color-dark);
-}
-
-.light {
-  background-color: var(--bg-color);
 }
 
 .MuiTab-label {
   display: flex;
   justify-content: flex-start;
+}
+
+.light .modal {
+  background-color: var(--bg-color);
+}
+
+.dark .modal {
+  background-color: var(--bg-color-dark);
 }
