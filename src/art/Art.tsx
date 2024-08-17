@@ -40,7 +40,7 @@ import rems12 from "/artport/rems12.jpg";
 import rems13 from "/artport/rems13.jpg";
 import rems14 from "/artport/rems14.jpg";
 import biga from "/artport/bigangle.jpg";
-import bigl from "/artport/biglong.jpg";
+// import bigl from "/artport/biglong.jpg";
 import cats from "/artport/cats.jpg";
 
 import { useState } from "react";
@@ -72,7 +72,7 @@ const art = [
     desc: "A warm painting of two cats, cuddling.",
   },
   {
-    imgs: [biga, bigl],
+    imgs: [biga],
     title: "The Big Print",
     date: "May 2024",
     media: "Woodblock",
@@ -241,20 +241,20 @@ export default function Art({ dark }: ArtProps) {
   };
 
   return (
-    <main className="main pt-[5vh] min-h-[95vh] pb-[9vh]">
+    <main className="main pt-[5vh] min-h-[95vh] pb-[11vh]">
       <ResponsiveMasonry
         columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-        className="w-full ml-[2vw]"
+        className="w-full"
       >
         <Masonry>
           {art.map((piece, ind) => {
             return (
               <div
-                className="relative w-fit"
+                className="relative w-fit flex justify-center"
                 key={ind}
                 onClick={() => onClick(piece)}
               >
-                <img className="w-full !m-[1vw]" src={piece.imgs[0]} alt="" />
+                <img className="imgg w-full !m-[1vw]" src={piece.imgs[0]} alt="" />
                 <div className="absolute top-0 overlay w-[90%] h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
                   <h1 className="!text-white opacity-100 text-[2.8vw] z-3 text-center !m-0">
                     {piece.title}

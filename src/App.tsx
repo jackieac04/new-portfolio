@@ -8,7 +8,6 @@ import "./App.css";
 import Development from "./uiux/Development";
 import Iterative from "./uiux/Iterative";
 import { useState } from "react";
-import face from "/main/newface.png";
 import BLT from "./uiux/BLT";
 import JAC from "/main/logo.png";
 import Bathrooms from "./cs/Bathrooms";
@@ -16,6 +15,8 @@ import Pab from "./cs/Pab";
 import resume from "/main/JaclynCohenResume0224.pdf";
 import Dreamweaver from "./cs/Dreamweaver";
 import Footer from "./Footer";
+import VideoComponent from "./VideoComponent";
+import flowers from "/main/flowers.mp4";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -24,16 +25,38 @@ function App() {
     setDark((prev) => !prev);
     document.body.classList.toggle("dark-mode", !dark);
   };
+
+  document.addEventListener("scroll", function () {
+    const navbar = document.getElementById("nav");
+    const path = window.location.hash;
+
+    if (path == "#/" || path == "/#/") {
+      const videoSection = document.getElementById("video");
+      const videoHeight = videoSection!.offsetHeight;
+      if (window.scrollY < videoHeight) {
+        navbar!.classList.add("navbar-light");
+        navbar!.classList.remove("navbar-dark");
+      } else {
+        navbar!.classList.add("navbar-dark");
+        navbar!.classList.remove("navbar-light");
+      }
+    } else {
+      console.log("???");
+      navbar!.classList.add("navbar-dark");
+      navbar!.classList.remove("navbar-light");
+    }
+  });
+
   return (
     <>
       <article
         className={`route-content min-h-[105vh] ${dark ? "dark" : "light"}`}
       >
-        <nav>
+        <nav id="nav">
           <div className="left-links grid grid-cols-2 relative">
             <Link to={"/"} className="flex mr-[2%] w-[20%] absolute">
               <img
-                className="justify-self-start self-start align-top !max-w-[100px]"
+                className="imgg justify-self-start self-start align-top !max-w-[100px]"
                 src={JAC}
                 alt=""
                 style={{ transform: " translate(-30%, -35%)" }}
@@ -81,7 +104,9 @@ function App() {
           <Route path="/pab" element={<Pab />} />
           <Route path="/dream" element={<Dreamweaver />} />
         </Routes>
-        <Footer dark={dark} />
+        <div className="w-full h-fit">
+          <Footer dark={dark} />
+        </div>
       </article>
     </>
   );
@@ -141,60 +166,59 @@ function Home({ dark }: HomeProps) {
       <main
         className={dark ? "darktop relative h-fit" : "lighttop relative h-fit"}
       >
-        <div className="bgimg w-screen h-fit bg-cover bg-no-repeat flex flex-col">
-          <div className="pink relative w-full flex flex-col lg:flex-row justify-start items-center lg:justify-between bg-cover bg-no-repeat h-fit relative">
-            <div className="flex flex-col mt-[5vh] lg:mt-0">
-              <h1 className="text-6xl pl-[4vw] lg:!mt-[5vh] ">Jaclyn Cohen</h1>
-              <h3 className="lg:block hidden pl-[3vw]">
-                Artist, Designer, Developer
-              </h3>
-            </div>
-
-            <div className="face w-[95%] lg:w-[65vw] lg:self-start lg-translate-[4vh]">
-              <img src={face} alt="" className="w-full" />
-            </div>
-            <h3 className="block lg:hidden pl-[3vw] self-center pb-[4vw]">
-              Artist, Designer, Developer
-            </h3>
-
-            <div className="gradient-overlay"></div>
+        <div className="bgimg w-screen h-fit flex flex-col">
+          <div className="pink relative w-screen bg-cover bg-no-repeat h-fit ">
+            <VideoComponent />
           </div>
 
-          <div className="orange flex flex-col md:flex-row h-fit">
-            <div className=" md:max-w-[45%] bg-orange-200/20 rounded mx-[2.5%] mt-[5vh]">
-              <div className="title mt-[5vh] mb-[2%]">
+          <div className="orange flex flex-col md:flex-row min-h-[110vh] py-[3rem]">
+            <div className=" md:max-w-[45%] rounded mx-[2.5%] mt-[5vh]">
+              <div className="title mt-[5vh] mb-[2%] flex">
+                <video
+                  src={flowers}
+                  loop
+                  typeof="video/mp4"
+                  autoPlay
+                  className="w-[10%]"
+                />
                 <h1
-                  className="justify-self-left pl-[5%] "
-                  style={{ fontSize: "6vw" }}
+                  className="justify-self-left mr-[.5rem] mb-[1rem]"
+                  style={{ fontSize: "4rem" }}
                 >
                   About Me
                 </h1>
+                <video
+                  src={flowers}
+                  loop
+                  typeof="video/mp4"
+                  autoPlay
+                  className="w-[10%]"
+                />
               </div>
 
               <p className="mx-[5%] text-[4vw] md:text-[3vw] lg:text-[1.8vw] btm">
                 Hi! My name is Jaclyn Cohen, I'm a junior at{" "}
-                <b> Brown University</b> (originally from South Florida!)
-                studying <b>Computer Science </b> and <b>Visual Arts.</b> I love
+                <b className="focus">
+                  {" "}
+                  Brown University{" "}
+                </b>
+                studying <b className="focus">Computer Science </b> and <b className="focus">Visual Arts.</b> I love
                 both topics individually but I'm especially interested in
                 intersections between the two from <b>graphics</b> to to{" "}
-                <b>frontend development </b>
-                to <b>UIUX</b> and everything inbetween.
-              </p>
-              <p className="btm mx-[5%] text-[4vw] md:text-[3vw] lg:text-[1.8vw]">
-                This summer I'm a <b>Frontend Engineering Intern</b> at{" "}
-                <b>Hexagon's Manufacturing Intelligence Division</b>, but I also
-                have experience as an undergraduate teaching assistant for CSCI
-                0150 and as a research assistant for{" "}
-                <b>The Brown Language and Thought Lab</b>.
+                <b className="focus">frontend development </b>
+                to <b className="focus">UIUX</b> and everything inbetween.
               </p>
             </div>
-            <div className="  lg:max-w-[45%] bg-orange-200/20 rounded mx-[2.5%] mt-[5vh] px-[2.5%]">
+          </div>
+          <div className="yellow h-fit min-h-screen flex flex-row">
+            <div className="w-1/2"></div>
+            <div className="  lg:max-w-[45%] rounded mx-[2.5%] mt-[5vh] px-[2.5%]">
               <div className="title mt-[5vh] mb-[2%]">
-                <h1 className="justify-self-left " style={{ fontSize: "5vw" }}>
+                <h1 className="justify-self-left " style={{ fontSize: "3rem" }}>
                   Skills
                 </h1>
               </div>
-              <h1 style={{ fontSize: "3vw" }}>Computer Science</h1>
+              <h1 style={{ fontSize: "1.5rem" }}>Computer Science</h1>
               <div className="skills lil">
                 {csskills.map((skill) => {
                   return (
@@ -207,7 +231,7 @@ function Home({ dark }: HomeProps) {
                   );
                 })}
               </div>
-              <h1 style={{ fontSize: "3vw" }}>Design</h1>
+              <h1 style={{ fontSize: "1.5rem" }}>Design</h1>
               <div className="skills lil">
                 {designskills.map((skill) => {
                   return (
@@ -220,7 +244,7 @@ function Home({ dark }: HomeProps) {
                   );
                 })}
               </div>
-              <h1 style={{ fontSize: "3vw" }}>Visual Arts</h1>
+              <h1 style={{ fontSize: "1.5rem" }}>Visual Arts</h1>
               <div className="skills lil">
                 {artskills.map((skill) => {
                   return (
@@ -235,7 +259,6 @@ function Home({ dark }: HomeProps) {
               </div>
             </div>
           </div>
-          <div className="yellow min-h-[30vh]"></div>
         </div>
       </main>
     </>

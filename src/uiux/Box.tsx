@@ -21,15 +21,12 @@ export default function Box({
       <div className="box">
         <Link to={insidelink}>
           <div className="img-overlay">
-            <img src={img} alt="" />
+            <img className="imgg" src={img} alt="" />
           </div>
         </Link>
         <div className="topbox">
           <div className="innerbox">
-            <h3
-              className="bxtitle !text-lg"
-              style={{ fontFamily: "var(--sans)", fontStyle: "normal" }}
-            >
+            <h3 className="bxtitle !text-lg" style={{ fontStyle: "normal" }}>
               {title}
             </h3>
             {outsidelink && (
@@ -39,7 +36,7 @@ export default function Box({
                 style={{ transform: "translateX(-70%)" }}
               >
                 {" "}
-                <img src={link} alt="" />
+                <img className="imgg" src={link} alt="" />
               </a>
             )}
           </div>

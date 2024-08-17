@@ -10,9 +10,9 @@ export default function Dreamweaver() {
     <main className="min-h-screen pt-[5vh] pb-[7vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-5xl">Dreamweaver</h1>
+          <h1 className="text-[5vw]">Dreamweaver</h1>
           <div className="skillswrap">
-            <img src={dream} />
+            <img src={dream} className="imgg" />
             <div className=""></div>
             <div className="skills">
               <div className="skill HTML">TypeScript</div>
@@ -26,7 +26,7 @@ export default function Dreamweaver() {
       <div className="content">
         <div
           className="lightsvg custom-shape-divider-top-1714497700 relative w-screen"
-          style={{ transform: "translateY(-5.1vh)" }}
+          style={{ transform: "translateY(-5.02vh)" }}
         >
           <svg
             data-name="Layer 1"
@@ -76,9 +76,9 @@ export default function Dreamweaver() {
               href="https://www.figma.com/design/uu9Gefn6bl8bfFIPCzMYh4/Dreamweaver?node-id=0-1&t=f3vrdXoW0Crih5RI-0"
               className="flex flex-col items-center"
             >
-              <img src={dreamfigma} alt="" />
-              <img src={entryfigma} alt="" />
-              <img src={statsfigma} alt="" />
+              <img src={dreamfigma} className="imgg" />
+              <img src={entryfigma} className="imgg" />
+              <img src={statsfigma} className="imgg" />
             </a>
           </div>
           <p className="btm">
@@ -110,7 +110,7 @@ export default function Dreamweaver() {
             average sleep quality.
           </p>
           <div className="mockst">
-            <img src={stats} alt="" />
+            <img src={stats} className="imgg" />
           </div>
           <p className="btm">
             I primarily used the Chart API to create these diagrams.
@@ -125,8 +125,8 @@ export default function Dreamweaver() {
               href="https://dreamweaver-ten.vercel.app"
               className="flex flex-col justify-center items-center"
             >
-              <img src={dream} alt="" />
-              <img src={dreamentry} alt="" />
+              <img src={dream} className="imgg" />
+              <img src={dreamentry} className="imgg" />
             </a>
           </div>
           <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh]">

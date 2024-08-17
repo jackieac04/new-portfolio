@@ -14,9 +14,9 @@ export default function BLT() {
       <div className="outer">
         <div className="top">
           {" "}
-          <h1 className="text-5xl">Brown Development Labs</h1>
+          <h1 className="text-[5vw]">Brown Development Labs</h1>
           <div className="skillwrap">
-            <img src={blt} />
+            <img className="imgg" src={blt} />
             <div className=""></div>
             <div className="skills">
               <div className="skill Figma">Figma</div>
@@ -29,7 +29,7 @@ export default function BLT() {
       <div className="content">
         <div
           className="lightsvg custom-shape-divider-top-1714497700 relative w-screen"
-          style={{ transform: "translateY(-5.1vh)" }}
+          style={{ transform: "translateY(-5.02vh)" }}
         >
           <svg
             data-name="Layer 1"
@@ -82,7 +82,7 @@ export default function BLT() {
           </a>
           <p className="btm">First, I wanted to see what I was working with.</p>
           <div className="mockst">
-            <img src={og} alt="" />
+            <img className="imgg" src={og} alt="" />
           </div>
           <p className="btm">
             The original site leaves much to be desired- for example, why is the
@@ -98,7 +98,7 @@ export default function BLT() {
             the many sites I used for inspiration.{" "}
           </p>
           <div className="mockst">
-            <img src={pin} alt="" />
+            <img className="imgg" src={pin} alt="" />
           </div>
           <p className="btm">
             These examples helped me get a sense for the style I was going for:
@@ -113,8 +113,8 @@ export default function BLT() {
             stage.
           </p>
           <div className="mocks">
-            <img src={homelofi} alt="" />
-            <img src={partnerslofi} alt="" />
+            <img className="imgg" src={homelofi} alt="" />
+            <img className="imgg" src={partnerslofi} alt="" />
           </div>
           <p className="btm">
             After making these I was still disatisfied. I felt like the site
@@ -136,13 +136,13 @@ export default function BLT() {
               href="https://www.figma.com/proto/5mJuDRxe0lTrI8aTfhqlNC/BLT?type=design&node-id=70-21&t=NGlf3pGD2SZvMrKK-0&scaling=scale-down&page-id=0%3A1&starting-point-node-id=70%3A21"
               target="_blank"
             >
-              <img className="!max-w-[40%]" src={homehifi} alt="" />
-              <img className="!max-w-[40%]" src={partnershifi} alt="" />
+              <img className="imgg !max-w-[40%]" src={homehifi} alt="" />
+              <img className="imgg !max-w-[40%]" src={partnershifi} alt="" />
             </a>
           </div>
           <p className="btm">With this design system in mind:</p>
           <div className="mocks">
-            <img src={designsys} alt="" />
+            <img className="imgg" src={designsys} alt="" />
           </div>
           <h3>Bonus Project</h3>
           <p className="btm">
@@ -154,7 +154,7 @@ export default function BLT() {
               href="https://www.figma.com/file/5mJuDRxe0lTrI8aTfhqlNC/BLT?type=design&node-id=0-1&mode=design&t=NGlf3pGD2SZvMrKK-0"
               target="_blank"
             >
-              <img className="max-h-screen" src={bltnews} alt="" />
+              <img className="imgg max-h-screen" src={bltnews} alt="" />
             </a>
           </div>
           <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh]">

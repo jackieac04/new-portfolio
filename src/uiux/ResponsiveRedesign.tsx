@@ -16,7 +16,7 @@ export default function ResponsiveRedesign() {
     <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-5xl">
+          <h1 className="text-[5vw]">
             Responsive Redesign: American Mathematical Society Program Listings
           </h1>
           <div className="skillswrap">
@@ -38,7 +38,7 @@ export default function ResponsiveRedesign() {
       <div className="content">
         <div
           className="lightsvg custom-shape-divider-top-1714497700 relative w-screen"
-          style={{ transform: "translateY(-5.1vh)" }}
+          style={{ transform: "translateY(-5.02vh)" }}
         >
           <svg
             data-name="Layer 1"
@@ -88,7 +88,7 @@ export default function ResponsiveRedesign() {
           <div className="mockss">
             <a href="https://www.mathprograms.org/db/program" className="grid">
               <img
-                className="max-h-[70vh] justify-self-center"
+                className="imgg max-h-[70vh] justify-self-center"
                 src={amsog}
                 alt="The original AMS program listings page."
               />
@@ -123,6 +123,7 @@ export default function ResponsiveRedesign() {
           <h3>Part One: Mockups</h3>
           <div className="mocks">
             <img
+              className="imgg"
               src={blind}
               alt="An image of 9 initial sketches inspired by various interfaces."
             />
@@ -147,7 +148,7 @@ export default function ResponsiveRedesign() {
           </p>
           <h3>Part Two: Lofi and Hifi Prototypes</h3>
           <div className="lofi">
-            <img className="desktop" src={desktop} alt="Lofi- desktop" />
+            <img className="imgg desktop" src={desktop} alt="Lofi- desktop" />
             <p>
               <ul>
                 <li>
@@ -169,7 +170,7 @@ export default function ResponsiveRedesign() {
                 </li>
               </ul>
             </p>
-            <img className="tablet" src={tablet} alt="Lofi- tablet" />
+            <img className="imgg tablet" src={tablet} alt="Lofi- tablet" />
             <p>
               <ul>
                 <li>
@@ -191,7 +192,7 @@ export default function ResponsiveRedesign() {
                 </li>
               </ul>
             </p>
-            <img className="mobile" src={mobile} alt="Lofi- mobile" />
+            <img className="imgg mobile" src={mobile} alt="Lofi- mobile" />
             <p>
               <ul>
                 <li>
@@ -215,10 +216,11 @@ export default function ResponsiveRedesign() {
           </div>
           <div className="hifi flex flex-col items-center">
             <div className="mockst max-w-[25vw]">
-              <img src={mobilehifi} alt="mobile- hifi" />
+              <img className="imgg" src={mobilehifi} alt="mobile- hifi" />
             </div>
             <div className="mockst max-w-[35vw]">
               <img
+                className="imgg"
                 id="hifiimg3"
                 // className="max-w-1/2"
                 src={tablethifi}
@@ -227,7 +229,7 @@ export default function ResponsiveRedesign() {
             </div>
             <div className="mockts flex justify-center ">
               <img
-                className="!max-w-[70vw] mr-[1vw]"
+                className="imgg !max-w-[70vw] mr-[1vw]"
                 id="hifiimg2 "
                 src={desktophifi}
                 alt="desktop- hifi"
@@ -245,7 +247,7 @@ export default function ResponsiveRedesign() {
           </p>
           <div className="mockst">
             <img
-              className="!max-h-[80vh]"
+              className="imgg !max-h-[80vh]"
               src={designguide}
               alt="the style guide, with each component laid out"
             />
@@ -267,7 +269,7 @@ export default function ResponsiveRedesign() {
               target="_blank"
             >
               <img
-                className="max-h-[90vh] justify-self-center py-[4vh]"
+                className="imgg max-h-[90vh] justify-self-center py-[4vh]"
                 src={respred}
                 alt="An image of a redesigned page for the American Mathematical Society's Program Listings"
               />

@@ -15,9 +15,13 @@ export default function Iterative() {
     <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-5xl">MiFonda Storefront</h1>
+          <h1 className="text-[5vw]">MiFonda Storefront</h1>
           <div className="skillswrap">
-            <img src={iter} alt="An image of the final hifi desktop." />
+            <img
+              className="imgg"
+              src={iter}
+              alt="An image of the final hifi desktop."
+            />
             <div className=""></div>
             <div className="skills">
               <div className="skill Figma">Figma</div>
@@ -30,7 +34,7 @@ export default function Iterative() {
       <div className="content">
         <div
           className="lightsvg custom-shape-divider-top-1714497700 relative w-screen"
-          style={{ transform: "translateY(-5.1vh)" }}
+          style={{ transform: "translateY(-5.02vh)" }}
         >
           <svg
             data-name="Layer 1"
@@ -74,7 +78,7 @@ export default function Iterative() {
             sketches of our initial ideas for mobile and/or desktop flows.
           </p>
           <div className="mockst">
-            <img src={sketches} alt="" />
+            <img className="imgg" src={sketches} alt="" />
           </div>
           <p className="btm">
             Upper left: my sketches, upper right: Anna's sketches, bottom left:
@@ -87,8 +91,8 @@ export default function Iterative() {
           </p>
           <h3>First Wireframes</h3>
           <div className="mockst flex flex-col justify-center items-center">
-            <img src={mobile1} alt="" />
-            <img src={desktop1} alt="" />
+            <img className="imgg" src={mobile1} alt="" />
+            <img className="imgg" src={desktop1} alt="" />
           </div>
           <p className="btm">
             After careful consideration, we combined the different sketches into
@@ -137,10 +141,10 @@ export default function Iterative() {
           <p>Given this feedback, we revised our wireframes accordingly:</p>
           <div className="mockst">
             {" "}
-            <img src={mobile2} alt="" />
+            <img className="imgg" src={mobile2} alt="" />
           </div>
           <div className="mockst">
-            <img src={desktop2} alt="" />
+            <img className="imgg" src={desktop2} alt="" />
           </div>
           <p className="btm">
             We incorporated all of the feedback into our new designs; each page
@@ -161,7 +165,7 @@ export default function Iterative() {
             features and high-contrast colors.{" "}
           </p>
           <div className="mocks">
-            <img src={designsys} alt="" />
+            <img className="imgg" src={designsys} alt="" />
           </div>
           <p>
             Based on their feedback, the design system, and our revised lofis we
@@ -176,12 +180,12 @@ export default function Iterative() {
               href="https://www.figma.com/file/iRwhq0w4NT9zuXu6B2jSnr/Iterative-Design?type=design&node-id=500-2143&mode=design&t=IFa4YjEIk4EbJqBE-0"
             >
               <img
-                className="pt-[2vh] max-h-screen justify-self-center"
+                className="imgg pt-[2vh] max-h-screen justify-self-center"
                 src={mobilehifi1}
                 alt=""
               />{" "}
               <img
-                className="max-h-screen justify-self-center self-center"
+                className="imgg max-h-screen justify-self-center self-center"
                 src={desktophifi1}
                 alt=""
               />
@@ -220,12 +224,12 @@ export default function Iterative() {
               <img
                 src={mobilehifi2}
                 alt=""
-                className="pt-[2vh] max-h-[90vh] justify-self-center"
+                className="imgg pt-[2vh] max-h-[90vh] justify-self-center"
               />{" "}
               <img
                 src={desktophifi2}
                 alt=""
-                className=" max-h-[90vh] self-center justify-self-center"
+                className="imgg max-h-[90vh] self-center justify-self-center"
               />
             </a>
           </div>

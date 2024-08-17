@@ -19,9 +19,10 @@ export default function Development() {
     <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-5xl">Development</h1>
+          <h1 className="text-[5vw]">Development</h1>
           <div className="skillswrap">
             <img
+              className="imgg"
               src={dev}
               alt="An image of the website after changes have been made."
             />
@@ -41,7 +42,7 @@ export default function Development() {
       <div className="content">
         <div
           className="lightsvg custom-shape-divider-top-1714497700 relative w-screen"
-          style={{ transform: "translateY(-5.1vh)" }}
+          style={{ transform: "translateY(-5.02vh)" }}
         >
           <svg
             data-name="Layer 1"
@@ -83,7 +84,12 @@ export default function Development() {
             public settings. My findings are displayed below:
           </p>
           <div className="mocks">
-            <img id="comp" src={companal} alt="Competitive analysis chart" />
+            <img
+              className="imgg"
+              id="comp"
+              src={companal}
+              alt="Competitive analysis chart"
+            />
           </div>
           <p className="btm">
             The simplicity of the like and save buttons for Instagram works well
@@ -102,21 +108,21 @@ export default function Development() {
             reflects this.
           </p>
           <div className="mockss">
-            <img src={explore} alt="" />
-            <img src={iglike} alt="" />
-            <img src={igsave} alt="" />
+            <img className="imgg" src={explore} alt="" />
+            <img className="imgg" src={iglike} alt="" />
+            <img className="imgg" src={igsave} alt="" />
           </div>
           <p className="btm">Instagram</p>
           <div className="mockss">
-            <img src={pinhome} alt="" />
-            <img src={pinlike} alt="" />
-            <img src={pinboard} alt="" />
+            <img className="imgg" src={pinhome} alt="" />
+            <img className="imgg" src={pinlike} alt="" />
+            <img className="imgg" src={pinboard} alt="" />
           </div>
           <p className="btm">Pinterest</p>
           <div className="mockss">
-            <img src={youhome} alt="" />
-            <img src={youvid} alt="" />
-            <img src={youliked} alt="" />
+            <img className="imgg" src={youhome} alt="" />
+            <img className="imgg" src={youvid} alt="" />
+            <img className="imgg" src={youliked} alt="" />
           </div>
           <p className="btm">YouTube</p>
           <p className="btm">
@@ -147,7 +153,7 @@ export default function Development() {
             The result was this design in Figma:
           </p>
           <div className="mocks">
-            <img src={hifi} alt="hifi mockup of my garden" />
+            <img className="imgg" src={hifi} alt="hifi mockup of my garden" />
           </div>
           <p className="btm">
             I used the design mainly to iterate on aesthetics: color choices,

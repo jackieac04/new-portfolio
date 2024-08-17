@@ -31,7 +31,7 @@ export default function Modal({
       ></div>
       <div className="flex flex-col md:grid md:grid-cols-2  w-[80vw] h-[80vh] rounded-lg mx-[10vw] my-[10vh] fixed">
         <div className=" self-center flex flex-col justify-center max-h-[60vh] md:max-h-screen md:w-[40vw] ">
-          <img src={mainimg} className="!max-w-[75%] max-h-full " alt="" />{" "}
+          <img src={mainimg} className="imgg !max-w-[75%] max-h-full " alt="" />{" "}
           <div className="w-[30vw] h-[5vw] flex overflow-x-scroll">
             {imgs.length > 1 &&
               imgs.map((bby, ind) => {
@@ -39,7 +39,7 @@ export default function Modal({
                   <img
                     key={ind}
                     src={bby}
-                    className="max-w-full max-h-full mx-[.5vw]"
+                    className="imgg max-w-full max-h-full mx-[.5vw]"
                     alt=""
                     onClick={() => setMainImg(bby)}
                   />

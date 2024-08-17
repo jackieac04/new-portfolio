@@ -19,6 +19,7 @@ export default function AB() {
         <h1 className="text-5xl">A/B Testing</h1>
         <div className="skillwrap">
           <img
+            className="imgg"
             src={bchange}
             alt="An image of the website after changes have been made."
           />
@@ -50,10 +51,12 @@ export default function AB() {
         </p>
         <div className="mocks">
           <img
+            className="imgg"
             src={bog}
             alt="An image of the website before changes have been made."
           />
           <img
+            className="imgg"
             src={bchange}
             alt="An image of the website after changes have been made."
           />
@@ -167,10 +170,12 @@ export default function AB() {
         </p>
         <div className="mocks">
           <img
+            className="imgg"
             src={misclickhista}
             alt="isitogram A statistics for the first metric."
           />
           <img
+            className="imgg"
             src={misclickhistb}
             alt="Histogram B statistics for the first metric."
           />
@@ -190,11 +195,13 @@ export default function AB() {
           </ul>
         </p>
         <div className="mocks">
-          <img
+          <img 
+          className="imgg"
             src={timespenthista}
             alt="isitogram A statistics for the second metric."
           />
           <img
+          className="imgg"
             src={timespenthistb}
             alt="Histogram B statistics for the second metric."
           />
@@ -212,10 +219,12 @@ export default function AB() {
         </p>
         <div className="mocks">
           <img
+          className="imgg"
             src={firstclickhista}
             alt="isitogram A statistics for the second metric."
           />
-          <img
+          <img 
+          className="imgg"
             src={firstclickhistb}
             alt="Histogram B statistics for the second metric."
           />

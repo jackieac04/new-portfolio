@@ -2,16 +2,44 @@
 @import "tailwindcss/base";
 @import "tailwindcss/components";
 @import "tailwindcss/utilities";
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lilita+One&family=Rosarivo:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Rosarivo:ital@0;1&display=swap");
 
 :root {
-  --bg-color: #f9c1fc;
-  --med-color: #ba1a7a;
+  --bg-main: #f6daec;
+  --bg-color: #f6efda;
+  --med-color: #ba1a7a40;
   --bg-color-dark: #1e1920;
+  --hfontcolor: #93006e;
+  --btmfontcolor: #73008d;
   --quador: "quador", serif;
-  --sans: "basic-sans", sans-serif;
+  --sans: "basic-sans", sans-serif, 300;
+  --rosarivo: "Rosarivo", cursive;
+  --jost: "Jost", sans-serif;
   justify-content: center;
   display: flex;
   color: var(--bg-color-dark);
+
+  --tagpinklow: #ff42e940;
+  --tagpurplelow: #9934ff40;
+  --tagbluelow: #3138ff40;
+  --tagcyanlow: #2790ff40;
+  --tagyellowlow: #f049ff40;
+
+  --tagpink: #ff42e9;
+  --tagpurple: #9934ff;
+  --tagblue: #3138ff;
+  --tagcyan: #2790ff;
+  --tagyellow: #f049ff;
+}
+
+.orange {
+  background: var(--bg-color);
+}
+
+.orange > div > .title > h1,
+.orange > div > h1 {
+  color: var(--hfontcolor);
 }
 
 nav {
@@ -26,11 +54,23 @@ nav {
   z-index: 5;
 }
 
-.light h1,
+/* Light theme for navbar over video */
+.navbar-light {
+  /* background-color: rgba(255, 255, 255, 0.7); */
+  color: white;
+}
+
+/* Dark theme for navbar over rest of the page */
+.navbar-dark {
+  /* background-color: rgba(0, 0, 0, 0.7); */
+  color: var(--bg-color-dark);
+}
+
+/* .light h1,
 .light a,
 .light p {
   color: var(--bg-color-dark);
-}
+} */
 
 /* Dark mode */
 .dark h1,
@@ -49,15 +89,18 @@ nav {
 }
 
 a,
-h1 {
+h1,
+h3 {
   all: unset;
-  font-family: var(--quador);
+  font-family: var(--rosarivo);
   font-weight: 600 !important;
-  font-style: italic;
-  color: var(--bg-color-dark);
+  color: var(--btmfontcolor);
+  /* font-style: italic; */
+  /* color: var(--bg-color-dark); */
 }
 p {
   font-size: 3vw;
+  font-weight: 300;
 }
 @media (min-width: 1000px) {
   p {
@@ -65,7 +108,7 @@ p {
   }
 }
 h3 {
-  font-family: var(--quador);
+  font-family: var(--rosarivo);
   font-weight: 600 !important;
   font-style: italic;
 }
@@ -136,7 +179,7 @@ h1 {
 p,
 p > a {
   margin: 0;
-  font-family: var(--sans);
+  font-family: var(--jost);
 }
 
 a :hover,
@@ -196,7 +239,7 @@ Link :hover {
 }
 
 .lightsvg {
-  fill: var(--med-color);
+  fill: var(--tagpinklow);
 }
 
 .darksvg {
@@ -227,23 +270,23 @@ a > img {
 }
 
 .dinst {
-  background-image: url("/main/instagramlight.svg");
+  background-image: url("/main/instagramlight.png");
 }
 
 .dlinked {
-  background-image: url("/main/linkedinlight.svg");
+  background-image: url("/main/linkedinlight.png");
 }
 
 .ddiscord {
-  background-image: url("/main/discordlight.svg");
+  background-image: url("/main/discordlight.png");
 }
 
 .demail {
-  background-image: url("/main/emaillight.svg");
+  background-image: url("/main/emaillight.png");
 }
 
 .dgit {
-  background-image: url("/main/githublight.svg");
+  background-image: url("/main/githublight.png");
 }
 
 .linst {
@@ -259,7 +302,7 @@ a > img {
 }
 
 .lemail {
-  background-image: url("/main/email.svg");
+  background-image: url("/main/gmail.svg");
 }
 
 .lgit {
@@ -299,96 +342,30 @@ a > img {
   width: 50vw;
 }
 
-.darktop > .bgimg > .pink {
-  background-image: url("/main/darkpink.png");
-}
-
-.lighttop > .bgimg > .pink {
-  background-image: url("/main/lightpink.png");
-}
-
 .lighttop > .bgimg,
 body {
-  background: #f579bb;
-  background: -moz-linear-gradient(top, #f579bb 30%, #ffc364 97%, #ffdf1c 100%);
+  background: var(--bg-main);
+  background: -moz-linear-gradient(
+    top,
+    var(--bg-main) 85%,
+    var(--bg-color) 97%
+  );
   background: -webkit-linear-gradient(
     top,
-    #f579bb 30%,
-    #ffc364 97%,
-    #ffdf1c 100%
+    var(--bg-main) 85%,
+    var(--bg-color) 100%
   );
   background: linear-gradient(
     to bottom,
-    #f579bb 30%,
-    #ffc364 97%,
-    #ffdf1c 100%
+    var(--bg-main) 85%,
+    var(--bg-color) 100%
   );
 }
 
 .darktop > .bgimg,
 .dark-mode {
   background: #4c012f;
-  background: -moz-linear-gradient(top, #4c012f 30%, #835b00 97%, #7f8300 100%);
-  background: -webkit-linear-gradient(
-    top,
-    #4c012f 30%,
-    #835b00 97%,
-    #836900 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    #4c012f 30%,
-    #835b00 97%,
-    #837200 100%
-  );
-}
-
-.lighttop > .bgimg > .pink > .gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* background: #7AA3F5; */
-  background: -moz-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 0%,
-    #f579bb 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 90%,
-    #f579bb 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 90%,
-    #f579bb 100%
-  );
-  pointer-events: none; /* This ensures the gradient overlay doesn't interfere with interacting with other elements inside the div */
-}
-
-.darktop > .bgimg > .pink > .gradient-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  /* background: #7AA3F5; */
-  background: -moz-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 0%,
-    #4c012f 100%
-  );
-  background: -webkit-linear-gradient(
-    top,
-    rgba(255, 255, 255, 0) 90%,
-    #4c012f 100%
-  );
-  background: linear-gradient(
-    to bottom,
-    rgba(255, 255, 255, 0) 90%,
-    #4c012f 100%
-  );
-  pointer-events: none; /* This ensures the gradient overlay doesn't interfere with interacting with other elements inside the div */
+  background: -moz-linear-gradient(top, #4c012f 30%, #9a6c00 97%);
+  background: -webkit-linear-gradient(top, #4c012f 60%, #710071 100%);
+  background: linear-gradient(to bottom, #4c012f 60%, #710071 100%);
 }
