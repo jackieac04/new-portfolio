@@ -199,7 +199,7 @@ function Home({ dark }: HomeProps) {
               <div className="grid grid-cols-3 w-full h-4/5">
                 <div className="flex flex-col col-span-2">
                   <h1 style={{ fontSize: "1.5rem" }}>
-                    Software Engineering and UI/UX Intern
+                    Software Engineering Intern
                   </h1>
                   <p style={{ fontSize: "1.2rem" }}>
                     Hexagon Manufacturing Intelligence
