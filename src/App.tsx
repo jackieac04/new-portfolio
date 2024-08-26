@@ -9,14 +9,14 @@ import Development from "./uiux/Development";
 import Iterative from "./uiux/Iterative";
 import { useState } from "react";
 import BLT from "./uiux/BLT";
-import JAC from "/main/logo.png";
 import Bathrooms from "./cs/Bathrooms";
 import Pab from "./cs/Pab";
-import resume from "/main/JaclynCohenResume0224.pdf";
+import resume from "/main/JaclynCohenResume0824.pdf";
 import Dreamweaver from "./cs/Dreamweaver";
 import Footer from "./Footer";
 import VideoComponent from "./VideoComponent";
-import flowers from "/main/flowers.mp4";
+import me from "/main/me.jpg";
+import Flowers from "./Flowers";
 
 function App() {
   const [dark, setDark] = useState<boolean>(false);
@@ -41,7 +41,6 @@ function App() {
         navbar!.classList.remove("navbar-light");
       }
     } else {
-      console.log("???");
       navbar!.classList.add("navbar-dark");
       navbar!.classList.remove("navbar-light");
     }
@@ -54,12 +53,13 @@ function App() {
       >
         <nav id="nav">
           <div className="left-links grid grid-cols-2 relative">
-            <Link to={"/"} className="flex mr-[2%] w-[20%] absolute">
-              <img
-                className="imgg justify-self-start self-start align-top !max-w-[100px]"
-                src={JAC}
-                alt=""
-                style={{ transform: " translate(-30%, -35%)" }}
+            <Link to={"/"} className="flex mr-[2%] w-fit absolute">
+              <div
+                className="logo imgg justify-self-start self-start align-top w-[120px] h-[150px] bg-cover"
+                style={{
+                  transform: "translate(-40%, -35%)",
+                  zIndex: 3,
+                }}
               />
             </Link>
             <button
@@ -151,16 +151,6 @@ interface HomeProps {
 }
 
 function Home({ dark }: HomeProps) {
-  // const [hovered, setHovered] = useState(false);
-
-  // const handleMouseEnter = () => {
-  //   setHovered(true);
-  // };
-
-  // const handleMouseLeave = () => {
-  //   setHovered(false);
-  // };
-
   return (
     <>
       <main
@@ -174,72 +164,97 @@ function Home({ dark }: HomeProps) {
           <div className="orange flex flex-col md:flex-row min-h-[110vh] py-[3rem]">
             <div className=" md:max-w-[45%] rounded mx-[2.5%] mt-[5vh]">
               <div className="title mt-[5vh] mb-[2%] flex">
-                <video
-                  src={flowers}
-                  loop
-                  typeof="video/mp4"
-                  autoPlay
-                  className="w-[10%]"
-                />
+                <Flowers dark={dark} />
                 <h1
                   className="justify-self-left mr-[.5rem] mb-[1rem]"
-                  style={{ fontSize: "4rem" }}
+                  style={{ fontSize: "3.5rem" }}
                 >
                   About Me
                 </h1>
-                <video
-                  src={flowers}
-                  loop
-                  typeof="video/mp4"
-                  autoPlay
-                  className="w-[10%]"
-                />
+                <Flowers dark={dark} />
               </div>
 
-              <p className="mx-[5%] text-[4vw] md:text-[3vw] lg:text-[1.8vw] btm">
+              <p className="mx-[5%] text-[1.8rem] btm">
                 Hi! My name is Jaclyn Cohen, I'm a junior at{" "}
-                <b className="focus">
-                  {" "}
-                  Brown University{" "}
-                </b>
-                studying <b className="focus">Computer Science </b> and <b className="focus">Visual Arts.</b> I love
-                both topics individually but I'm especially interested in
-                intersections between the two from <b>graphics</b> to to{" "}
+                <b className="focus"> Brown University </b>
+                studying <b className="focus">Computer Science </b> and{" "}
+                <b className="focus">Visual Arts.</b> I love both topics
+                individually but I'm especially interested in intersections
+                between the two from <b>graphics</b> to{" "}
                 <b className="focus">frontend development </b>
                 to <b className="focus">UIUX</b> and everything inbetween.
               </p>
             </div>
+            <div className=" md:max-w-[45%] rounded mx-[2.5%] mt-[5vh] object-contain">
+              <img className="max-h-[80vh] shadow-md rounded" src={me} />
+            </div>
           </div>
-          <div className="yellow h-fit min-h-screen flex flex-row">
-            <div className="w-1/2"></div>
-            <div className="  lg:max-w-[45%] rounded mx-[2.5%] mt-[5vh] px-[2.5%]">
+          <div className="yellow h-fit min-h-screen flex flex-col md:flex-row">
+            <div className="md:w-1/2 rounded ml-[2%] mt-[5vh] pl-[2.5%]">
+              <div className="title mt-[5vh] mb-[2%] justify-left flex">
+                {/* <Flowers dark={dark} /> */}
+                <h1 style={{ fontSize: "3rem" }}>Experience</h1>
+                {/* <Flowers dark={dark} /> */}
+              </div>
+              <div className="grid grid-cols-3 w-full h-4/5">
+                <div className="flex flex-col col-span-2">
+                  <h1 style={{ fontSize: "1.5rem" }}>
+                    Software Engineering and UI/UX Intern
+                  </h1>
+                  <p style={{ fontSize: "1.2rem" }}>
+                    Hexagon Manufacturing Intelligence
+                  </p>
+                </div>
+                <h1 style={{ fontSize: "1.2rem" }}>May - August 2024</h1>
+                <div className="flex flex-col col-span-2">
+                  <h1 style={{ fontSize: "1.5rem" }}>
+                    Creative and Co-Technical Director
+                  </h1>
+                  <p style={{ fontSize: "1.2rem" }}>
+                    Brown University Puzzle Club
+                  </p>
+                </div>
+                <h1 style={{ fontSize: "1.2rem" }}>January 2023 - Present</h1>
+                <div className="flex flex-col col-span-2">
+                  <h1 style={{ fontSize: "1.5rem" }}>Research Assistant</h1>
+                  <p style={{ fontSize: "1.2rem" }}>
+                    Brown Language and Thought Lab
+                  </p>
+                </div>
+                <h1 style={{ fontSize: "1.2rem" }}>June 2023 - June 2024</h1>
+                <div className="flex flex-col col-span-2">
+                  <h1 style={{ fontSize: "1.5rem" }}>
+                    CSCI 0150 Undergraduate Teaching Assistant
+                  </h1>
+                  <p style={{ fontSize: "1.2rem" }}>
+                    Brown University Computer Science Department
+                  </p>
+                </div>
+                <h1 style={{ fontSize: "1.2rem" }}>May - December 2023</h1>
+              </div>
+            </div>
+            <div className="h-full md:w-1/2 rounded mx-[2%] mt-[5vh] pr-[2.5%]">
               <div className="title mt-[5vh] mb-[2%]">
                 <h1 className="justify-self-left " style={{ fontSize: "3rem" }}>
                   Skills
                 </h1>
               </div>
               <h1 style={{ fontSize: "1.5rem" }}>Computer Science</h1>
-              <div className="skills lil">
+              <div className="skills lil mb-[2%]">
                 {csskills.map((skill) => {
                   return (
-                    <div
-                      className={`skill sm ${skill} text-[4vw] md:text-[3vw] lg:text-[1.8vw] `}
-                      key={skill}
-                    >
-                      {skill}
+                    <div className={`skill sm csskill `} key={skill}>
+                      <p>{skill}</p>
                     </div>
                   );
                 })}
               </div>
               <h1 style={{ fontSize: "1.5rem" }}>Design</h1>
-              <div className="skills lil">
+              <div className="skills lil mb-[2%]">
                 {designskills.map((skill) => {
                   return (
-                    <div
-                      className={`skill sm ${skill} text-[4vw] md:text-[3vw] lg:text-[1.8vw] `}
-                      key={skill}
-                    >
-                      {skill}
+                    <div className={`skill sm designskill `} key={skill}>
+                      <p>{skill}</p>
                     </div>
                   );
                 })}
@@ -248,11 +263,8 @@ function Home({ dark }: HomeProps) {
               <div className="skills lil">
                 {artskills.map((skill) => {
                   return (
-                    <div
-                      className={`skill sm ${skill} text-[4vw] md:text-[3vw] lg:text-[1.8vw] `}
-                      key={skill}
-                    >
-                      {skill}
+                    <div className={`skill sm artskill`} key={skill}>
+                      <p>{skill}</p>
                     </div>
                   );
                 })}

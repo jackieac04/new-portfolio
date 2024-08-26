@@ -26,9 +26,9 @@ export default function Box({
         </Link>
         <div className="topbox">
           <div className="innerbox">
-            <h3 className="bxtitle !text-lg" style={{ fontStyle: "normal" }}>
+            <h1 className="bxtitle" style={{ fontStyle: "normal" }}>
               {title}
-            </h3>
+            </h1>
             {outsidelink && (
               <a
                 className="link"
@@ -41,11 +41,11 @@ export default function Box({
             )}
           </div>
         </div>
-        <div className="skills lil">
+        <div className={`skills lil`}>
           {skills.map((skill) => {
             return (
               <div className={`skill sm ${skill}`} key={skill}>
-                {skill}
+                <p>{skill}</p>
               </div>
             );
           })}

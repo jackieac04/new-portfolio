@@ -7,7 +7,7 @@ export default function Footer({ dark }: HomeProps) {
     <footer
       className={
         (dark ? "d" : "l") +
-        " px-[4rem] mt-[1rem] flex justify-between bottom-[2rem]"
+        " px-[1rem] md:px-[4rem] mt-[1rem] flex justify-between bottom-[2rem]w-full"
       }
     >
       <div
@@ -18,7 +18,7 @@ export default function Footer({ dark }: HomeProps) {
           <div
             className={
               (dark ? "d" : "l") +
-              "email w-[4vw] h-[4vw] py-[1vh] object-contain bg-no-repeat"
+              "email w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
             }
           />
         </Link>
@@ -26,7 +26,7 @@ export default function Footer({ dark }: HomeProps) {
           <div
             className={
               (dark ? "d" : "l") +
-              "git w-[4vw] h-[4vw] py-[1vh] object-contain bg-no-repeat"
+              "git w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
             }
           />
         </Link>
@@ -37,7 +37,7 @@ export default function Footer({ dark }: HomeProps) {
           <div
             className={
               (dark ? "d" : "l") +
-              "linked  w-[4vw] h-[4vw] py-[1vh] object-contain bg-no-repeat"
+              "linked w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
             }
             style={{ transform: "translateY(-.5vh)" }}
           />
@@ -46,7 +46,7 @@ export default function Footer({ dark }: HomeProps) {
           <div
             className={
               (dark ? "d" : "l") +
-              "discord w-[4vw] h-[4vw] py-[1vh] object-contain bg-no-repeat"
+              "discord w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
             }
           />
         </Link>
@@ -55,7 +55,7 @@ export default function Footer({ dark }: HomeProps) {
           <div
             className={
               (dark ? "d" : "l") +
-              "inst w-[4vw] h-[4vw] py-[1vh] object-contain bg-no-repeat"
+              "inst w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
             }
           />
         </Link>

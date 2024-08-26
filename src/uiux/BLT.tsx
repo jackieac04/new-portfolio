@@ -12,11 +12,25 @@ export default function BLT() {
   return (
     <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
-        <div className="top">
+        <div className="top items-center">
           {" "}
           <h1 className="text-[5vw]">Brown Development Labs</h1>
+          <div className="info">
+            <div className="role">
+              <h3>Role</h3>
+              <p>UI/UX Designer</p>
+            </div>
+            <div className="role">
+              <h3>Duration</h3>
+              <p>April 2024</p>
+            </div>
+            <div className="role">
+              <h3>Team</h3>
+              <p> Just Me!</p>
+            </div>
+          </div>
           <div className="skillwrap">
-            <img className="imgg" src={blt} />
+            <img className="px-[5rem] py-[2rem]" src={blt} />
             <div className=""></div>
             <div className="skills">
               <div className="skill Figma">Figma</div>
@@ -27,22 +41,6 @@ export default function BLT() {
       </div>
 
       <div className="content">
-        <div
-          className="lightsvg custom-shape-divider-top-1714497700 relative w-screen"
-          style={{ transform: "translateY(-5.02vh)" }}
-        >
-          <svg
-            data-name="Layer 1"
-            xmlns="http://www.w3.org/2000/svg"
-            viewBox="0 0 1200 120"
-            preserveAspectRatio="none"
-          >
-            <path
-              d="M321.39,56.44c58-10.79,114.16-30.13,172-41.86,82.39-16.72,168.19-17.73,250.45-.39C823.78,31,906.67,72,985.66,92.83c70.05,18.48,146.53,26.09,214.34,3V0H0V27.35A600.21,600.21,0,0,0,321.39,56.44Z"
-              className="lightsvg shape-fill"
-            ></path>
-          </svg>
-        </div>
         <div className="text grid">
           <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
             <div className="lef justify-self-center col-span-4 mb-[2vw]">

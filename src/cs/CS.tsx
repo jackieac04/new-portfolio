@@ -17,6 +17,7 @@ const projects = [
       "TypeScript",
       "React",
       "Fullstack Development",
+      "Figma",
     ],
     img: pab,
   },
@@ -24,7 +25,7 @@ const projects = [
     title: "Bathrooms@Brown",
     outsidelink: "https://devpost.com/software/bathrooms-brown",
     insidelink: "/bath",
-    skills: ["TypeScript", "React", "MapBox", "Frontend Development"],
+    skills: ["TypeScript", "React", "MapBox", "Frontend Development", "Figma"],
     img: bathrooms,
   },
 
@@ -32,7 +33,15 @@ const projects = [
     title: "Dreamweaver",
     outsidelink: "https://dreamweaver-ten.vercel.app/",
     insidelink: "/dream",
-    skills: ["TypeScript", "React", "Frontend Development", "APIs"],
+    skills: [
+      "TypeScript",
+      "React",
+      "Frontend Development",
+      "APIs",
+      "Figma",
+      "Digital Illustration",
+      "Adobe Illustrator",
+    ],
     img: dream,
   },
 ];

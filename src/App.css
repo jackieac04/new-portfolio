@@ -12,6 +12,7 @@
   --bg-color-dark: #1e1920;
   --hfontcolor: #93006e;
   --btmfontcolor: #73008d;
+  --darkbg: #550099;
   --quador: "quador", serif;
   --sans: "basic-sans", sans-serif, 300;
   --rosarivo: "Rosarivo", cursive;
@@ -33,52 +34,52 @@
   --tagyellow: #f049ff;
 }
 
-.orange {
+.lighttop > .bgimg > .orange {
   background: var(--bg-color);
 }
 
-.orange > div > .title > h1,
-.orange > div > h1 {
+.darktop > .bgimg > .orange {
+  background-color: var(--darkbg);
+}
+
+.lighttop > .bgimg > .orange > div > .title > h1,
+.lighttop > .bgimg > .orange > div > h1 {
   color: var(--hfontcolor);
+}
+
+.darktop > .bgimg > .orange > div > .title > h1,
+.darktop > .bgimg > .orange > div > h1 {
+  color: var(--bg-main);
 }
 
 nav {
   display: flex;
   justify-content: space-between;
-  margin: 0.5rem !important;
+  margin-left: 1vw !important;
   /* background-color: var(--bg-color); */
   opacity: 0.8;
   position: fixed;
   width: 97vw;
-  left: 2rem;
+  left: 2vw;
   z-index: 5;
 }
 
-/* Light theme for navbar over video */
 .navbar-light {
-  /* background-color: rgba(255, 255, 255, 0.7); */
-  color: white;
+  color: var(--bg-color) !important;
 }
 
-/* Dark theme for navbar over rest of the page */
 .navbar-dark {
-  /* background-color: rgba(0, 0, 0, 0.7); */
-  color: var(--bg-color-dark);
+  color: var(--bg-color-dark) !important;
 }
 
-/* .light h1,
-.light a,
-.light p {
-  color: var(--bg-color-dark);
-} */
-
-/* Dark mode */
 .dark h1,
-.dark a,
-.dark p {
+.dark a {
   color: var(--bg-color);
 }
 
+.dark p {
+  color: white;
+}
 .lighttop,
 .darkme {
   background-color: var(--med-color);
@@ -95,22 +96,16 @@ h3 {
   font-family: var(--rosarivo);
   font-weight: 600 !important;
   color: var(--btmfontcolor);
-  /* font-style: italic; */
-  /* color: var(--bg-color-dark); */
 }
 p {
-  font-size: 3vw;
+  font-size: 1.4rem;
   font-weight: 300;
 }
-@media (min-width: 1000px) {
-  p {
-    font-size: 1.8vw;
-  }
-}
+
 h3 {
   font-family: var(--rosarivo);
   font-weight: 600 !important;
-  font-style: italic;
+  /* font-style: italic; */
 }
 
 .dark h3 {
@@ -129,8 +124,9 @@ h3 {
 .right-links {
   display: flex;
   width: fit-content;
-  margin-right: 3rem;
+  margin-right: 3vw;
   z-index: 3;
+  padding-top: 1vh;
 }
 
 .right-links > a {
@@ -162,7 +158,7 @@ main,
 }
 
 h1 {
-  font-size: 3vw;
+  font-size: 3.5rem;
   margin-top: 2vh !important;
 }
 
@@ -205,11 +201,6 @@ Link :hover {
   width: 30%;
 }
 
-.imgtxt {
-  position: absolute;
-  font-size: 4vw;
-}
-
 @keyframes fadeIn {
   0% {
     opacity: 0;
@@ -239,11 +230,11 @@ Link :hover {
 }
 
 .lightsvg {
-  fill: var(--tagpinklow);
+  fill: none;
 }
 
 .darksvg {
-  fill: var(--bg-color-dark);
+  fill: none;
 }
 
 footer {
@@ -266,27 +257,34 @@ footer {
 }
 
 a > img {
-  box-shadow: none;
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+img {
+  box-shadow:
+    0 4px 6px -1px rgb(0 0 0 / 0.1),
+    0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
 
 .dinst {
-  background-image: url("/main/instagramlight.png");
+  background-image: url("/main/instagramlight.svg");
 }
 
 .dlinked {
-  background-image: url("/main/linkedinlight.png");
+  background-image: url("/main/linkedinlight.svg");
 }
 
 .ddiscord {
-  background-image: url("/main/discordlight.png");
+  background-image: url("/main/discordlight.svg");
 }
 
 .demail {
-  background-image: url("/main/emaillight.png");
+  background-image: url("/main/emaillight.svg");
 }
 
 .dgit {
-  background-image: url("/main/githublight.png");
+  background-image: url("/main/githublight.svg");
 }
 
 .linst {
@@ -368,4 +366,12 @@ body {
   background: -moz-linear-gradient(top, #4c012f 30%, #9a6c00 97%);
   background: -webkit-linear-gradient(top, #4c012f 60%, #710071 100%);
   background: linear-gradient(to bottom, #4c012f 60%, #710071 100%);
+}
+
+.light > nav > div > a > .logo {
+  background-image: url("/main/logo.png");
+}
+
+.dark > nav > div > a > .logo {
+  background-image: url("/main/Logodark.png");
 }

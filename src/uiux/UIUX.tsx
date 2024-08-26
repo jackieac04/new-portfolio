@@ -39,7 +39,7 @@ const projects = [
   //   img: abtest,
   // },
   {
-    title: "Development",
+    title: "My Garden",
     outsidelink: "https://jackieac04.github.io/MyGarden/",
     insidelink: "/dev",
     skills: [
