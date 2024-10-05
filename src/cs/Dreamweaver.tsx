@@ -10,7 +10,7 @@ export default function Dreamweaver() {
     <main className="min-h-screen pt-[5vh] pb-[7vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-[5vw]">Dreamweaver</h1>
+          <h1>Dreamweaver</h1>
           <div className="info">
             <div className="role">
               <h3>Role</h3>

@@ -54,15 +54,15 @@ export default function Modal({
           }
         >
           <div className="right w-full flex flex-col">
-            <h1 className="text-[3vw] z-3 text-center justify-self-center mb-[1vh]">
+            <h1 className="!text-[3rem] z-3 text-center justify-self-center mb-[1vh]">
               {title}
             </h1>
-            <div className=" flex justify-between mb-[2vh] !text-[1.8vw]  ">
+            <div className=" flex justify-between mb-[2vh] !text-[1.8rem]  ">
               <p>{date}</p> <p>{media}</p>
             </div>
             <div className="">
-              <p className="!text-[2vw] md:!text-[1.5vw] my-[1vh]">{desc}</p>
-              <p className=" !text-[1.2vw]"> {awards}</p>
+              <p className="!text-[2vw] md:!text-[1.5rem] my-[1vh]">{desc}</p>
+              <p className=" !text-[1.2rem]"> {awards}</p>
             </div>
           </div>
         </div>

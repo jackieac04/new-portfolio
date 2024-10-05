@@ -61,7 +61,7 @@ export default function Footer({ dark }: HomeProps) {
         </Link>
       </div>
       <div className="z-10">
-        <p>Made with leafy sheepy</p>
+        <p className="!text-[1rem]">Made with leafy sheepy</p>
       </div>
     </footer>
   );

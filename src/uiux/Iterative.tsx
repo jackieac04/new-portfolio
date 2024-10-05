@@ -15,8 +15,8 @@ export default function Iterative() {
     <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-[5vw]">MiFonda Storefront</h1>
-          <div className="info ml-[5rem]">
+          <h1>MiFonda Storefront</h1>
+          <div className="info">
             <div className="role">
               <h3>Role</h3>
               <p>UI/UX Designer</p>

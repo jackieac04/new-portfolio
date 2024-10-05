@@ -197,7 +197,7 @@ h3 {
     width: auto;
   }
   .skill {
-    font-size: 1.8rem !important;
+    font-size: 1.4rem !important;
   }
 }
 
@@ -226,22 +226,32 @@ h3,
 }
 
 .info {
+  width: 70%;
   display: flex;
-  /* grid-template-columns: 1fr 1fr 1fr; */
-  max-width: 75vw;
-  min-width: 35vw;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  align-items: start;
+  /* row-gap: 32px;
+  column-gap: 48px; */
+  margin-left: 5%;
+  margin-right: 5%;
 }
 
 .role {
   display: flex;
-  flex-direction: column;
-  max-width: 40%;
-  margin-right: 5%;
+  flex-flow: column wrap;
+  align-items: start;
+  max-width: 400px;
+  /* gap: 4px; */
 }
 
 .role > h3 {
-  font-size: 1.4rem !important;
+  font-size: 1.2rem !important;
   margin-left: 0 !important;
+}
+
+.role > p {
+  font-size: 1.2rem !important;
 }
 
 .skills {
@@ -261,6 +271,14 @@ h3,
   padding: 1rem;
   /* color: white;
   box-shadow: 4px 7px var(--bg-color-dark); */
+}
+
+h1 {
+  font-size: 4.5rem !important;
+}
+
+h4 {
+  color: var(--btmfontcolor);
 }
 
 .TypeScript,

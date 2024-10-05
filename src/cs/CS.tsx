@@ -49,7 +49,7 @@ const projects = [
 export default function CS() {
   return (
     <main className="relative w-screen pt-[5vh] pb-[8vh]">
-      <h1 className="text-[5vw]">CS Projects</h1>
+      <h1>CS Projects</h1>
       <div className="box-grid h-fit">
         {" "}
         {projects.map((project, indx) => {

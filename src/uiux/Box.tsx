@@ -26,9 +26,9 @@ export default function Box({
         </Link>
         <div className="topbox">
           <div className="innerbox">
-            <h1 className="bxtitle" style={{ fontStyle: "normal" }}>
+            <h4 className="bxtitle" style={{ fontStyle: "normal" }}>
               {title}
-            </h1>
+            </h4>
             {outsidelink && (
               <a
                 className="link"

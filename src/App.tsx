@@ -174,7 +174,7 @@ function Home({ dark }: HomeProps) {
                 <Flowers dark={dark} />
               </div>
 
-              <p className="mx-[5%] text-[1.8rem] btm">
+              <p className={dark + " mx-[5%] text-[1.8rem] btm"}>
                 Hi! My name is Jaclyn Cohen, I'm a junior at{" "}
                 <b className="focus"> Brown University </b>
                 studying <b className="focus">Computer Science </b> and{" "}
@@ -185,61 +185,70 @@ function Home({ dark }: HomeProps) {
                 to <b className="focus">UIUX</b> and everything inbetween.
               </p>
             </div>
-            <div className=" md:max-w-[45%] rounded mx-[2.5%] mt-[5vh] object-contain">
+            <div className=" md:max-w-[45%] rounded mx-[2.5%] mt-[5vh] object-contain flex justify-center flex flex-col">
               <img className="max-h-[80vh] shadow-md rounded" src={me} />
+              <p>The glasses are perscription!</p>
             </div>
           </div>
           <div className="yellow h-fit min-h-screen flex flex-col md:flex-row">
-            <div className="md:w-1/2 rounded ml-[2%] mt-[5vh] pl-[2.5%]">
+            <div
+              className={dark + " md:w-1/2 rounded ml-[2%] mt-[5vh] pl-[2.5%]"}
+            >
               <div className="title mt-[5vh] mb-[2%] justify-left flex">
                 {/* <Flowers dark={dark} /> */}
-                <h1 style={{ fontSize: "3rem" }}>Experience</h1>
+                <h4 className="!text-[3.5rem]">Experience</h4>
                 {/* <Flowers dark={dark} /> */}
               </div>
-              <div className="grid grid-cols-3 w-full h-4/5">
+              <div className={dark + " grid grid-cols-3 w-full h-4/5"}>
                 <div className="flex flex-col col-span-2">
-                  <h1 style={{ fontSize: "1.5rem" }}>
+                  <h2 style={{ fontSize: "1.2rem !important" }}>
                     Software Engineering Intern
-                  </h1>
+                  </h2>
                   <p style={{ fontSize: "1.2rem" }}>
                     Hexagon Manufacturing Intelligence
                   </p>
                 </div>
-                <h1 style={{ fontSize: "1.2rem" }}>May - August 2024</h1>
+                <h2 style={{ fontSize: "1.2rem" }}>May - August 2024</h2>
                 <div className="flex flex-col col-span-2">
-                  <h1 style={{ fontSize: "1.5rem" }}>
-                    Creative and Co-Technical Director
-                  </h1>
+                  <h2 style={{ fontSize: "1.2rem !important" }}>
+                    Creative Director
+                  </h2>
                   <p style={{ fontSize: "1.2rem" }}>
                     Brown University Puzzle Club
                   </p>
                 </div>
-                <h1 style={{ fontSize: "1.2rem" }}>January 2023 - Present</h1>
+                <h2 style={{ fontSize: "1.2rem" }}>January 2023 - Present</h2>
                 <div className="flex flex-col col-span-2">
-                  <h1 style={{ fontSize: "1.5rem" }}>Research Assistant</h1>
+                  <h2 style={{ fontSize: "1.2rem !important" }}>
+                    Research Assistant
+                  </h2>
                   <p style={{ fontSize: "1.2rem" }}>
                     Brown Language and Thought Lab
                   </p>
                 </div>
-                <h1 style={{ fontSize: "1.2rem" }}>June 2023 - June 2024</h1>
+                <h2 style={{ fontSize: "1.2rem" }}>June 2023 - June 2024</h2>
                 <div className="flex flex-col col-span-2">
-                  <h1 style={{ fontSize: "1.5rem" }}>
+                  <h2 style={{ fontSize: "1.2rem !important" }}>
                     CSCI 0150 Undergraduate Teaching Assistant
-                  </h1>
+                  </h2>
                   <p style={{ fontSize: "1.2rem" }}>
                     Brown University Computer Science Department
                   </p>
                 </div>
-                <h1 style={{ fontSize: "1.2rem" }}>May - December 2023</h1>
+                <h2 style={{ fontSize: "1.2rem" }}>May - December 2023</h2>
               </div>
             </div>
-            <div className="h-full md:w-1/2 rounded mx-[2%] mt-[5vh] pr-[2.5%]">
+            <div
+              className={
+                dark + " h-full md:w-1/2 rounded mx-[2%] mt-[5vh] pr-[2.5%]"
+              }
+            >
               <div className="title mt-[5vh] mb-[2%]">
-                <h1 className="justify-self-left " style={{ fontSize: "3rem" }}>
-                  Skills
-                </h1>
+                <h4 className="justify-self-left !text-[3.5rem]">Skills</h4>
               </div>
-              <h1 style={{ fontSize: "1.5rem" }}>Computer Science</h1>
+              <h2 style={{ fontSize: "1.2rem !important" }}>
+                Computer Science
+              </h2>
               <div className="skills lil mb-[2%]">
                 {csskills.map((skill) => {
                   return (
@@ -249,7 +258,7 @@ function Home({ dark }: HomeProps) {
                   );
                 })}
               </div>
-              <h1 style={{ fontSize: "1.5rem" }}>Design</h1>
+              <h2 style={{ fontSize: "1.2rem !important" }}>Design</h2>
               <div className="skills lil mb-[2%]">
                 {designskills.map((skill) => {
                   return (
@@ -259,7 +268,7 @@ function Home({ dark }: HomeProps) {
                   );
                 })}
               </div>
-              <h1 style={{ fontSize: "1.5rem" }}>Visual Arts</h1>
+              <h2 style={{ fontSize: "1.5rem" }}>Visual Arts</h2>
               <div className="skills lil">
                 {artskills.map((skill) => {
                   return (

@@ -16,7 +16,7 @@ export default function ResponsiveRedesign() {
     <main className="pt-[5vh] pb-[9vh]">
       <div className="outer">
         <div className="top">
-          <h1 className="text-[5vw]">American Mathematical Society</h1>
+          <h1>American Mathematical Society</h1>
           <div className="info">
             <div className="role">
               <h3>Role</h3>

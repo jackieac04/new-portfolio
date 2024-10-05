@@ -13,8 +13,6 @@
   --hfontcolor: #93006e;
   --btmfontcolor: #73008d;
   --darkbg: #550099;
-  --quador: "quador", serif;
-  --sans: "basic-sans", sans-serif, 300;
   --rosarivo: "Rosarivo", cursive;
   --jost: "Jost", sans-serif;
   justify-content: center;
@@ -32,6 +30,18 @@
   --tagblue: #3138ff;
   --tagcyan: #2790ff;
   --tagyellow: #f049ff;
+}
+
+* {
+  border-radius: 10px;
+}
+
+.false > b {
+  color: var(--btmfontcolor);
+}
+
+.true > b {
+  color: var(--bg-color);
 }
 
 .lighttop > .bgimg > .orange {
@@ -73,7 +83,9 @@ nav {
 }
 
 .dark h1,
-.dark a {
+.dark h4,
+.dark a,
+.dark .skill {
   color: var(--bg-color);
 }
 
@@ -91,12 +103,26 @@ nav {
 
 a,
 h1,
-h3 {
+h2,
+h3,
+h4 {
   all: unset;
   font-family: var(--rosarivo);
   font-weight: 600 !important;
   color: var(--btmfontcolor);
 }
+
+.true > h4,
+.true > h2,
+.true > div > h4,
+.true > div > h2 {
+  color: var(--bg-color);
+}
+
+h2 {
+  font-size: 1.8rem !important;
+}
+
 p {
   font-size: 1.4rem;
   font-weight: 300;
@@ -261,6 +287,7 @@ a > img {
     0 4px 6px -1px rgb(0 0 0 / 0.1),
     0 2px 4px -2px rgb(0 0 0 / 0.1);
 }
+
 img {
   box-shadow:
     0 4px 6px -1px rgb(0 0 0 / 0.1),

@@ -14,7 +14,7 @@ export default function BLT() {
       <div className="outer">
         <div className="top items-center">
           {" "}
-          <h1 className="text-[5vw]">Brown Development Labs</h1>
+          <h1>Brown Development Labs</h1>
           <div className="info">
             <div className="role">
               <h3>Role</h3>

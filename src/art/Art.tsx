@@ -254,9 +254,13 @@ export default function Art({ dark }: ArtProps) {
                 key={ind}
                 onClick={() => onClick(piece)}
               >
-                <img className="imgg w-full !m-[1vw]" src={piece.imgs[0]} alt="" />
+                <img
+                  className="imgg w-full !m-[1vw]"
+                  src={piece.imgs[0]}
+                  alt=""
+                />
                 <div className="absolute top-0 overlay w-[90%] h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
-                  <h1 className="!text-white opacity-100 text-[2.8vw] z-3 text-center !m-0">
+                  <h1 className="!text-white opacity-100 !text-[2.5rem] z-3 text-center !m-0">
                     {piece.title}
                   </h1>
                   <div className="flex w-full bottom-0 absolute justify-between">
