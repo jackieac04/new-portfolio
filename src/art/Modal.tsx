@@ -8,7 +8,6 @@ interface ModalProps {
   awards: string | undefined;
   desc: string;
   setModalOpen: React.Dispatch<React.SetStateAction<boolean>>;
-  dark: boolean;
 }
 
 export default function Modal({
@@ -19,7 +18,6 @@ export default function Modal({
   awards,
   desc,
   setModalOpen,
-  dark,
 }: ModalProps) {
   const [mainimg, setMainImg] = useState<string>(imgs[0]);
   return (
@@ -49,8 +47,7 @@ export default function Modal({
         </div>
         <div
           className={
-            (dark ? "dark" : "light") +
-            " flex self-center w-[80vw] md:w-[40vw] md:fixed h-fit max-h-[80vh] overflow-y-scroll rounded-lg justify-self-end  p-[2vw] modal"
+            "bg-orange-50 flex self-center w-[80vw] md:w-[40vw] md:fixed h-fit max-h-[80vh] overflow-y-scroll rounded-lg justify-self-end  p-[2vw] modal"
           }
         >
           <div className="right w-full flex flex-col">

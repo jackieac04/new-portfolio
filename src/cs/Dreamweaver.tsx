@@ -40,7 +40,7 @@ export default function Dreamweaver() {
       <div className="content">
         <div className="text grid">
           <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
-            <div className="lef justify-self-center col-span-9 mb-[2vw]">
+            <div className="lef justify-self-center col-span-9 mb-[2vw] outline">
               <h3>Project Overview</h3>
               <p className="btm">
                 <b>Dreamweaver</b> is a <b>hypermedia</b> based sleep tracking
@@ -127,7 +127,7 @@ export default function Dreamweaver() {
               <img src={dreamentry} className="imgg" />
             </a>
           </div>
-          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh]">
+          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh] outline">
             <h3 className="justify-self-center">Lessons Learned</h3>
             <p className="btm">
               This project taught me how to rework UI from an existing site, and

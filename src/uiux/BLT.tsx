@@ -43,7 +43,7 @@ export default function BLT() {
       <div className="content">
         <div className="text grid">
           <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
-            <div className="lef justify-self-center col-span-4 mb-[2vw]">
+            <div className="lef justify-self-center col-span-4 mb-[2vw] outline">
               <h3>The People</h3>
               <p className="btm">
                 The <b>Brown Development Labs</b> is a group of labs at Brown
@@ -59,7 +59,7 @@ export default function BLT() {
               </p>
             </div>
             <div></div>
-            <div className="righ justify-self-center col-span-4">
+            <div className="righ justify-self-center col-span-4 outline">
               <h3>The Problem</h3>
               <p className="btm">
                 Much of the current site is out of date. Containing typos, old
@@ -155,7 +155,7 @@ export default function BLT() {
               <img className="imgg max-h-screen" src={bltnews} alt="" />
             </a>
           </div>
-          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh]">
+          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh] outline">
             <h3 className="justify-self-center">Lessons Learned</h3>
             <p className="btm">
               Through completing this project, I learned how to design for a

@@ -1,67 +1,43 @@
 import { Link } from "react-router-dom";
-interface HomeProps {
-  dark: boolean;
-}
-export default function Footer({ dark }: HomeProps) {
+
+export default function Footer() {
   return (
     <footer
       className={
-        (dark ? "d" : "l") +
-        " px-[1rem] md:px-[4rem] mt-[1rem] flex justify-between bottom-[2rem]w-full"
+        " px-[1rem] py-[1rem] md:px-[4rem] flex justify-between bottom-[2rem] w-full bg-orange-50"
       }
     >
       <div
-        className="z-10 w-[30%] flex justify-between "
+        className="z-10 w-[40%] flex justify-between "
         style={{ transform: "translateY(-25%)" }}
       >
         <Link to={"mailto: jaclyn_cohen@brown.edu"} target="_blank">
-          <div
-            className={
-              (dark ? "d" : "l") +
-              "email w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
-            }
-          />
+          <div className={"email"}>
+            <p className="!text-[1rem] md:!text-[1.8rem]">Email</p>
+          </div>
         </Link>
         <Link to={"https://github.com/jackieac04"} target="_blank">
-          <div
-            className={
-              (dark ? "d" : "l") +
-              "git w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
-            }
-          />
+          <div className={"git"}>
+            <p className="!text-[1rem] md:!text-[1.8rem]">Github</p>
+          </div>
         </Link>
         <Link
           to={"https://www.linkedin.com/in/jaclyn-a-cohen/"}
           target="_blank"
         >
-          <div
-            className={
-              (dark ? "d" : "l") +
-              "linked w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
-            }
-            style={{ transform: "translateY(-.5vh)" }}
-          />
-        </Link>
-        <Link to={"https://discordapp.com/users/leafysheepy/"} target="_blank">
-          <div
-            className={
-              (dark ? "d" : "l") +
-              "discord w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
-            }
-          />
+          <div className={"linked "}>
+            <p className="!text-[1rem] md:!text-[1.8rem]">Linkedin</p>
+          </div>
         </Link>
 
         <Link to={"https://instagram.com/leafysheepy/"} target="_blank">
-          <div
-            className={
-              (dark ? "d" : "l") +
-              "inst w-[2rem] h-[2rem] md:w-[3rem] md:h-[3rem] py-[1vh] object-contain bg-no-repeat"
-            }
-          />
+          <div className={"inst"}>
+            <p className="!text-[1rem] md:!text-[1.8rem]">Instagram</p>
+          </div>
         </Link>
       </div>
       <div className="z-10">
-        <p className="!text-[1rem]">Made with leafy sheepy</p>
+        <p className="!text-[1rem] md:!text-[1.8rem]">Made with leafy sheepy</p>
       </div>
     </footer>
   );

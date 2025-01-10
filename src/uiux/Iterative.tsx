@@ -53,7 +53,7 @@ export default function Iterative() {
       <div className="content">
         <div className="text grid">
           <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
-            <div className="lef justify-self-end col-span-4 mb-[1vw]">
+            <div className="lef justify-self-end col-span-4 mb-[1vw] outline">
               <h3 className="justify-self-center">The People</h3>
               <p className="btm">
                 <a href="https://mifonda.io/">MiFonda</a> is a technology
@@ -63,7 +63,7 @@ export default function Iterative() {
               </p>
             </div>
             <div></div>
-            <div className="righ justify-self-start col-span-4">
+            <div className="righ justify-self-start col-span-4 outline">
               <h3 className="justify-self-center">The Problem</h3>
               <p className="btm">
                 They tasked us to create a <b>visually-focused, gamified</b>{" "}
@@ -248,7 +248,7 @@ export default function Iterative() {
             </a>
           </p>
 
-          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh]">
+          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh] outline">
             <h3 className="justify-self-center">Final Thoughts</h3>
             <p className="btm">
               This project taught me how to best work as a team- both with other

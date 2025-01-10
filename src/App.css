@@ -6,13 +6,13 @@
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Rosarivo:ital@0;1&display=swap");
 
 :root {
-  --bg-main: #f6daec;
-  --bg-color: #f6efda;
-  --med-color: #ba1a7a40;
-  --bg-color-dark: #1e1920;
-  --hfontcolor: #93006e;
-  --btmfontcolor: #73008d;
-  --darkbg: #550099;
+  --bg-main: rgb(255 247 237 / var(--tw-bg-opacity, 1));
+  --bg-color: rgb(255 247 237 / var(--tw-bg-opacity, 1));
+  --med-color: black;
+  --bg-color-dark: black;
+  --hfontcolor: black;
+  --btmfontcolor: black;
+  --darkbg: black;
   --rosarivo: "Rosarivo", cursive;
   --jost: "Jost", sans-serif;
   justify-content: center;
@@ -120,11 +120,11 @@ h4 {
 }
 
 h2 {
-  font-size: 1.8rem !important;
+  font-size: 2.5rem !important;
 }
 
 p {
-  font-size: 1.4rem;
+  font-size: 1.2rem;
   font-weight: 300;
 }
 
@@ -142,17 +142,16 @@ h3 {
   ul,
   ol {
     list-style: revert-layer !important;
-    margin: auto !important;
-    padding-left: 2%;
+
+    padding-left: 2rem;
   }
 }
 
 .right-links {
   display: flex;
   width: fit-content;
-  margin-right: 3vw;
+  margin-right: 1rem;
   z-index: 3;
-  padding-top: 1vh;
 }
 
 .right-links > a {
@@ -184,7 +183,7 @@ main,
 }
 
 h1 {
-  font-size: 3.5rem;
+  font-size: 2.5rem;
   margin-top: 2vh !important;
 }
 

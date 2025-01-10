@@ -1,7 +1,6 @@
 import "./uiux.css";
 import "../App.css";
 import respred from "/respred/respred.png";
-// import abtest from "/ab/bchange.png";
 import dev from "/dev/dev.png";
 import iter from "/iter/iter.png";
 import Box from "./Box";
@@ -57,7 +56,11 @@ const projects = [
 export default function UIUX() {
   return (
     <main className="page relative w-screen h-fit pt-[5vh] pb-[12vh]">
-      <h1 className="text-5xl">UIUX Projects</h1>
+      <div className="flex items-center justify-center">
+        {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
+        <h1>UIUX Projects</h1>
+        {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
+      </div>
       <div className="box-grid h-fit">
         {projects.map((project, indx) => {
           return (

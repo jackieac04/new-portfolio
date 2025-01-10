@@ -295,6 +295,9 @@ h4 {
 .MapBox,
 .Frontend,
 .SpringBoot,
+.JavaScript,
+.Threejs,
+.Drei,
 .csskill {
   border-color: var(--tagpink);
   border-width: 2px;
@@ -305,7 +308,9 @@ h4 {
 .Personas,
 .AB,
 .UX,
-.designskill {
+.Blender,
+.designskill,
+.outline {
   border-color: var(--tagpurple);
   border-width: 2px;
 }

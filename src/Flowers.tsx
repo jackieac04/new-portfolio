@@ -1,16 +1,15 @@
-import flowers from "/main/flowers.mp4";
-import flowersdark from "/main/flowersdark.mp4";
-
 interface FlowerInterface {
   dark: boolean;
+  video: string;
+  videoDark: string;
 }
 
-export default function Flowers({ dark }: FlowerInterface) {
+export default function Flowers({ dark, videoDark, video }: FlowerInterface) {
   return (
     <>
       {!dark ? (
         <video
-          src={flowers}
+          src={video}
           loop
           typeof="video/mp4"
           autoPlay
@@ -18,7 +17,7 @@ export default function Flowers({ dark }: FlowerInterface) {
         />
       ) : (
         <video
-          src={flowersdark}
+          src={videoDark}
           loop
           typeof="video/mp4"
           autoPlay

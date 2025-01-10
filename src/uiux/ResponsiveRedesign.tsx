@@ -50,7 +50,7 @@ export default function ResponsiveRedesign() {
       <div className="content">
         <div className="text grid">
           <div className="grid  md:grid-cols-9 lg:grid-cols-9 w-full justify-center text-center sm:grid-flow-row md:grid-flow-column lg:grid-flow-column">
-            <div className="lef mb-[2vw] col-span-4 justify-self-center">
+            <div className="lef mb-[2vw] col-span-4 justify-self-center outline">
               <h3>The People</h3>
               <p className="btm">
                 The <b> American Mathematical Society </b> is an association
@@ -65,7 +65,7 @@ export default function ResponsiveRedesign() {
               </p>
             </div>
             <div></div>
-            <div className="righ  col-span-4 justify-self-center">
+            <div className="righ  col-span-4 justify-self-center outline">
               <h3>The Problem</h3>
               <p className="btm">
                 An issue evident from their listings page is that the website is
@@ -272,8 +272,8 @@ export default function ResponsiveRedesign() {
             </a>
           </div>
 
-          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh]">
-            <h3 className="justify-self-center">Final Thoughts</h3>
+          <div className="bottom grid justify-self-center max-w-[70vw] my-[4vh] outline">
+            <h3 className="justify-self-center ">Final Thoughts</h3>
             <p className="btm">
               In summary, this project challenged me to think of every step of
               the design process, from the needs of the user (students and

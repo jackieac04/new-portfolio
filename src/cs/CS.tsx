@@ -2,8 +2,16 @@ import Box from "../uiux/Box";
 import bathrooms from "/cs/bathrooms.png";
 import pab from "/cs/pabhome.png";
 import dream from "/cs/dream.png";
+import ter from "/cs/ter.png";
 
 const projects = [
+  {
+    title: "Terrarium World",
+    outsidelink: "https://github.com/jackieac04/Terrarium-World",
+    insidelink: "/terworld",
+    skills: ["JavaScript", "Threejs", "React Three Fiber", "Blender", "Drei"],
+    img: ter,
+  },
   {
     title: "Posters@Brown",
     outsidelink: null,
@@ -48,8 +56,13 @@ const projects = [
 
 export default function CS() {
   return (
-    <main className="relative w-screen pt-[5vh] pb-[8vh]">
-      <h1>CS Projects</h1>
+    <main className="relative w-screen pt-[5vh] pb-[8vh] ">
+      <div className="flex items-center justify-center">
+        {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
+        <h1>CS Projects</h1>
+        {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
+      </div>
+
       <div className="box-grid h-fit">
         {" "}
         {projects.map((project, indx) => {

@@ -55,17 +55,19 @@ export default function Development() {
 
       <div className="content">
         <div className="text">
-          <h3>Project Overview</h3>
-          <p className="btm">
-            In this project, I aim to{" "}
-            <b>
-              {" "}
-              create an interface for users to select and aggregate items from a
-              list,
-            </b>{" "}
-            but with a twist: the main function of the app is to{" "}
-            <b>collect plants to add to a personal garden. </b>
-          </p>
+          <div className="lef flex flex-col items-center col-span-9 mb-[2vw] outline">
+            <h3>Project Overview</h3>
+            <p className="btm">
+              In this project, I aim to{" "}
+              <b>
+                {" "}
+                create an interface for users to select and aggregate items from
+                a list,
+              </b>{" "}
+              but with a twist: the main function of the app is to{" "}
+              <b>collect plants to add to a personal garden. </b>
+            </p>
+          </div>
           <h3>Competitive Analysis</h3>
           <p className="btm">
             I first created a competitve analysis of some popular apps with
@@ -174,12 +176,15 @@ export default function Development() {
             You can view the completed page{" "}
             <a href="https://jackieac04.github.io/MyGarden/">here</a>.
           </p>
-          <h3>Conclusion</h3>
-          <p className="btm">
-            In conclusion, with this project I learned how to develop a project
-            by beginning with a comparison to existing interfaces, which allowed
-            me to see what's already working, and what I can iterate on.
-          </p>
+          <div className="lef flex flex-col items-center col-span-9 mb-[2vw] outline">
+            <h3>Lessons Learned</h3>
+            <p className="btm">
+              In conclusion, with this project I learned how to develop a
+              project by beginning with a comparison to existing interfaces,
+              which allowed me to see what's already working, and what I can
+              iterate on.
+            </p>
+          </div>
         </div>
       </div>
     </main>
