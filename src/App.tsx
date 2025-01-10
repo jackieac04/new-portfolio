@@ -69,8 +69,13 @@ import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
 import meArt from "/main/me.png";
 
-import Firefly from "./Fireflies";
-import ColorfulFog from "./ColorfulFog";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import Firefly from "./Fireflies.jsx";
+// eslint-disable-next-line @typescript-eslint/ban-ts-comment
+// @ts-expect-error
+import ColorfulFog from "./ColorfulFog.jsx";
+
 import Terrarium from "./cs/Terrarium";
 
 const Scene = () => {
@@ -95,7 +100,7 @@ const Scene = () => {
         <Firefly
           key={index}
           initialPosition={firefly.initialPosition}
-          boids={fireflies.map((f) => ({ position: f.initialPosition }))} // Pass the other fireflies for boid behavior
+          allFireflies={undefined}
         />
       ))}
       <ambientLight intensity={0.5} />

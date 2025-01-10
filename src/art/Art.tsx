@@ -221,10 +221,7 @@ interface ModalProps {
   desc: string;
 }
 
-interface ArtProps {
-  dark: boolean;
-}
-export default function Art({ dark }: ArtProps) {
+export default function Art() {
   const [modalOpen, setModalOpen] = useState<boolean>(false);
   const [attributes, setAttributes] = useState<ModalProps>();
   const onClick = (piece: Partial<ModalProps>) => {
@@ -286,7 +283,6 @@ export default function Art({ dark }: ArtProps) {
           awards={attributes?.awards}
           desc={attributes!.desc}
           setModalOpen={setModalOpen}
-          dark={dark}
         />
       )}
     </main>

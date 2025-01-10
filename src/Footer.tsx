@@ -13,12 +13,12 @@ export default function Footer() {
       >
         <Link to={"mailto: jaclyn_cohen@brown.edu"} target="_blank">
           <div className={"email"}>
-            <p className="!text-[1rem] md:!text-[1.8rem]">Email</p>
+            <p className="!text-[.8rem] md:!text-[1.4rem]">Email</p>
           </div>
         </Link>
         <Link to={"https://github.com/jackieac04"} target="_blank">
           <div className={"git"}>
-            <p className="!text-[1rem] md:!text-[1.8rem]">Github</p>
+            <p className="!text-[.8rem] md:!text-[1.4rem]">Github</p>
           </div>
         </Link>
         <Link
@@ -26,18 +26,20 @@ export default function Footer() {
           target="_blank"
         >
           <div className={"linked "}>
-            <p className="!text-[1rem] md:!text-[1.8rem]">Linkedin</p>
+            <p className="!text-[.8rem] md:!text-[1.4rem]">Linkedin</p>
           </div>
         </Link>
 
         <Link to={"https://instagram.com/leafysheepy/"} target="_blank">
           <div className={"inst"}>
-            <p className="!text-[1rem] md:!text-[1.8rem]">Instagram</p>
+            <p className="!text-[.8rem] md:!text-[1.4rem]">Instagram</p>
           </div>
         </Link>
       </div>
       <div className="z-10">
-        <p className="!text-[1rem] md:!text-[1.8rem]">Made with leafy sheepy</p>
+        <p className="!text-[.8rem] md:!text-[1.4rem]">
+          Made with leafy sheepy
+        </p>
       </div>
     </footer>
   );

@@ -1,15 +1,15 @@
 import React, { useRef, useEffect } from "react";
 import { useFrame } from "@react-three/fiber";
 import * as THREE from "three";
-import FakeGlowMaterial from "./FakeGlowMaterial";
+import FakeGlowMaterial from "./FakeGlowMaterial.js";
 
-const Firefly = ({
+export default function Firefly({
   light = true,
   bodyColor = 0xfff09c,
   lightColor = 0x00ffa5,
   initialPosition = [0, 0, 0],
   allFireflies,
-}) => {
+}) {
   const groupRef = useRef(null);
   const pointLightRef = useRef(null);
 
@@ -105,6 +105,4 @@ const Firefly = ({
   });
 
   return <group ref={groupRef} />;
-};
-
-export default Firefly;
+}
