@@ -16,7 +16,6 @@ import trees from "/artport/trees.jpg";
 import lil from "/artport/littleheart.png";
 import marble from "/artport/marblegif.gif";
 import metrad from "/artport/meacrylic.png";
-import mefirst from "/artport/mefirst.jpg";
 import meweb from "/artport/meweb.jpg";
 import oranges from "/artport/oranges.png";
 import rgb from "/artport/rbgportrait.jpg";
@@ -42,11 +41,29 @@ import rems14 from "/artport/rems14.jpg";
 import biga from "/artport/bigangle.jpg";
 // import bigl from "/artport/biglong.jpg";
 import cats from "/artport/cats.jpg";
+import blue from "/artport/blue.jpg";
+import water from "/artport/watergirl.png";
+import fish from "/artport/webfishbg.mp4";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Modal from "./Modal";
+import useIntersectionObserver from "../UseIntersectionObserver";
 
 const art = [
+  {
+    imgs: [fish],
+    title: "Home Page 2024",
+    date: "August 2024",
+    media: "Digital",
+    desc: "A digital animation of fish swimming across my face, used as the home page for this site for one year.",
+  },
+  {
+    imgs: [water],
+    title: "By the Lake",
+    date: "December 2024",
+    media: "Digital",
+    desc: "A digital painting of a whimiscal and peaceful scene as a girl plays with fireflies in a lake.",
+  },
   {
     imgs: [smallred, bigred],
     title: "Cycle of Rebirth",
@@ -55,6 +72,13 @@ const art = [
     awards:
       "Gold Key, American Visions Nomination, Scholastic Art And Writing Awards 2022",
     desc: " In this piece, the old self falls from the new self as one not only understands themselves now but who they want to become. While a rebirth can feel like a religious experience, people go through many cycles of realization and remake themselves through a lifetime, which is why the composition and flying birds encircle the figure. The process of rebirth is ongoing, and so is the piece.",
+  },
+  {
+    imgs: [blue],
+    title: "Blue",
+    date: "November 2024",
+    media: "Cyanotype, photography, watercolor",
+    desc: "An experimentation in cyanotype, using fragmented and layered imagery.",
   },
   {
     imgs: [birb, birbs],
@@ -175,13 +199,7 @@ const art = [
     media: "Acrylic",
     desc: "A monochromatic self-portrait painted after the end of my freshman year of college.",
   },
-  {
-    imgs: [mefirst],
-    title: "Self-Portrait, Digital",
-    date: "July 2023",
-    media: "Digital",
-    desc: "The first digital painting I ever created using Procreate, after buying an iPad with my first substantial paycheck.",
-  },
+
   {
     imgs: [meweb],
     title: "Original Website Homepage",
@@ -236,6 +254,16 @@ export default function Art() {
       desc: piece.desc || "",
     });
   };
+  const entries = useIntersectionObserver({ threshold: 0.1 });
+
+  useEffect(() => {
+    entries.forEach((entry) => {
+      const element = entry.target;
+      if (entry.isIntersecting) {
+        element.classList.add("animate__animated", "animate__fadeInUp");
+      }
+    });
+  }, [entries]);
 
   return (
     <main className="main pt-[5vh] min-h-[95vh] pb-[11vh]">
@@ -247,15 +275,24 @@ export default function Art() {
           {art.map((piece, ind) => {
             return (
               <div
-                className="relative w-fit flex justify-center"
+                className="relative w-fit flex justify-center observe"
                 key={ind}
                 onClick={() => onClick(piece)}
               >
-                <img
-                  className="imgg w-full !m-[1vw]"
-                  src={piece.imgs[0]}
-                  alt=""
-                />
+                {piece.imgs[0].endsWith("mp4") ? (
+                  <video
+                    autoPlay
+                    loop
+                    className="imgg w-full !m-[1vw]"
+                    src={piece.imgs[0]}
+                  />
+                ) : (
+                  <img
+                    className="imgg w-full !m-[1vw]"
+                    src={piece.imgs[0]}
+                    alt=""
+                  />
+                )}
                 <div className="absolute top-0 overlay w-[90%] h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
                   <h1 className="!text-white opacity-100 !text-[2.5rem] z-3 text-center !m-0">
                     {piece.title}

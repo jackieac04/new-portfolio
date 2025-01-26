@@ -7,14 +7,13 @@ import CS from "./cs/CS";
 import "./App.css";
 import Development from "./uiux/Development";
 import Iterative from "./uiux/Iterative";
-import { useState } from "react";
+
 import BLT from "./uiux/BLT";
 import Bathrooms from "./cs/Bathrooms";
 import Pab from "./cs/Pab";
 import resume from "/main/JaclynCohenResume0125FE.pdf";
 import Dreamweaver from "./cs/Dreamweaver";
 import Footer from "./Footer";
-import me from "/main/me.jpg";
 
 function App() {
   return (
@@ -67,7 +66,6 @@ function App() {
 
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
-import meArt from "/main/me.png";
 
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-expect-error
@@ -77,6 +75,7 @@ import Firefly from "./Fireflies.jsx";
 import ColorfulFog from "./ColorfulFog.jsx";
 
 import Terrarium from "./cs/Terrarium";
+import ScrollAnimatedSection from "./ScrollAnimatedSection.js";
 
 const Scene = () => {
   // Generate fireflies positions within the sphere
@@ -110,7 +109,6 @@ const Scene = () => {
 };
 
 const Home = () => {
-  const [img, setImg] = useState<boolean>(false);
   return (
     <>
       {/* Background Canvas */}
@@ -140,41 +138,11 @@ const Home = () => {
             height: "100vh",
           }}
         >
-          <h1>Jaclyn Cohen</h1>
+          <h1 className="!text-[3.5rem] md:!text-[4.5rem]">Jaclyn Cohen</h1>
           <p>Developer, Designer, Artist</p>
         </div>
 
-        {/* About Section */}
-        <section className="p-32 gap-y-24 flex flex-col bg-orange-50">
-          <div className="flex flex-col md:flex-row">
-            <div className="flex-col  md:w-2/3">
-              <h2>About Me</h2>
-              <p className="">
-                Hi! My name is Jaclyn Cohen, I'm a junior at{" "}
-                <b className="focus"> Brown University </b>
-                studying <b className="focus">Computer Science </b> and{" "}
-                <b className="focus">Visual Arts.</b> I love both topics
-                individually but I'm especially interested in intersections
-                between the two from <b>graphics</b> to{" "}
-                <b className="focus">frontend development </b>
-                to <b className="focus">UIUX</b> and everything inbetween.
-              </p>
-            </div>
-
-            <div
-              className="rounded mx-[2.5%] object-contain flex justify-center flex flex-col"
-              onMouseEnter={() => setImg(true)}
-              onMouseLeave={() => setImg(false)}
-            >
-              {!img ? (
-                <img className="max-h-[80vh] rounded" src={me} />
-              ) : (
-                <img className="max-h-[80vh] rounded" src={meArt} />
-              )}
-              <p>The glasses are perscription!</p>
-            </div>
-          </div>
-        </section>
+        <ScrollAnimatedSection />
       </div>
     </>
   );

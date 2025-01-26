@@ -29,7 +29,22 @@ export default function Modal({
       ></div>
       <div className="flex flex-col md:grid md:grid-cols-2  w-[80vw] h-[80vh] rounded-lg mx-[10vw] my-[10vh] fixed">
         <div className=" self-center flex flex-col justify-center max-h-[60vh] md:max-h-screen md:w-[40vw] ">
-          <img src={mainimg} className="imgg !max-w-[75%] max-h-full " alt="" />{" "}
+          {mainimg.endsWith("mp4") ? (
+            <video
+              autoPlay
+              loop
+              controls
+              className="imgg !max-w-[75%] max-h-full "
+              src={mainimg}
+            />
+          ) : (
+            <img
+              src={mainimg}
+              className="imgg !max-w-[75%] max-h-full "
+              alt=""
+            />
+          )}
+
           <div className="w-[30vw] h-[5vw] flex overflow-x-scroll">
             {imgs.length > 1 &&
               imgs.map((bby, ind) => {

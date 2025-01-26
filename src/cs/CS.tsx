@@ -1,8 +1,10 @@
 import Box from "../uiux/Box";
-import bathrooms from "/cs/bathrooms.png";
+// import bathrooms from "/cs/bathrooms.png";
 import pab from "/cs/pabhome.png";
 import dream from "/cs/dream.png";
 import ter from "/cs/ter.png";
+import useIntersectionObserver from "../UseIntersectionObserver";
+import { useEffect } from "react";
 
 const projects = [
   {
@@ -29,13 +31,13 @@ const projects = [
     ],
     img: pab,
   },
-  {
-    title: "Bathrooms@Brown",
-    outsidelink: "https://devpost.com/software/bathrooms-brown",
-    insidelink: "/bath",
-    skills: ["TypeScript", "React", "MapBox", "Frontend Development", "Figma"],
-    img: bathrooms,
-  },
+  // {
+  //   title: "Bathrooms@Brown",
+  //   outsidelink: "https://devpost.com/software/bathrooms-brown",
+  //   insidelink: "/bath",
+  //   skills: ["TypeScript", "React", "MapBox", "Frontend Development", "Figma"],
+  //   img: bathrooms,
+  // },
 
   {
     title: "Dreamweaver",
@@ -55,15 +57,25 @@ const projects = [
 ];
 
 export default function CS() {
+  const entries = useIntersectionObserver({ threshold: 0.1 });
+
+  useEffect(() => {
+    entries.forEach((entry) => {
+      const element = entry.target;
+      if (entry.isIntersecting) {
+        element.classList.add("animate__animated", "animate__fadeInUp");
+      }
+    });
+  }, [entries]);
   return (
     <main className="relative w-screen pt-[5vh] pb-[8vh] ">
       <div className="flex items-center justify-center">
         {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
-        <h1>CS Projects</h1>
+        <h1 className="observe">CS Projects</h1>
         {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
       </div>
 
-      <div className="box-grid h-fit">
+      <div className="box-grid h-fit observe">
         {" "}
         {projects.map((project, indx) => {
           return (

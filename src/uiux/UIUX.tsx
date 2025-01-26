@@ -5,6 +5,8 @@ import dev from "/dev/dev.png";
 import iter from "/iter/iter.png";
 import Box from "./Box";
 import blt from "/blt/blt.png";
+import useIntersectionObserver from "../UseIntersectionObserver";
+import { useEffect } from "react";
 
 const projects = [
   {
@@ -54,14 +56,25 @@ const projects = [
 ];
 
 export default function UIUX() {
+  const entries = useIntersectionObserver({ threshold: 0.1 });
+
+  useEffect(() => {
+    entries.forEach((entry) => {
+      const element = entry.target;
+      if (entry.isIntersecting) {
+        element.classList.add("animate__animated", "animate__fadeInUp");
+      }
+    });
+  }, [entries]);
+
   return (
     <main className="page relative w-screen h-fit pt-[5vh] pb-[12vh]">
       <div className="flex items-center justify-center">
         {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
-        <h1>UIUX Projects</h1>
+        <h1 className="observe">UIUX Projects</h1>
         {/* <Flowers dark={dark} video={flowersPink} videoDark={flowersPinkdark} /> */}
       </div>
-      <div className="box-grid h-fit">
+      <div className="box-grid h-fit observe">
         {projects.map((project, indx) => {
           return (
             <Box

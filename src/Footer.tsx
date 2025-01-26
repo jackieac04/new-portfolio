@@ -8,7 +8,7 @@ export default function Footer() {
       }
     >
       <div
-        className="z-10 w-[40%] flex justify-between "
+        className="z-10 w-[40%] flex justify-between gap-x-2 "
         style={{ transform: "translateY(-25%)" }}
       >
         <Link to={"mailto: jaclyn_cohen@brown.edu"} target="_blank">
