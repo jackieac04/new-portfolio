@@ -118,7 +118,7 @@ const Home = () => {
           top: 0,
           left: 0,
           width: "100vw",
-          height: "100vh",
+          height: "120vh",
           zIndex: 0,
         }}
       >
@@ -136,6 +136,7 @@ const Home = () => {
             alignItems: "center",
             justifyContent: "center",
             height: "100vh",
+            width: "100vw"
           }}
         >
           <h1 className="!text-[3.5rem] md:!text-[4.5rem]">Jaclyn Cohen</h1>
