@@ -23,7 +23,7 @@ const ScrollAnimatedSection = () => {
         <div className="flex-col flex md:w-2/3">
           <h2>About Me</h2>
           <p className="">
-            Hi! My name is Jaclyn Cohen, I'm a junior at{" "}
+            Hi! My name is Jaclyn Cohen, I'm a senior at{" "}
             <b className="focus"> Brown University </b>
             studying <b className="focus">Computer Science </b> and{" "}
             <b className="focus">Visual Arts.</b> I love both topics
@@ -44,7 +44,7 @@ const ScrollAnimatedSection = () => {
           ) : (
             <img className="max-h-[80vh] rounded" src={meArt} />
           )}
-          <p>The glasses are perscription!</p>
+          <p>The glasses are prescription!</p>
         </div>
       </div>
     </section>

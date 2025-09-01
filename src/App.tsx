@@ -11,7 +11,7 @@ import Iterative from "./uiux/Iterative";
 import BLT from "./uiux/BLT";
 import Bathrooms from "./cs/Bathrooms";
 import Pab from "./cs/Pab";
-import resume from "/main/JaclynCohenResume0125FE.pdf";
+import resume from "/main/JaclynCohenResume0825FE.pdf";
 import Dreamweaver from "./cs/Dreamweaver";
 import Footer from "./Footer";
 

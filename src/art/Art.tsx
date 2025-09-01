@@ -45,11 +45,22 @@ import blue from "/artport/blue.jpg";
 import water from "/artport/watergirl.png";
 import fish from "/artport/webfishbg.mp4";
 
+import shirt1 from "/artport/shirt1.jpg"
+import shirt2 from "/artport/shirt2.jpg"
+import shirt3 from "/artport/shirt3.jpg"
+
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
 import useIntersectionObserver from "../UseIntersectionObserver";
 
 const art = [
+    {
+    imgs: [shirt1, shirt2, shirt3],
+    title: "Moving On",
+    date: "March 2025",
+    media: "Button-up shirt, dye, cyanotype, ink, embroidery floss, handwritten letters",
+    desc: "Reimagining an item gifted to me by someone I once loved, with new hope for who I can become without them.",
+  },
   {
     imgs: [fish],
     title: "Home Page 2024",
