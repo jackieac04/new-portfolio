@@ -8,31 +8,34 @@ import {
   FloatType,
 } from "three";
 
-// Shader code (GLSL)
+// fragment shader with time-based color oscillation and wavy distortion
 const fragmentShader = `
-  uniform sampler2D uTexture;
-  uniform vec2 uResolution;
   uniform float uTime;
   varying vec2 vUv;
 
   void main() {
-    // Add time-based distortion to UVs
     vec2 uv = vUv;
-    uv.x += sin(uTime + uv.y * 10.0) * 0.02; // Horizontal wave
-    uv.y += cos(uTime + uv.x * 10.0) * 0.02; // Vertical wave
 
-    // Sample texture color
-    vec4 texColor = texture2D(uTexture, uv);
+    //  wavy distortion
+    uv.x += sin(uTime*0.5 + uv.y * 2.0) * 0.01;
+    uv.y += cos(uTime*0.5 + uv.x * 2.0) * 0.01;
 
-    // If no texture is available, default to a colorful gradient
-    if (texColor.a == 0.0) {
-      texColor = vec4(uv.x, uv.y, sin(uTime) * 0.5 + 0.5, 1.0);
-    }
+    // Oscillating base colors
+    float r = 0.5 + 0.5 * sin(uTime + uv.x*2.0);
+    float g = 0.5 + 0.5 * sin(uTime + uv.y*2.5 + 1.0);
+    float b = 0.5 + 0.5 * sin(uTime + (uv.x+uv.y)*2.0 + 2.0);
 
-    gl_FragColor = texColor;
-  }
+    vec3 baseColor = vec3(r, g, b);
+
+    // Blend towards pastel (soft white)
+    vec3 pastelColor = mix(baseColor, vec3(0.85, 0.85, 0.95), 0.4);
+
+
+    gl_FragColor = vec4(pastelColor, 1.0);
+}
+
 `;
-
+// Simple vertex shader to pass UVs
 const vertexShader = `
   varying vec2 vUv;
   void main() {
@@ -52,6 +55,7 @@ export default function ColorfulFog() {
     const size = 512;
     const data = new Float32Array(size * size * 4); // RGBA
 
+    // initialize with random colors
     for (let i = 0; i < data.length; i += 4) {
       data[i] = Math.random(); // Red
       data[i + 1] = Math.random(); // Green
@@ -59,23 +63,18 @@ export default function ColorfulFog() {
       data[i + 3] = 1.0; // Alpha
     }
 
+    // creates tex from raw data, w, h, format, type
     const texture = new DataTexture(data, size, size, RGBAFormat, FloatType);
     texture.needsUpdate = true; // Mark texture for GPU update
     textureRef.current = texture;
   }, []);
 
+  // updating the time triggers re-render
   useFrame(() => {
     const simulationMaterial = simulationMaterialRef.current;
     if (simulationMaterial && textureRef.current) {
+      // on each frame, update time uniform
       simulationMaterial.uniforms.uTime.value += 0.01;
-
-      // Optionally, animate the texture for more dynamic behavior
-
-      const data = textureRef.current.image.data;
-      for (let i = 0; i < data.length; i += 4) {
-        data[i] = (Math.sin(data[i] + 0.01) + 1.0) * 0.5; // Example: Red channel
-      }
-      textureRef.current.needsUpdate = true;
     }
   });
 
