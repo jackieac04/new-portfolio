@@ -49,11 +49,31 @@ import shirt1 from "/artport/shirt1.jpg"
 import shirt2 from "/artport/shirt2.jpg"
 import shirt3 from "/artport/shirt3.jpg"
 
+import room1 from "/artport/roomport/room1.jpeg"
+import room2 from "/artport/roomport/room2.jpeg"
+import room3 from "/artport/roomport/room3.jpeg"
+
+import candy1 from "/artport/candybox/1.jpg"
+import candy2 from "/artport/candybox/2.jpg"
+import candy3 from "/artport/candybox/3.jpg"
+import candy4 from "/artport/candybox/4.jpg"
+import candy5 from "/artport/candybox/5.jpg"
+
 import { useEffect, useState } from "react";
 import Modal from "./Modal";
 import useIntersectionObserver from "../UseIntersectionObserver";
 
 const art = [
+  {imgs: [room1, room2, room3],
+    title: "Room Portrait: Mary Oliver",
+    date: "November 2025",
+    media: "Wood, Leaves, Acrylic, Paper, mixed media",
+    desc: "An imagined space for the poet Mary Oliver, complete with handmade paintings, leaves and pine cones sourced from Providence, clay figures, and several small versions of her books."},
+  {imgs: [candy1, candy2, candy3, candy4, candy5],
+    title: "Candy Box for a Former Self",
+    date: "October 2025",
+    media: "Wood, Acrylic, Scupley, Watercolor, Embroidery Floss",
+    desc: "A celebration of the people who make my life special, each wrapped in a note that reminds me of them, created with laser cut slabs of wood, designed in Illustrator and hand-painted."},
     {
     imgs: [shirt1, shirt2, shirt3],
     title: "Moving On",

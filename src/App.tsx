@@ -1,14 +1,14 @@
 import { Routes, Route, Link } from "react-router-dom";
 import Art from "./art/Art";
-import UIUX from "./uiux/UIUX";
-import ResponsiveRedesign from "./uiux/ResponsiveRedesign";
-import AB from "./uiux/AB";
+// import UIUX from "./uiux/UIUX";
+// import ResponsiveRedesign from "./uiux/ResponsiveRedesign";
+// import AB from "./uiux/AB";
 import CS from "./cs/CS";
 import "./App.css";
-import Development from "./uiux/Development";
-import Iterative from "./uiux/Iterative";
+// import Development from "./uiux/Development";
+// import Iterative from "./uiux/Iterative";
 
-import BLT from "./uiux/BLT";
+// import BLT from "./uiux/BLT";
 import Bathrooms from "./cs/Bathrooms";
 import Pab from "./cs/Pab";
 import resume from "/main/JaclynCohenResume0825FE.pdf";
@@ -29,9 +29,9 @@ function App() {
             <Link className="cs" to={"/cs"}>
               Software
             </Link>
-            <Link className="uiux" to={"/uiux"}>
+            {/* <Link className="uiux" to={"/uiux"}>
               Design
-            </Link>
+            </Link> */}
             <Link className="art" to={"/art"}>
               Art
             </Link>
@@ -44,13 +44,13 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/art" element={<Art />} />
-          <Route path="/uiux" element={<UIUX />}></Route>
-          <Route path="/respred" element={<ResponsiveRedesign />} />
-          <Route path="/abtest" element={<AB />} />
-          <Route path="/dev" element={<Development />} />
+          {/* <Route path="/uiux" element={<UIUX />}></Route> */}
+          {/* <Route path="/respred" element={<ResponsiveRedesign />} /> */}
+          {/* <Route path="/abtest" element={<AB />} /> */}
+          {/* <Route path="/dev" element={<Development />} /> */}
           <Route path="/cs" element={<CS />} />
-          <Route path="/iter" element={<Iterative />} />
-          <Route path="/blt" element={<BLT />} />
+          {/* <Route path="/iter" element={<Iterative />} /> */}
+          {/* <Route path="/blt" element={<BLT />} /> */}
           <Route path="/bath" element={<Bathrooms />} />
           <Route path="/pab" element={<Pab />} />
           <Route path="/terworld" element={<Terrarium />} />
