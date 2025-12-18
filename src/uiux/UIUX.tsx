@@ -3,7 +3,7 @@ import "../App.css";
 import respred from "/respred/respred.png";
 import dev from "/dev/dev.png";
 import iter from "/iter/iter.png";
-import Box from "./Box";
+import Box from "../cs/Box";
 import blt from "/blt/blt.png";
 import useIntersectionObserver from "../UseIntersectionObserver";
 import { useEffect } from "react";

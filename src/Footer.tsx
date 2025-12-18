@@ -4,7 +4,7 @@ export default function Footer() {
   return (
     <footer
       className={
-        " px-[1rem] py-[1rem] md:px-[4rem] flex justify-between bottom-[2rem] w-full bg-orange-50"
+        " px-[1rem] py-[1rem] md:px-[4rem] flex justify-between bottom-[2rem] w-full"
       }
     >
       <div

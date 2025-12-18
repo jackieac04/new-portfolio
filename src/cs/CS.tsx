@@ -1,10 +1,11 @@
-import Box from "../uiux/Box";
+import Box from "./Box";
 // import bathrooms from "/cs/bathrooms.png";
 import pab from "/cs/pabhome.png";
 import dream from "/cs/dream.png";
 import ter from "/cs/ter.png";
 import useIntersectionObserver from "../UseIntersectionObserver";
 import { useEffect } from "react";
+import "./cs.css"
 
 const projects = [
   {

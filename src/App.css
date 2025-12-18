@@ -1,7 +1,10 @@
 @import url(https://use.typekit.net/zst0kpr.css);
-@import "tailwindcss";
+/* @import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities'; */
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Lilita+One&family=Rosarivo:ital@0;1&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Cabin:ital,wght@0,400..700;1,400..700&family=Jost:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Rosarivo:ital@0;1&display=swap");
+@import 'tailwindcss';
 
 :root {
   --bg-main: rgb(255 247 237 / var(--tw-bg-opacity, 1));
@@ -13,8 +16,6 @@
   --darkbg: black;
   --rosarivo: "Rosarivo", cursive;
   --jost: "Jost", sans-serif;
-  justify-content: center;
-  display: flex;
   color: var(--bg-color-dark);
 
   --tagpinklow: #ff42e940;
@@ -190,7 +191,8 @@ h1 {
   position: relative;
   display: flex;
   justify-content: center;
-  top: 0;
+  top: -20px;
+  right: 35px;
   text-wrap: wrap;
   flex-wrap: wrap;
 }
@@ -292,11 +294,12 @@ footer {
   transform: translateY(0);
 }
 .observe {
-  opacity: 0;
-  transform: translateY(20px); /* Optional: Start position for animation */
+  /* keep content visible by default; animate position when `.visible` is added */
+  opacity: 1;
+  transform: translateY(12px);
   transition:
     opacity 0.3s ease,
-    transform 0.3s ease; /* Smooth transition */
+    transform 0.3s ease;
 }
 
 .observe.visible {

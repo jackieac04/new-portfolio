@@ -1,27 +1,29 @@
 import { useState, useEffect } from "react";
 
-const useIntersectionObserver = (options: unknown) => {
+const useIntersectionObserver = (options?: IntersectionObserverInit) => {
   const [entries, setEntries] = useState<IntersectionObserverEntry[]>([]);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.intersectionRatio > 0.5) {
-            // Trigger at 50% visibility
-            setEntries([...entries, entry]);
-            entry.target.classList.add("visible");
-          }
-        });
-      },
-      { threshold: 0.5 } // Trigger when 50% of the element is visible
-    );
+    const opts: IntersectionObserverInit = {
+      threshold: 0.1,
+      ...(options || {}),
+    };
+
+    const observer = new IntersectionObserver((ioEntries) => {
+      ioEntries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setEntries((prev) => [...prev, entry]);
+          entry.target.classList.add("visible");
+        }
+      });
+    }, opts);
 
     const elements = document.querySelectorAll(".observe");
     elements.forEach((el) => observer.observe(el));
 
     return () => observer.disconnect();
-  }, [options]);
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [JSON.stringify(options || {})]);
 
   return entries;
 };

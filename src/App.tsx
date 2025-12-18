@@ -44,13 +44,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/art" element={<Art />} />
-          {/* <Route path="/uiux" element={<UIUX />}></Route> */}
-          {/* <Route path="/respred" element={<ResponsiveRedesign />} /> */}
-          {/* <Route path="/abtest" element={<AB />} /> */}
-          {/* <Route path="/dev" element={<Development />} /> */}
           <Route path="/cs" element={<CS />} />
-          {/* <Route path="/iter" element={<Iterative />} /> */}
-          {/* <Route path="/blt" element={<BLT />} /> */}
           <Route path="/bath" element={<Bathrooms />} />
           <Route path="/pab" element={<Pab />} />
           <Route path="/terworld" element={<Terrarium />} />
@@ -116,8 +110,8 @@ const Home = () => {
         style={{
           position: "absolute",
           top: 0,
-          left: 0,
-          width: "100vw",
+          left: -30,
+          width: "120vw",
           height: "120vh",
           zIndex: 0,
         }}

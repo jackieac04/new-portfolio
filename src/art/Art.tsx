@@ -1,5 +1,5 @@
 import "./art.css";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
+import Masonry from '@mui/lab/Masonry';
 
 import smallred from "/artport/smallred.jpg";
 import bigred from "/artport/bigred.jpg";
@@ -297,12 +297,9 @@ export default function Art() {
   }, [entries]);
 
   return (
-    <main className="main pt-[5vh] min-h-[95vh] pb-[11vh]">
-      <ResponsiveMasonry
-        columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}
-        className="w-full"
-      >
-        <Masonry>
+    <>
+    <main className="main pt-[5vh] min-h-[95vh] pb-[11vh] flex justify-center ml-[5vw]">
+        <Masonry columns={{xs: 1, sm: 2, md: 3}} spacing={2}>
           {art.map((piece, ind) => {
             return (
               <div
@@ -314,35 +311,29 @@ export default function Art() {
                   <video
                     autoPlay
                     loop
-                    className="imgg w-full !m-[1vw]"
+                    className="imgg w-[90%] !m-[1vw]"
                     src={piece.imgs[0]}
                   />
                 ) : (
                   <img
-                    className="imgg w-full !m-[1vw]"
+                    className="imgg w-[90%]  !m-[1vw]"
                     src={piece.imgs[0]}
                     alt=""
                   />
                 )}
-                <div className="absolute top-0 overlay w-[90%] h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
-                  <h1 className="!text-white opacity-100 !text-[2.5rem] z-3 text-center !m-0">
+                <div className="absolute top-0 overlay w-full h-full opacity-0 hover:opacity-50 bg-black rounded-lg flex justify-center items-center z-2">
+                  <h1 className="!text-white opacity-100 !text-[2.5rem] z-3 !text-center !m-0">
                     {piece.title}
                   </h1>
-                  <div className="flex w-full bottom-0 absolute justify-between">
-                    <h3 className="!text-white opacity-100 !text-[2vw]">
-                      {piece.date}
-                    </h3>{" "}
-                    <h3 className="!text-white opacity-100 !text-[2vw]">
-                      {piece.media}
-                    </h3>
-                  </div>
+                  
                 </div>
               </div>
             );
           })}
         </Masonry>
-      </ResponsiveMasonry>
-      {modalOpen && (
+      
+    </main>
+    {modalOpen && (
         <Modal
           title={attributes!.title}
           imgs={attributes!.imgs}
@@ -353,6 +344,6 @@ export default function Art() {
           setModalOpen={setModalOpen}
         />
       )}
-    </main>
+      </>
   );
 }

@@ -18,7 +18,7 @@ const ScrollAnimatedSection = () => {
   }, [entries]);
 
   return (
-    <section className="p-8 md:p-32 gap-y-24 flex flex-col bg-orange-50 ">
+    <section className="p-8 pl-[100px] md:p-32 gap-y-24 flex flex-col mt-[148px] ">
       <div className="flex flex-col gap-y-8 md:flex-row observe">
         <div className="flex-col flex md:w-2/3">
           <h2>About Me</h2>
@@ -35,14 +35,14 @@ const ScrollAnimatedSection = () => {
         </div>
 
         <div
-          className="rounded mx-[2.5%] object-contain flex justify-center flex flex-col"
+          className="rounded mx-[2.5%] object-contain flex justify-center flex flex-col items-center"
           onMouseEnter={() => setImg(true)}
           onMouseLeave={() => setImg(false)}
         >
           {!img ? (
-            <img className="max-h-[80vh] rounded" src={me} />
+            <img className="block w-auto max-h-[80vh] sm:max-w-[80vw] rounded" src={me} />
           ) : (
-            <img className="max-h-[80vh] rounded" src={meArt} />
+            <img className="block h-auto max-h-[80vh] sm:max-w-[80vw] rounded" src={meArt} />
           )}
           <p>The glasses are prescription!</p>
         </div>
