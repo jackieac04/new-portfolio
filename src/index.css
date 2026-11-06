@@ -362,6 +362,16 @@ button { cursor: pointer; font-family: var(--font-sans); border: none; outline: 
   transition-duration: 0.06s;
 }
 
+/* unavailable -- stuck flat to the page and faded, ignores hover */
+.btn:disabled,
+.product-card__add-btn:disabled {
+  --sticker-lift: 0px;
+  --sticker-depth: 0px;
+  --sticker-tilt: -0.7deg;
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
 /* ----- a corner that has lifted -----
    The flap is the reverse of the sticker curling back over its own corner, so
    it is drawn in the rim colour shading to the fold, and it overhangs the

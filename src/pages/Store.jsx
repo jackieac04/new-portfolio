@@ -28,6 +28,17 @@ export default function Store() {
   const [selectedItem, setSelectedItem] = useState(null);
   const [checkoutLoading, setCheckoutLoading] = useState(false);
   const [toast, setToast] = useState(null); // { msg, type }
+  const [sold, setSold] = useState(() => new Set()); // ids of originals already bought
+
+  // Originals sell once. The server reads that from Stripe; if it's asleep or
+  // unreachable everything just shows as available and checkout re-checks.
+  const loadSold = () =>
+    fetch(`${API_URL}/api/sold`)
+      .then((r) => (r.ok ? r.json() : { sold: [] }))
+      .then((data) => setSold(new Set(data.sold)))
+      .catch(() => {});
+
+  useEffect(() => { loadSold(); }, []);
 
   // Show success/cancel feedback from Stripe redirect
   useEffect(() => {
@@ -38,6 +49,15 @@ export default function Store() {
       window.history.replaceState({}, '', '/store');
     } else if (params.get('canceled') === 'true') {
       setToast({ msg: 'Checkout canceled — your cart is still saved.', type: 'info' });
+      // Free any original this checkout was holding so it can be bought again.
+      const sessionId = params.get('session_id');
+      if (sessionId) {
+        fetch(`${API_URL}/api/release`, {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sessionId }),
+        }).catch(() => {});
+      }
       window.history.replaceState({}, '', '/store');
     }
   }, []);
@@ -53,9 +73,10 @@ export default function Store() {
     : storeItems.filter((i) => i.category === category);
 
   const addToCart = (item) => {
+    if (sold.has(item.id)) return;
     setCart((prev) => {
       const exists = prev.find((c) => c.id === item.id);
-      if (exists) return prev.map((c) => c.id === item.id ? { ...c, qty: c.qty + 1 } : c);
+      if (exists) return prev.map((c) => c.id === item.id ? { ...c, qty: Math.min(c.qty + 1, c.stock) } : c);
       return [...prev, { ...item, qty: 1 }];
     });
     setCartOpen(true);
@@ -65,7 +86,7 @@ export default function Store() {
   const updateQty = (id, delta) => {
     setCart((prev) =>
       prev
-        .map((c) => c.id === id ? { ...c, qty: c.qty + delta } : c)
+        .map((c) => c.id === id ? { ...c, qty: Math.min(c.qty + delta, c.stock) } : c)
         .filter((c) => c.qty > 0)
     );
   };
@@ -104,6 +125,7 @@ export default function Store() {
     } catch (err) {
       setCheckoutLoading(false);
       setToast({ msg: err.message, type: 'error' });
+      loadSold(); // the failure may be a piece that just sold
     }
   };
 
@@ -183,6 +205,7 @@ export default function Store() {
               <ProductCard
                 item={item}
                 index={i}
+                sold={sold.has(item.id)}
                 onAddToCart={() => addToCart(item)}
                 onView={() => setSelectedItem(item)}
               />
@@ -346,8 +369,9 @@ export default function Store() {
                   className="btn btn-primary"
                   style={{ width: '100%', justifyContent: 'center', marginTop: '8px' }}
                   onClick={() => { addToCart(selectedItem); setSelectedItem(null); }}
+                  disabled={sold.has(selectedItem.id)}
                 >
-                  Add to Cart
+                  {sold.has(selectedItem.id) ? 'Sold' : 'Add to Cart'}
                 </button>
               </div>
             </motion.div>
@@ -358,7 +382,7 @@ export default function Store() {
   );
 }
 
-function ProductCard({ item, index, onAddToCart, onView }) {
+function ProductCard({ item, index, sold, onAddToCart, onView }) {
   return (
     <Poster
       index={index}
@@ -387,8 +411,8 @@ function ProductCard({ item, index, onAddToCart, onView }) {
           ) : (
             <span className="product-card__image-placeholder">🖼</span>
           )}
-          {item.badge && (
-            <span className="product-card__badge">{item.badge}</span>
+          {(sold || item.badge) && (
+            <span className="product-card__badge">{sold ? 'Sold' : item.badge}</span>
           )}
           <div className="product-card__hover-overlay">
             <span>view details</span>
@@ -400,8 +424,8 @@ function ProductCard({ item, index, onAddToCart, onView }) {
         <p className="product-card__desc">{item.description.slice(0, 80)}…</p>
         <div className="product-card__footer">
           <span className="product-card__price">${(item.price / 100).toFixed(2)}</span>
-          <button className="product-card__add-btn" onClick={onAddToCart}>
-            + add to cart
+          <button className="product-card__add-btn" onClick={onAddToCart} disabled={sold}>
+            {sold ? 'sold' : '+ add to cart'}
           </button>
         </div>
       </div>
