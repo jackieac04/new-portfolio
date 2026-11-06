@@ -1,0 +1,15 @@
+# Render blueprint for the Stripe checkout server (server/). The site itself
+# is static and deployed to GitHub Pages with `npm run deploy`.
+services:
+  - type: web
+    name: jaclyncohen-checkout
+    runtime: node
+    plan: free
+    buildCommand: cd server && npm ci
+    startCommand: node server/index.js
+    healthCheckPath: /api/health
+    envVars:
+      - key: STRIPE_SECRET_KEY
+        sync: false # entered in the Render dashboard, never committed
+      - key: CLIENT_URL
+        value: https://jaclyncohen.dev

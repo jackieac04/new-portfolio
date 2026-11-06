@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import Masonry from 'react-masonry-css';
 import { motion, AnimatePresence } from 'framer-motion';
 import { storeItems, storeCategories } from '../data/store';
+
+// The checkout server runs on its own host in production (GitHub Pages only
+// serves static files). Locally it's empty and Vite proxies /api to :3001.
+const API_URL = import.meta.env.VITE_API_URL ?? '';
 import Poster from '../components/Poster';
 import './Store.css';
 
@@ -72,7 +76,7 @@ export default function Store() {
   const handleCheckout = async () => {
     setCheckoutLoading(true);
     try {
-      const res = await fetch('/api/checkout', {
+      const res = await fetch(`${API_URL}/api/checkout`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({

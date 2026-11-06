@@ -13,6 +13,10 @@ const stripe     = Stripe(process.env.STRIPE_SECRET_KEY);
 const CLIENT_URL = process.env.CLIENT_URL || 'http://localhost:5173';
 const PORT       = process.env.PORT || 3001;
 
+// Prices come from the same listings the store page renders, never from the
+// request -- otherwise anyone could edit the cart and pay a cent.
+const catalogReady = import('../src/data/listings.js').then((m) => m.catalog);
+
 const app = express();
 app.use(cors({ origin: CLIENT_URL }));
 app.use(express.json());
@@ -22,25 +26,38 @@ app.get('/api/health', (_req, res) => res.json({ ok: true }));
 
 /* ── Create Stripe Checkout Session ─────────── */
 app.post('/api/checkout', async (req, res) => {
-  const { items } = req.body;
+  const { items } = req.body ?? {};
 
   if (!Array.isArray(items) || items.length === 0) {
     return res.status(400).json({ error: 'Cart is empty.' });
   }
 
+  const catalog = await catalogReady;
+  const lines = [];
+  for (const item of items) {
+    const offer = catalog.get(item?.id);
+    if (!offer) {
+      return res.status(400).json({ error: 'Something in your cart is no longer for sale.' });
+    }
+    if (!Number.isInteger(item.qty) || item.qty < 1 || item.qty > offer.stock) {
+      return res.status(400).json({ error: `Invalid quantity for ${offer.title}.` });
+    }
+    lines.push({ offer, qty: item.qty, description: item.description });
+  }
+
   try {
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: items.map((item) => ({
+      line_items: lines.map(({ offer, qty, description }) => ({
         price_data: {
           currency: 'usd',
           product_data: {
-            name: item.title,
-            ...(item.description ? { description: item.description.slice(0, 200) } : {}),
+            name: offer.title,
+            ...(typeof description === 'string' && description ? { description: description.slice(0, 200) } : {}),
           },
-          unit_amount: item.price, // in cents, already stored that way
+          unit_amount: offer.price, // in cents
         },
-        quantity: item.qty,
+        quantity: qty,
       })),
       mode: 'payment',
       success_url: `${CLIENT_URL}/store?success=true`,
