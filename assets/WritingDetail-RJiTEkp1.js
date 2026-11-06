@@ -1,4 +1,4 @@
-import{c as e,i as t,n,s as r}from"./index-CDxDrS3K.js";import{n as i}from"./art-DHfN9QZG.js";var a=t(),o=[`Essay`,`Short Story`];function s({text:e,right:t}){return(0,a.jsx)(`div`,{className:`wd-stanza ${t?`wd-stanza--right`:``}`,children:e.split(`
+import{c as e,i as t,n,s as r}from"./index-M_uJVA-A.js";import{n as i}from"./art-DHfN9QZG.js";var a=t(),o=[`Essay`,`Short Story`];function s({text:e,right:t}){return(0,a.jsx)(`div`,{className:`wd-stanza ${t?`wd-stanza--right`:``}`,children:e.split(`
 `).map((e,t)=>(0,a.jsx)(`span`,{className:`wd-line`,children:e||(0,a.jsx)(a.Fragment,{children:`\xA0`})},t))})}var c=(e=``)=>e.trim().split(`
 `)[0];function l(e){let t=e.content.split(`
 
