@@ -90,7 +90,10 @@ export default function Store() {
         }),
       });
 
-      const data = await res.json();
+      // Anything but JSON means we never reached the checkout server (e.g. an
+      // HTML 404 page), so don't surface a JSON parse error to the shopper.
+      const isJson = res.headers.get('content-type')?.includes('application/json');
+      const data = isJson ? await res.json() : { error: 'Checkout is unavailable right now. Please try again later.' };
 
       if (!res.ok || data.error) {
         throw new Error(data.error || 'Checkout failed. Please try again.');
