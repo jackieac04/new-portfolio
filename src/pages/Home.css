@@ -1,0 +1,130 @@
+/* HOME */
+.home { overflow: hidden; }
+
+/* ===== HIGHLIGHTS ===== */
+.highlights {
+  padding: 96px 24px 80px;
+}
+
+.highlights__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 30px 26px;
+  align-items: stretch;
+}
+.highlights__grid > * { display: flex; }
+.highlights__grid .poster { display: flex; flex-direction: column; }
+
+/* The poster wrapper supplies the pin, lean and shadow; the sheet just holds
+   the content and a colour wash that comes up on hover. */
+.highlight-card .poster__sheet {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 34px 28px 30px;
+  height: 100%;
+  transition: box-shadow 0.35s cubic-bezier(0.2, 0.7, 0.3, 1),
+              border-color 0.3s ease;
+}
+.highlight-card .poster__sheet::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--card-color, var(--accent));
+  opacity: 0;
+  transition: opacity 0.3s;
+  pointer-events: none;
+}
+.highlight-card:hover .poster__sheet {
+  border-color: color-mix(in srgb, var(--card-color, var(--accent)) 55%, transparent);
+}
+.highlight-card:hover .poster__sheet::before { opacity: 0.10; }
+
+/* a small firefly that lights up on hover */
+.highlight-card__spark {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: var(--card-color, var(--accent));
+  box-shadow: 0 0 0 0 var(--card-color, var(--accent));
+  opacity: 0.55;
+  position: relative;
+  z-index: 1;
+  transition: opacity 0.3s ease, box-shadow 0.4s ease;
+}
+.highlight-card:hover .highlight-card__spark {
+  opacity: 1;
+  box-shadow: 0 0 18px 4px var(--card-color, var(--accent));
+}
+
+.highlight-card__label {
+  font-family: var(--font-hand);
+  font-size: 1.5rem;
+  color: var(--heading);
+  position: relative;
+  z-index: 1;
+}
+.highlight-card__desc {
+  font-size: 0.95rem;
+  color: var(--muted);
+  line-height: 1.65;
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+.highlight-card__arrow {
+  font-size: 1.3rem;
+  color: var(--card-color, var(--accent));
+  transition: transform 0.25s;
+  position: relative;
+  z-index: 1;
+}
+.highlight-card:hover .highlight-card__arrow { transform: translateX(7px); }
+
+/* ===== ABOUT STRIP ===== */
+.about-strip {
+  padding: 80px 0;
+  border-top: 1.5px solid var(--line);
+  border-bottom: 1.5px solid var(--line);
+}
+.about-strip__inner {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: center;
+}
+.about-strip__text p {
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.85;
+}
+.about-strip__deco {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 500px;
+}
+.about-strip__blob {
+  width: 400px;
+  height: 500px;
+  border-radius: var(--radius-blob);
+  background-image: url('../assets/me.png');
+  background-size: cover;
+  background-position: center;
+  box-shadow: var(--shadow-md);
+  animation: blobMorph 12s ease-in-out infinite;
+}
+@keyframes blobMorph {
+  0%, 100% { border-radius: 60% 40% 70% 30% / 50% 60% 40% 70%; }
+  25%      { border-radius: 40% 60% 30% 70% / 60% 40% 70% 50%; }
+  50%      { border-radius: 70% 30% 50% 50% / 40% 70% 60% 40%; }
+  75%      { border-radius: 30% 70% 60% 40% / 70% 30% 50% 60%; }
+}
+
+@media (max-width: 900px) {
+  .highlights__grid { grid-template-columns: 1fr; }
+  .about-strip__inner { grid-template-columns: 1fr; }
+  .about-strip__deco { height: 240px; }
+  .about-strip__blob { width: 220px; height: 220px; }
+}

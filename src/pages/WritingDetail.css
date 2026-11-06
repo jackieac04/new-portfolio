@@ -1,0 +1,201 @@
+.wd-page { padding-bottom: 100px; }
+
+.wd-container {
+  max-width: 720px;
+  padding-top: 48px;
+}
+
+/* Back */
+.wd-back {
+  background: none;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+  padding: 6px 0;
+  margin-bottom: 36px;
+  transition: color 0.2s, transform 0.2s;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+.wd-back:hover { color: var(--rose); transform: translateX(-3px); }
+
+/* Header */
+.wd-header { margin-bottom: 24px; }
+
+.wd-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 16px;
+}
+.wd-meta__date,
+.wd-meta__time {
+  font-size: 0.8rem;
+  color: var(--muted);
+}
+.wd-meta__date::before,
+.wd-meta__time::before { content: '·'; margin-right: 12px; }
+
+/* The reading column -- title, poems and prose -- is set in the book face.
+   Everything around it (nav, tags, buttons) stays in the hand font, so the
+   page reads as the writing pinned inside the site's chrome. */
+.wd-title {
+  font-family: var(--font-lit);
+  font-weight: 500;
+  font-size: clamp(2.3rem, 6vw, 3.6rem);
+  color: var(--heading);
+  line-height: 1.12;
+  letter-spacing: -0.01em;
+}
+
+/* Divider */
+.wd-divider {
+  height: 2px;
+  width: 60px;
+  border-radius: 2px;
+  margin-bottom: 40px;
+  opacity: 0.6;
+}
+
+/* ── Poetry ── */
+.wd-poetry {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
+
+.wd-stanza {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.wd-line {
+  display: block;
+  font-family: var(--font-lit);
+  font-size: 1.35rem;
+  color: var(--ink);
+  line-height: 1.62;
+}
+
+/* A poem can ask to be centred (layout.align in art.js); its header follows
+   so the title sits over the poem rather than off to one side. */
+.wd-container--center .wd-header { text-align: center; }
+.wd-container--center .wd-meta { justify-content: center; }
+.wd-container--center .wd-divider { margin-inline: auto; }
+.wd-poetry--center { text-align: center; }
+
+/* Stanzas named in layout.right sit against the right edge, narrower than
+   the column so a wrapped line still reads as right-set, not justified. */
+.wd-stanza--right {
+  align-self: flex-end;
+  max-width: 75%;
+  text-align: right;
+}
+
+/* Stanzas set side by side (layout.columns). The row breaks out of the
+   720px reading column so each column keeps a usable line length, and the
+   columns read left-aligned even inside a centred poem. */
+.wd-stanza-row {
+  display: grid;
+  grid-auto-flow: column;
+  grid-auto-columns: 1fr;
+  gap: 56px;
+  width: min(1040px, calc(100vw - 48px));
+  margin-left: 50%;
+  translate: -50% 0;
+  text-align: left;
+}
+/* hanging indent, so a wrapped line can't be mistaken for a new one */
+.wd-stanza-row .wd-line {
+  padding-left: 1.2em;
+  text-indent: -1.2em;
+}
+
+/* ── Prose ── */
+.wd-prose {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.wd-prose p {
+  font-family: var(--font-lit);
+  font-size: 1.24rem;
+  color: var(--ink);
+  line-height: 1.78;
+}
+
+/* ── Navigation ── */
+.wd-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 24px;
+  margin-top: 72px;
+  padding-top: 32px;
+  border-top: 1px solid var(--blush);
+}
+
+.wd-nav__btn {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: none;
+  text-align: left;
+  transition: opacity 0.2s, transform 0.2s;
+  max-width: 48%;
+}
+.wd-nav__btn:hover { opacity: 0.7; }
+.wd-nav__btn:hover .wd-nav__arrow { transform: translateX(-3px); }
+.wd-nav__btn--next:hover .wd-nav__arrow { transform: translateX(3px); }
+
+.wd-nav__label {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.wd-nav__label--right { text-align: right; }
+
+.wd-nav__label small {
+  font-size: 0.72rem;
+  color: var(--muted);
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.wd-nav__label:not(.wd-nav__label--right) {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--warm-brown);
+}
+.wd-nav__label--right {
+  font-family: var(--font-serif);
+  font-size: 0.95rem;
+  color: var(--warm-brown);
+}
+
+.wd-nav__arrow {
+  font-size: 1.3rem;
+  color: var(--rose);
+  transition: transform 0.2s;
+  flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+  .wd-line { font-size: 1.18rem; }
+  /* no room for columns on a phone -- stack them back into the poem */
+  .wd-stanza-row {
+    grid-auto-flow: row;
+    gap: 32px;
+    width: auto;
+    margin-left: 0;
+    translate: none;
+  }
+  .wd-prose p { font-size: 1.1rem; }
+  .wd-nav { flex-direction: column; gap: 16px; }
+  .wd-nav__btn { max-width: 100%; }
+}

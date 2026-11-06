@@ -1,0 +1,505 @@
+/* ===== FONTS ===== */
+/* Gladolia only ships a regular weight. Declaring the face across the whole
+   weight range stops the browser faking a bold from the 600/700 weights the
+   heading rules ask for. */
+@font-face {
+  font-family: 'Gladolia';
+  src: url('./assets/fonts/GladoliaDEMO-Regular.otf') format('opentype');
+  font-weight: 100 900;
+  font-display: swap;
+}
+
+/* ===== RESET & ROOT ===== */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/*
+  Palette is sampled directly from "By the Pond" (src/assets/art/Homepage):
+  a periwinkle paper ground, deep pond blues, iris ripples, firefly gold.
+
+  The painting's own paper is a warm mauve (#b88db0); the page ground is the
+  cooler periwinkle a short walk round the wheel from it (#9e93bf). The art is
+  never filtered -- PondHero's feather and vignette carry the one into the
+  other, and at matched lightness and saturation that reads as a soft warm-to-
+  cool drift rather than an edge.
+*/
+:root {
+  /* --- pigments pulled from the artwork (theme independent) --- */
+  --pond-deep:   #1e2f5e;
+  --pond:        #2a4a86;
+  --pond-mid:    #40659a;
+  --periwinkle:  #7b83b8;
+  --iris:        #8e8ad4;
+  --firefly:     #ffd166;
+  --gold:        #f2b544;
+  --ember:       #e8834f;
+  --coral:       #d9634a;
+  --reed:        #9aa46e;
+  --cream:       #f7ece1;
+
+  /* the page's paper ground -- the artwork's mauve, cooled to periwinkle */
+  --paper-mauve: #9e93bf;
+
+  --paper-tex: url('./assets/home/paper-grain.webp');
+  --paper-size: 620px;
+
+  /* labels, buttons, tags and nav -- the name is historical */
+  --font-hand:   'Josefin Sans', system-ui, sans-serif;
+  /* page titles and the logo; card titles and section subheadings use the hand font */
+  --font-display: 'Gladolia', var(--font-hand);
+  --font-sans:   'Nunito', system-ui, sans-serif;
+  /* For the writing itself. The hand font is right for labels and chrome but
+     wrong for a poem -- it reads as a caption of the work rather than the
+     work. A book face gives the reading column its own, quieter voice. */
+  --font-lit:    'EB Garamond', 'Iowan Old Style', Georgia, serif;
+  /* kept as aliases so older rules keep resolving */
+  --font-serif:  var(--font-hand);
+  --font-script: var(--font-hand);
+
+  --radius: 18px;
+  --radius-sm: 10px;
+  /* lopsided radii — corners that look drawn rather than computed */
+  --radius-hand:  22px 30px 20px 28px / 28px 20px 30px 22px;
+  --radius-hand2: 30px 20px 28px 22px / 20px 30px 22px 28px;
+  --radius-blob:  62% 38% 55% 45% / 45% 55% 45% 55%;
+}
+
+/* ===== DAY (light lavender paper) ===== */
+:root,
+html[data-theme="day"] {
+  /* --bg is the artwork's paper ground cooled towards periwinkle. Close
+     enough in value that the hero's feather dissolves the join. */
+  --bg:         #9e93bf;
+  --bg-alt:     #8d81b2;
+  --surface:    #ded9f0;
+  --surface-2:  #ebe8f8;
+  --ink:        #1f1c3c;
+  --ink-strong: #14122c;
+  --muted:      #403c69;
+  --heading:    #282455;
+  --line:       rgba(31, 28, 60, 0.22);
+
+  --paper-art:  #9e93bf;
+  --art-filter: none;
+
+  /* per-card accents, flipped at night so they stay legible on a dark ground */
+  --card-blue:  #2a4a86;
+  --card-warm:  #c9522f;
+  --card-green: #6b7a40;
+
+  --accent:      var(--coral);
+  --accent-soft: var(--ember);
+  --accent-ink:  #fff8f0;
+  --link:        var(--pond);
+
+  --paper-blend: soft-light;
+
+  /* die-cut vinyl rim, the cut edge just inside it, and the shadows the
+     sticker's thickness casts. --sticker-gloss is deliberately low: matte
+     stock takes a diffuse wash, not a highlight. */
+  --sticker-rim:   #f7f4ec;
+  --sticker-cut:   rgba(34, 30, 66, 0.14);
+  --sticker-edge:  rgba(34, 30, 66, 0.26);
+  --sticker-cast:  rgba(34, 30, 66, 0.20);
+  --sticker-gloss: rgba(255, 255, 255, 0.18);
+
+  --footer-bg:  #262148;
+
+  --shadow-sm: 0 2px 10px rgba(34, 30, 66, 0.10);
+  --shadow-md: 0 8px 26px rgba(34, 30, 66, 0.16);
+  --shadow-lg: 0 16px 50px rgba(34, 30, 66, 0.22);
+
+  /* legacy aliases still referenced by older pages */
+  --soft-white: var(--surface);
+  --warm-brown: var(--heading);
+  --blush:      rgba(122, 114, 196, 0.20);
+  --rose:       var(--coral);
+  --lavender:   var(--iris);
+  --sage:       var(--reed);
+  --terracotta: var(--ember);
+  --forest:     var(--pond);
+  --leaf:       var(--pond-mid);
+  --leaf-light: var(--periwinkle);
+  --dusty-pink: var(--ember);
+  --ink-legacy: var(--ink);
+}
+
+/* ===== NIGHT (deep lavender paper) ===== */
+html[data-theme="night"] {
+  /* The artwork plays at full colour in both themes. Night just darkens the
+     page and lets PondHero's vignette carry the painting's edges down into
+     it, so nothing is ever filtered or re-encoded. */
+  --bg:         #232040;
+  --bg-alt:     #1a1832;
+  --surface:    #322e56;
+  --surface-2:  #3e3a66;
+  --ink:        #efedfb;
+  --ink-strong: #ffffff;
+  --muted:      #b6b2d6;
+  --heading:    #e8e5f9;
+  --line:       rgba(239, 237, 251, 0.18);
+
+  --paper-art:  #232040;
+  --art-filter: none;
+
+  --card-blue:  #9cc6ec;
+  --card-warm:  #ffb066;
+  --card-green: #c6d493;
+
+  --accent:      var(--firefly);
+  --accent-soft: var(--gold);
+  --accent-ink:  #241a33;
+  --link:        var(--periwinkle);
+
+  --paper-blend: soft-light;
+
+  /* the rim stays pale at night -- a die-cut edge is the white of the backing
+     sheet, not a tint of the page -- but the cast shadow has to get darker to
+     read against the deep ground. */
+  --sticker-rim:   #e8e6f4;
+  --sticker-cut:   rgba(14, 12, 32, 0.22);
+  --sticker-edge:  rgba(0, 0, 0, 0.50);
+  --sticker-cast:  rgba(0, 0, 0, 0.44);
+  --sticker-gloss: rgba(255, 255, 255, 0.11);
+
+  --footer-bg:  #15132a;
+
+  --shadow-sm: 0 2px 10px rgba(0, 0, 0, 0.40);
+  --shadow-md: 0 8px 26px rgba(0, 0, 0, 0.50);
+  --shadow-lg: 0 16px 50px rgba(0, 0, 0, 0.60);
+
+  --soft-white: var(--surface);
+  --warm-brown: var(--heading);
+  --blush:      rgba(255, 209, 102, 0.14);
+  --rose:       var(--firefly);
+  --lavender:   var(--iris);
+  --sage:       var(--reed);
+  --terracotta: var(--gold);
+  --forest:     var(--pond);
+  --leaf:       var(--pond-mid);
+  --leaf-light: var(--periwinkle);
+  --dusty-pink: var(--ember);
+  --ink-legacy: var(--ink);
+}
+
+/* Smooth transition during theme switch */
+html.theme-switching,
+html.theme-switching * {
+  transition: background-color 0.35s ease, color 0.35s ease,
+              border-color 0.35s ease, box-shadow 0.35s ease,
+              filter 0.35s ease !important;
+}
+
+html {
+  scroll-behavior: smooth;
+  background-color: var(--bg);
+}
+
+/*
+  The page ground is a cooled cousin of the paper the artwork sits on: a flat
+  theme colour with the same grain tile blended over it, so the hero art
+  dissolves straight into the page instead of sitting in a frame.
+*/
+body {
+  font-family: var(--font-sans);
+  color: var(--ink);
+  line-height: 1.65;
+  overflow-x: hidden;
+  background-color: var(--bg);
+  background-image: var(--paper-tex);
+  background-size: var(--paper-size);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  background-blend-mode: var(--paper-blend);
+}
+
+/* Any panel that paints over the body needs its own grain, or the paper
+   texture would stop at its edges. */
+.paper-surface {
+  background-color: var(--surface);
+  background-image: var(--paper-tex);
+  background-size: var(--paper-size);
+  background-blend-mode: var(--paper-blend);
+}
+.paper-surface--alt {
+  background-color: var(--surface-2);
+  background-image: var(--paper-tex);
+  background-size: var(--paper-size);
+  background-blend-mode: var(--paper-blend);
+}
+
+h1, h2, h3, h4 {
+  font-family: var(--font-display);
+  font-weight: 600;
+  line-height: 1.18;
+  color: var(--heading);
+  letter-spacing: -0.005em;
+}
+a { color: inherit; text-decoration: none; }
+img { max-width: 100%; display: block; }
+button { cursor: pointer; font-family: var(--font-sans); border: none; outline: none; }
+
+::selection { background: var(--accent); color: var(--accent-ink); }
+
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: var(--bg-alt); }
+::-webkit-scrollbar-thumb { background: var(--iris); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: var(--accent); }
+
+/* ===== TYPE ===== */
+.section-title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  color: var(--heading);
+  margin-bottom: 0.25rem;
+}
+.section-subtitle {
+  font-family: var(--font-script);
+  font-size: 1.15rem;
+  font-style: italic;
+  letter-spacing: 0.03em;
+  color: var(--muted);
+  margin-bottom: 2.5rem;
+}
+
+.page-wrapper { min-height: 100vh; padding-top: 80px; }
+.container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+/* A wobbling ink underline, drawn with a wave rather than a ruled line. */
+.underline-hand {
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='120' height='8' viewBox='0 0 120 8'%3E%3Cpath d='M1 5.2c14-3.4 27 1.6 41-.6s26-3.9 40-1.2 24 2 37-.8' fill='none' stroke='%23e8834f' stroke-width='2' stroke-linecap='round'/%3E%3C/svg%3E");
+  background-repeat: repeat-x;
+  background-position: 0 100%;
+  background-size: 120px 8px;
+  padding-bottom: 6px;
+}
+
+/* ===== STICKERS =====
+   Everything clickable on the site is a matte sticker peeled off a sheet:
+
+   - a pale die-cut rim all the way round
+   - a hairline just inside that rim, a shade darker, which is the cut edge of
+     the vinyl seen side-on -- this is what stops the rim reading as a plain
+     border
+   - a short hard shadow directly beneath for the thickness of the stock
+   - a soft, wide cast shadow below that for the gap to the page
+
+   Matte, not gloss: the top light is a very low-alpha wash with a matching
+   roll-off at the bottom, so the face stays flat. A glossy highlight would
+   read as plastic or as a button bevel.
+
+   Pressing squashes the thickness to nothing so the sticker flattens onto the
+   paper. Some stickers additionally carry .sticker--peel (see below). */
+.btn,
+.tag,
+.filter-btn,
+.art-tab,
+.product-card__add-btn,
+.cart-btn,
+.navbar__theme-toggle {
+  --sticker-lift: 0px;
+  --sticker-depth: 3px;
+  position: relative;
+  isolation: isolate;
+  border: var(--sticker-ring, 3px) solid var(--sticker-rim);
+  box-shadow:
+    inset 0 0 0 1px var(--sticker-cut),
+    0 var(--sticker-depth) 0 var(--sticker-edge),
+    0 calc(var(--sticker-depth) + 5px) 16px var(--sticker-cast);
+  transform: translateY(var(--sticker-lift)) rotate(var(--sticker-tilt, -0.7deg));
+  transition: transform 0.22s cubic-bezier(0.2, 0.7, 0.3, 1),
+              box-shadow 0.22s ease, background 0.22s ease,
+              color 0.22s ease, border-color 0.22s ease;
+}
+
+/* the matte face -- diffuse light from above, no specular */
+.btn::before,
+.tag::before,
+.filter-btn::before,
+.art-tab::before,
+.product-card__add-btn::before,
+.cart-btn::before,
+.navbar__theme-toggle::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: -1;
+  border-radius: inherit;
+  background: linear-gradient(
+    var(--sticker-gloss),
+    transparent 46%,
+    rgba(0, 0, 0, 0.05)
+  );
+  pointer-events: none;
+}
+
+/* peeling up off the page */
+.btn:hover,
+.tag:hover,
+.filter-btn:hover,
+.art-tab:hover,
+.product-card__add-btn:hover,
+.cart-btn:hover,
+.navbar__theme-toggle:hover {
+  --sticker-lift: -3px;
+  --sticker-depth: 5px;
+  --sticker-tilt: 0.8deg;
+}
+
+/* pressed flat -- no thickness left to cast */
+.btn:active,
+.filter-btn:active,
+.art-tab:active,
+.product-card__add-btn:active,
+.cart-btn:active,
+.navbar__theme-toggle:active {
+  --sticker-lift: 2px;
+  --sticker-depth: 0px;
+  --sticker-tilt: -0.2deg;
+  transition-duration: 0.06s;
+}
+
+/* ----- a corner that has lifted -----
+   The flap is the reverse of the sticker curling back over its own corner, so
+   it is drawn in the rim colour shading to the fold, and it overhangs the
+   corner slightly -- a peel that stayed inside the silhouette would just look
+   like a shadow. Picked out by position rather than at random so a given
+   sticker keeps its peel across re-renders. */
+.sticker--peel,
+.filter-btn:nth-child(4n + 3),
+.tag:nth-child(3n + 2),
+.art-tab:nth-child(2) {
+  --peel: 15px;
+}
+
+.sticker--peel::after,
+.filter-btn:nth-child(4n + 3)::after,
+.tag:nth-child(3n + 2)::after,
+.art-tab:nth-child(2)::after {
+  content: '';
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  z-index: 1;
+  width: var(--peel);
+  height: var(--peel);
+  pointer-events: none;
+  /* the triangle the corner folds back along */
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  border-radius: 0 0 10px 0;
+  background: linear-gradient(
+    315deg,
+    var(--sticker-rim) 0%,
+    color-mix(in srgb, var(--sticker-rim) 86%, #000) 48%,
+    color-mix(in srgb, var(--sticker-rim) 58%, #000) 100%
+  );
+  /* the flap throws a shadow back onto the face it lifted off */
+  filter: drop-shadow(-1.5px -1.5px 1.5px rgba(20, 12, 26, 0.32));
+  transition: width 0.22s cubic-bezier(0.2, 0.7, 0.3, 1),
+              height 0.22s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+
+/* hovering curls it further back; pressing lays it flat again */
+.sticker--peel:hover,
+.filter-btn:nth-child(4n + 3):hover,
+.tag:nth-child(3n + 2):hover,
+.art-tab:nth-child(2):hover { --peel: 22px; }
+
+.sticker--peel:active,
+.filter-btn:nth-child(4n + 3):active,
+.art-tab:nth-child(2):active { --peel: 8px; }
+
+/* ===== BUTTONS ===== */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 13px 30px;
+  border-radius: 26px 32px 28px 34px / 32px 26px 34px 28px;
+  font-family: var(--font-hand);
+  font-size: 0.98rem;
+  font-weight: 700;
+  letter-spacing: 0.01em;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.btn-primary:hover {
+  background: var(--accent-soft);
+}
+
+.btn-secondary {
+  background: var(--pond);
+  color: #f3efff;
+}
+.btn-secondary:hover {
+  background: var(--pond-mid);
+}
+
+/* The outline button keeps its drawn ink line, so the die-cut rim moves
+   outside it as a second ring rather than replacing it. */
+.btn-outline {
+  background: var(--surface);
+  color: var(--ink);
+  border-radius: var(--radius-hand);
+  box-shadow:
+    inset 0 0 0 2px var(--ink),
+    0 var(--sticker-depth) 0 var(--sticker-edge),
+    0 calc(var(--sticker-depth) + 5px) 16px var(--sticker-cast);
+}
+.btn-outline:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+  box-shadow:
+    inset 0 0 0 2px var(--accent-ink),
+    0 var(--sticker-depth) 0 var(--sticker-edge),
+    0 calc(var(--sticker-depth) + 5px) 16px var(--sticker-cast);
+}
+
+/* ===== TAGS =====
+   Small stickers: a thinner rim and no press state, since they aren't
+   clickable. */
+.tag {
+  --sticker-ring: 2px;
+  --sticker-depth: 2px;
+  display: inline-block;
+  padding: 4px 13px;
+  border-radius: 14px 18px 12px 20px / 18px 12px 20px 14px;
+  font-family: var(--font-hand);
+  font-size: 0.78rem;
+  font-weight: 700;
+  background: var(--blush);
+  color: var(--heading);
+}
+.tag:hover { --sticker-depth: 3px; }
+
+/* ===== FILTER BUTTONS ===== */
+.filter-btn {
+  font-family: var(--font-hand);
+  font-weight: 700;
+  background: var(--surface);
+  color: var(--muted);
+  border-radius: 18px 24px 20px 22px / 22px 18px 24px 20px;
+}
+.filter-btn:hover {
+  background: var(--blush);
+  color: var(--heading);
+}
+.filter-btn--active {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after {
+    animation-duration: 0.001ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.001ms !important;
+  }
+}

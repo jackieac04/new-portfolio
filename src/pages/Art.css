@@ -1,0 +1,508 @@
+.art-page { padding-bottom: 80px; }
+.art-header { padding: 48px 0 8px; }
+
+.art-tabs {
+  display: flex;
+  gap: 12px;
+  margin-bottom: 40px;
+}
+
+/* Sticker rim, lift and shadow come from index.css; this sets shape only. */
+.art-tab {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 24px;
+  border-radius: 20px 26px 22px 28px / 26px 20px 28px 22px;
+  font-family: var(--font-hand);
+  font-size: 0.9rem;
+  font-weight: 700;
+  background: var(--soft-white);
+  color: var(--muted);
+}
+.art-tab:hover {
+  color: var(--forest);
+}
+.art-tab--active,
+.art-tab--active:hover {
+  background: var(--forest);
+  color: #f3efff;
+}
+
+/* Masonry reuse */
+/* Scoped: Store.css and Projects.css style the same class names. */
+.art-page .masonry-grid { display: flex; gap: 20px; width: 100%; }
+.art-page .masonry-grid__col { display: flex; flex-direction: column; gap: 28px; min-width: 0; }
+
+/* Art Card */
+/* Art Card — the pinned sheet; Poster.css owns pin, lean and shadow */
+.art-card .poster__sheet {
+  text-align: left;
+}
+
+.art-card__image {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+/* Capped so two rows of the gallery fit on a laptop screen; very tall pieces
+   crop a little from the edges rather than stretching the row. */
+.art-card__img {
+  width: 100%;
+  height: auto;
+  max-height: 330px;
+  object-fit: cover;
+  display: block;
+}
+.art-card__image-placeholder {
+  font-size: 3rem;
+  opacity: 0.4;
+}
+.art-card__hover-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(18, 16, 40, 0.45);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  color: white;
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  opacity: 0;
+  transition: opacity 0.25s;
+}
+.art-card:hover .art-card__hover-overlay { opacity: 1; }
+.art-card__count { font-size: 0.72rem; opacity: 0.8; }
+
+.art-card__body { padding: 14px 16px; display: flex; flex-direction: column; gap: 6px; }
+
+.art-card__meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 8px;
+}
+.art-card__medium {
+  font-size: 0.75rem;
+  color: var(--muted);
+  text-transform: lowercase;
+  letter-spacing: 0.04em;
+}
+.art-card__year { font-size: 0.75rem; color: var(--muted); }
+
+.art-card__title {
+  font-family: var(--font-hand);
+  font-size: 0.95rem;
+  letter-spacing: 0.01em;
+  color: var(--warm-brown);
+}
+
+
+/* Writing Grid */
+/* Filter row -- sizing matches .projects-filters; the sticker look comes
+   from .filter-btn in index.css */
+.art-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+.art-filters .filter-btn {
+  padding: 8px 20px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+/* Writing tab: themes fill the left, structure tags sit in their own group
+   on the right behind a thin rule. */
+.art-filters--split {
+  display: grid;
+  grid-template-columns: 1fr minmax(auto, 34%);
+  gap: 28px;
+  align-items: start;
+}
+.art-filters__group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+.art-filters__group--aside {
+  justify-content: flex-end;
+  padding-left: 24px;
+  border-left: 2px dashed var(--line);
+}
+
+/* The "+ N more" toggle is a filter button drawn in outline, so it reads as
+   an action rather than another tag. */
+.art-filters .filter-btn--more {
+  background: transparent;
+  border-style: dashed;
+  box-shadow: none;
+}
+
+/* On a card, themes then structure, each a group that wraps as a unit; the
+   structure group is set off by the same dashed rule as the filter row. */
+.writing-card__tag-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+.writing-card__tag-group--structure {
+  padding-left: 10px;
+  border-left: 2px dashed var(--line);
+}
+
+@media (max-width: 700px) {
+  .art-filters--split { grid-template-columns: 1fr; gap: 14px; }
+  .art-filters__group--aside {
+    justify-content: flex-start;
+    padding: 14px 0 0;
+    border-left: 0;
+    border-top: 2px dashed var(--line);
+  }
+}
+
+.writing-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 32px;
+}
+
+/* Writing Card — the piece's colour is the poster trim (--poster-accent in
+   Poster.css); there is no separate stripe inside the sheet. */
+.writing-card .poster__sheet {
+  display: flex;
+}
+
+.writing-card__body {
+  padding: 22px 22px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+
+.writing-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.writing-card__date {
+  font-size: 0.78rem;
+  color: var(--muted);
+}
+
+.writing-card__title {
+  font-family: var(--font-hand);
+  font-size: 1.25rem;
+  letter-spacing: 0.01em;
+  color: var(--warm-brown);
+  line-height: 1.25;
+}
+
+/* the excerpt is the writing itself, so it takes the book face the piece is
+   set in rather than the card's hand font */
+.writing-card__excerpt {
+  font-family: var(--font-lit);
+  font-size: 1.08rem;
+  color: var(--muted);
+  line-height: 1.72;
+  border: none;
+  padding: 12px 0;
+  border-top: 1px solid var(--blush);
+  border-bottom: 1px solid var(--blush);
+  flex: 1;
+}
+
+.writing-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 10px;
+}
+
+.writing-card__footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 6px;
+  padding-top: 4px;
+}
+.writing-card__read-time {
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+.writing-card__read-btn {
+  background: none;
+  color: var(--rose);
+  font-size: 0.85rem;
+  font-weight: 500;
+  transition: color 0.2s, transform 0.2s;
+}
+.writing-card__read-btn:hover {
+  color: var(--terracotta);
+  transform: translateX(3px);
+}
+
+@media (max-width: 640px) {
+  .writing-grid { grid-template-columns: 1fr; }
+}
+@media (min-width: 641px) and (max-width: 1000px) {
+  .writing-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* ===== ART MODAL ===== */
+.art-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(14, 12, 32, 0.75);
+  z-index: 1100;
+  backdrop-filter: blur(4px);
+}
+
+.art-modal {
+  position: fixed;
+  top: 25%;
+  left: 25%;
+  transform: translate(-50%, -50%);
+  width: min(900px, calc(100vw - 32px));
+  max-height: calc(100vh - 48px);
+  background: var(--cream);
+  border-radius: 20px;
+  z-index: 1200;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  box-shadow: 0 24px 80px rgba(14, 12, 32, 0.4);
+}
+
+/* Image panel */
+.art-modal__image-panel {
+  position: relative;
+  background: var(--modal-color, var(--blush));
+  min-height: 380px;
+  overflow: hidden;
+  user-select: none;
+}
+
+.art-modal__image-track {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  overflow: hidden;
+}
+
+.art-modal__image-slide {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.art-modal__img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+}
+
+.art-modal__placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 380px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  font-size: 4rem;
+  color: rgba(64, 60, 105, 0.6);
+}
+.art-modal__placeholder p {
+  font-size: 0.78rem;
+  color: rgba(64, 60, 105, 0.5);
+  text-align: center;
+  line-height: 1.6;
+  font-family: var(--font-sans);
+}
+.art-modal__placeholder code {
+  font-size: 0.72rem;
+  background: rgba(255,255,255,0.4);
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* nav arrows */
+.art-modal__nav {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(246, 244, 255, 0.85);
+  border-radius: 50%;
+  width: 36px;
+  height: 36px;
+  font-size: 1.4rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--warm-brown);
+  z-index: 2;
+  transition: background 0.2s, transform 0.2s;
+  line-height: 1;
+  padding-bottom: 2px;
+}
+.art-modal__nav:hover { background: white; transform: translateY(-50%) scale(1.1); }
+.art-modal__nav--prev { left: 12px; }
+.art-modal__nav--next { right: 12px; }
+
+/* dots */
+.art-modal__dots {
+  position: absolute;
+  bottom: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 6px;
+  z-index: 2;
+}
+.art-modal__dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: rgba(246, 244, 255, 0.5);
+  transition: all 0.2s;
+}
+.art-modal__dot--active {
+  background: white;
+  transform: scale(1.3);
+}
+
+/* Info panel */
+.art-modal__info {
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  overflow-y: auto;
+  position: relative;
+}
+
+.art-modal__close {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: var(--blush);
+  border-radius: 50%;
+  width: 30px;
+  height: 30px;
+  font-size: 0.82rem;
+  color: var(--warm-brown);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.2s, transform 0.2s;
+}
+.art-modal__close:hover { background: var(--rose); color: white; transform: rotate(90deg); }
+
+.art-modal__badges { display: flex; align-items: center; gap: 8px; flex-wrap: wrap; }
+.art-modal__year { font-size: 0.78rem; color: var(--muted); }
+
+.art-modal__title {
+  font-family: var(--font-display);
+  font-size: 1.7rem;
+  color: var(--warm-brown);
+  line-height: 1.15;
+}
+
+.art-modal__dims {
+  font-size: 0.82rem;
+  color: var(--muted);
+  letter-spacing: 0.03em;
+}
+
+.art-modal__desc {
+  font-size: 0.92rem;
+  color: var(--ink);
+  line-height: 1.8;
+  flex: 1;
+}
+
+.art-modal__instagram { margin-top: auto; padding-top: 16px; border-top: 1px solid var(--blush); }
+.art-modal__ig-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: var(--muted);
+  transition: color 0.2s;
+}
+.art-modal__ig-link:hover { color: var(--rose); }
+
+@media (max-width: 680px) {
+  .art-modal {
+    grid-template-columns: 1fr;
+    max-height: 92vh;
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    border-radius: 20px 20px 0 0;
+  }
+  .art-modal__image-panel { min-height: 260px; }
+  .art-modal__image-track { min-height: 260px; }
+  .art-modal__placeholder { min-height: 260px; }
+  .art-modal__info { padding: 20px; }
+}
+
+
+/* Arrange mode (dev only) */
+.arrange-bar {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 20px;
+  flex-wrap: wrap;
+}
+.arrange-bar .filter-btn { padding: 6px 16px; }
+.arrange-bar__hint,
+.arrange-bar__status {
+  font-family: var(--font-hand);
+  font-size: 0.85rem;
+  color: var(--muted);
+}
+.arrange-slot {
+  position: relative;
+  cursor: grab;
+  border-radius: 12px;
+  outline: 3px dashed transparent;
+  outline-offset: 6px;
+  transition: outline-color 0.15s;
+}
+.arrange-slot:active { cursor: grabbing; }
+.arrange-slot--over { outline-color: var(--forest); }
+/* Let the whole card be the drag handle, not the image inside it. */
+.arrange-slot img { pointer-events: none; -webkit-user-drag: none; }
+.arrange-slot__number {
+  position: absolute;
+  top: -10px;
+  left: -10px;
+  z-index: 5;
+  min-width: 28px;
+  height: 28px;
+  padding: 0 6px;
+  border-radius: 14px;
+  display: grid;
+  place-items: center;
+  background: var(--forest);
+  color: #f3efff;
+  font-size: 0.8rem;
+  font-weight: 700;
+}

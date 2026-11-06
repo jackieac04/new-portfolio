@@ -1,0 +1,197 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  padding: 20px 0;
+  transition: all 0.3s ease;
+  /* transparent over dark hero */
+  background: transparent;
+}
+
+.navbar--scrolled {
+  background: color-mix(in srgb, var(--bg) 88%, transparent);
+  backdrop-filter: blur(12px);
+  padding: 14px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+html[data-theme="night"] .navbar--scrolled {
+  background: color-mix(in srgb, var(--bg) 92%, transparent);
+  box-shadow: var(--shadow-md);
+}
+
+.navbar__inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.navbar__logo {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  letter-spacing: 0.01em;
+  transition: opacity 0.2s;
+}
+.navbar__logo:hover { opacity: 0.75; }
+
+.navbar__logo-script {
+  font-family: var(--font-display);
+  color: var(--accent);
+  transition: color 0.3s;
+}
+.navbar--scrolled .navbar__logo-script { color: var(--accent); }
+
+.navbar__logo-serif {
+  font-family: var(--font-display);
+  color: var(--ink);
+  font-style: italic;
+  transition: color 0.3s;
+}
+.navbar--scrolled .navbar__logo-serif { color: var(--heading); }
+
+.navbar__links {
+  display: flex;
+  align-items: center;
+  gap: 36px;
+  list-style: none;
+}
+
+.navbar__link {
+  position: relative;
+  font-family: var(--font-hand);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: color-mix(in srgb, var(--ink) 78%, transparent);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  padding-bottom: 2px;
+  transition: color 0.2s;
+}
+.navbar--scrolled .navbar__link { color: var(--muted); }
+.navbar__link:hover { color: var(--accent); }
+.navbar--scrolled .navbar__link:hover { color: var(--accent); }
+.navbar__link--active { color: var(--accent); }
+.navbar--scrolled .navbar__link--active { color: var(--accent); }
+
+.navbar__link-dot {
+  position: absolute;
+  bottom: -4px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 4px;
+  height: 4px;
+  border-radius: 50%;
+  background: var(--accent);
+  opacity: 0;
+  transition: opacity 0.2s;
+}
+.navbar--scrolled .navbar__link-dot { background: var(--accent); }
+.navbar__link--active .navbar__link-dot,
+.navbar__link:hover .navbar__link-dot {
+  opacity: 1;
+}
+
+/* hamburger */
+.navbar__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background: var(--ink);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+  transform-origin: center;
+}
+.navbar--scrolled .navbar__hamburger span { background: var(--heading); }
+
+/* Right side: toggle + hamburger */
+.navbar__right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+/* Theme toggle -- a round sticker; index.css owns the rim, lift and shadow,
+   and the hover spin is fed through --sticker-tilt so it composes with the
+   lift instead of overwriting the transform. */
+.navbar__theme-toggle {
+  --sticker-ring: 2.5px;
+  --sticker-depth: 2px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: color-mix(in srgb, var(--iris) 42%, transparent);
+  color: var(--ink);
+}
+.navbar__theme-toggle:hover {
+  --sticker-tilt: 20deg;
+  --sticker-depth: 4px;
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+.navbar--scrolled .navbar__theme-toggle {
+  background: var(--blush);
+  color: var(--heading);
+}
+.navbar--scrolled .navbar__theme-toggle:hover {
+  background: var(--accent);
+  color: var(--accent-ink);
+}
+
+/* Hamburger */
+.navbar__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  padding: 4px;
+}
+.navbar__hamburger.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.navbar__hamburger.open span:nth-child(2) { opacity: 0; }
+.navbar__hamburger.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+/* Mobile menu */
+.navbar__mobile-menu {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  overflow: hidden;
+  background: color-mix(in srgb, var(--surface) 97%, transparent);
+  backdrop-filter: blur(12px);
+  border-top: 1px solid var(--line);
+}
+
+html[data-theme="night"] .navbar__mobile-menu {
+  background: color-mix(in srgb, var(--surface) 97%, transparent);
+  border-top-color: var(--line);
+}
+
+.navbar__mobile-link {
+  font-family: var(--font-hand);
+  width: 100%;
+  text-align: center;
+  padding: 16px;
+  font-size: 1rem;
+  color: var(--muted);
+  text-transform: lowercase;
+  letter-spacing: 0.06em;
+  transition: color 0.2s, background 0.2s;
+}
+.navbar__mobile-link:hover,
+.navbar__mobile-link--active {
+  color: var(--accent);
+  background: var(--blush);
+}
+
+@media (max-width: 640px) {
+  .navbar__links { display: none; }
+  .navbar__hamburger { display: flex; }
+}

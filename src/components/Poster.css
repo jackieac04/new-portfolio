@@ -1,0 +1,417 @@
+/* ===== POSTER PINNED TO A WALL =====
+   .poster is the pinned sheet: it owns the lean, the pin and the wall
+   shadow. .poster__sheet is the paper itself and is what page-level styles
+   (.project-card, .art-card, ...) paint into. */
+
+.poster {
+  --tilt: 0deg;
+  --pin-shift: 0%;
+  --lift: 0px;
+
+  position: relative;
+  display: block;
+  width: 100%;
+  padding-top: 12px;            /* room for the pin head above the paper */
+  cursor: pointer;
+  transform: rotate(var(--tilt)) translateY(var(--lift));
+  transform-origin: 50% 6px;    /* swings from the pin, not the centre */
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.poster:focus-visible {
+  outline: none;
+}
+.poster:focus-visible .poster__sheet {
+  outline: 2.5px dashed var(--accent);
+  outline-offset: 4px;
+}
+
+/*
+  The paper.
+
+  Shadows live on the wrapper as drop-shadow filters rather than box-shadow
+  on the sheet, because the sheet is clipped: a curled corner cuts a notch out
+  of it, and box-shadow would keep tracing the original rectangle. drop-shadow
+  follows the clipped silhouette, so the shadow ends where the paper does.
+*/
+.poster__sheet {
+  --notch: 0px;
+  /* the unprinted margin a poster is trimmed with -- the plate never runs to
+     the edge of the stock */
+  --poster-margin: 11px;
+
+  position: relative;
+  padding: var(--poster-margin);
+  /* poster stock is trimmed square, not rounded like a card */
+  border-radius: 2px;
+  background-color: var(--poster-stock);
+  background-image: var(--paper-tex);
+  background-size: var(--paper-size);
+  background-blend-mode: var(--paper-blend);
+  /* A card's accent colour is carried by the trim itself rather than by a
+     separate bar inside the sheet -- one edge doing the job instead of two
+     competing lines. Cards with no accent fall back to the neutral trim. */
+  border: 2.5px solid var(--poster-accent, var(--poster-edge));
+  overflow: hidden;
+  clip-path: polygon(
+    0 0,
+    100% 0,
+    100% calc(100% - var(--notch)),
+    calc(100% - var(--notch)) 100%,
+    0 100%
+  );
+  transition: clip-path 0.35s ease;
+}
+
+/* the keyline the plate is printed inside, sitting just off the trim */
+.poster__sheet::before {
+  content: '';
+  position: absolute;
+  inset: calc(var(--poster-margin) - 4px);
+  z-index: 2;
+  /* picks up the trim colour so the two lines read as one printing, not as a
+     coloured border with an unrelated grey rule inside it */
+  border: 1px solid color-mix(
+    in srgb,
+    var(--poster-accent, var(--poster-rule)) 42%,
+    transparent
+  );
+  pointer-events: none;
+}
+/* Ink lies heavier at the edges of a press run and the stock takes light
+   unevenly, so the sheet is fractionally brighter in the middle. */
+.poster__sheet::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  z-index: 3;
+  pointer-events: none;
+  background: radial-gradient(
+    ellipse 80% 72% at 50% 38%,
+    transparent 58%,
+    var(--poster-burn) 100%
+  );
+}
+
+:root, html[data-theme="day"] {
+  --poster-stock: #f2f0f9;
+  --poster-edge:  rgba(31, 28, 60, 0.20);
+  --poster-rule:  rgba(31, 28, 60, 0.16);
+  --poster-burn:  rgba(31, 28, 60, 0.11);
+}
+html[data-theme="night"] {
+  --poster-stock: #3a3663;
+  --poster-edge:  rgba(239, 237, 251, 0.16);
+  --poster-rule:  rgba(247, 239, 250, 0.13);
+  --poster-burn:  rgba(0, 0, 0, 0.30);
+}
+
+.poster__paper {
+  position: relative;
+  height: 100%;
+  filter:
+    drop-shadow(0 1px 1px rgba(24, 14, 30, 0.22))
+    drop-shadow(0 9px 14px rgba(24, 14, 30, 0.26));
+  transition: filter 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+html[data-theme="night"] .poster__paper {
+  filter:
+    drop-shadow(0 1px 1px rgba(0, 0, 0, 0.5))
+    drop-shadow(0 9px 16px rgba(0, 0, 0, 0.55));
+}
+
+/* ----- hover: the sheet swings straight and stands off the wall ----- */
+.poster:hover,
+.poster:focus-visible {
+  --lift: -6px;
+  --tilt: 0deg;
+  z-index: 2;
+}
+.poster:hover .poster__paper,
+.poster:focus-visible .poster__paper {
+  filter:
+    drop-shadow(0 2px 3px rgba(24, 14, 30, 0.2))
+    drop-shadow(0 18px 22px rgba(24, 14, 30, 0.3));
+}
+html[data-theme="night"] .poster:hover .poster__paper {
+  filter:
+    drop-shadow(0 2px 3px rgba(0, 0, 0, 0.55))
+    drop-shadow(0 18px 26px rgba(0, 0, 0, 0.6));
+}
+
+/* ===== THE PIN ===== */
+.poster__pin {
+  position: absolute;
+  top: 1px;
+  left: calc(50% + var(--pin-shift));
+  z-index: 4;
+  width: 19px;
+  height: 19px;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  background:
+    radial-gradient(circle at 33% 28%, rgba(255, 255, 255, 0.85), transparent 44%),
+    radial-gradient(circle at 68% 78%, rgba(0, 0, 0, 0.32), transparent 52%),
+    var(--pin-color, var(--coral));
+  box-shadow:
+    0 3px 5px rgba(20, 12, 26, 0.45),
+    inset 0 -2px 3px rgba(0, 0, 0, 0.22);
+  transition: transform 0.25s cubic-bezier(0.2, 0.7, 0.3, 1), opacity 0.2s;
+}
+/* the shaft disappearing into the paper */
+.poster__pin::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 68%;
+  width: 3px;
+  height: 9px;
+  transform: translateX(-50%);
+  border-radius: 0 0 2px 2px;
+  background: linear-gradient(
+    to bottom,
+    color-mix(in srgb, var(--pin-color, var(--coral)) 70%, #000),
+    rgba(20, 12, 26, 0.25)
+  );
+  z-index: -1;
+}
+
+.poster__pin--coral { --pin-color: #d9634a; }
+.poster__pin--gold  { --pin-color: #f0b03e; }
+.poster__pin--blue  { --pin-color: #3d6fae; }
+.poster__pin--green { --pin-color: #7e9455; }
+
+/* ===== CURLED CORNER =====
+   The sheet is notched away at the bottom-right (see --notch above) and the
+   flap is drawn back over that exact triangle, showing the reverse of the
+   paper. Because the sheet is genuinely cut, no rectangle survives behind
+   the curl -- the wall shows through beside it. */
+.poster--curl .poster__sheet { --notch: 40px; }
+.poster--curl:hover .poster__sheet { --notch: 52px; }
+
+.poster__curl {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 40px;
+  height: 40px;
+  pointer-events: none;
+  /* the same lower-right triangle the notch removed */
+  clip-path: polygon(100% 0, 0 100%, 100% 100%);
+  background: linear-gradient(
+    315deg,
+    var(--curl-tip) 0%,
+    var(--curl-face) 38%,
+    var(--curl-face) 62%,
+    var(--curl-fold) 100%
+  );
+  filter: drop-shadow(-2px -2px 3px rgba(24, 14, 30, 0.35));
+  transition: width 0.35s ease, height 0.35s ease;
+}
+.poster--curl:hover .poster__curl {
+  width: 52px;
+  height: 52px;
+}
+
+:root, html[data-theme="day"] {
+  --curl-face: #e6e3f4;
+  --curl-fold: #a9a3ca;
+  --curl-tip:  #f8f6fd;
+}
+html[data-theme="night"] {
+  --curl-face: #474372;
+  --curl-fold: #1a1832;
+  --curl-tip:  #5b568c;
+}
+
+/* ===== TAPE =====
+   A strip of coloured washi across the top, always a little off-square. It
+   multiplies onto whatever is under it so it reads as translucent over both
+   the paper and the wall. */
+.poster__tape {
+  position: absolute;
+  z-index: 3;
+  width: 88px;
+  height: 26px;
+  background:
+    linear-gradient(
+      rgba(255, 255, 255, 0.45),
+      rgba(255, 255, 255, 0.05) 38%,
+      rgba(0, 0, 0, 0.07)
+    ),
+    var(--tape-color);
+  opacity: 0.5;
+  mix-blend-mode: multiply;
+  box-shadow: 0 1px 2px rgba(24, 14, 30, 0.16);
+  /* torn-ish ends rather than a clean rectangle */
+  clip-path: polygon(
+    3% 8%, 26% 0%, 55% 9%, 78% 1%, 97% 10%,
+    100% 88%, 74% 100%, 48% 91%, 22% 100%, 0% 90%
+  );
+}
+html[data-theme="night"] .poster__tape {
+  mix-blend-mode: screen;
+  opacity: 0.3;
+}
+
+/* single strip, hung slightly off-centre and off-angle */
+.poster__tape--top {
+  top: -4px;
+  left: calc(50% + var(--pin-shift));
+  transform: translateX(-50%) rotate(var(--tape-angle, -3deg));
+}
+/* a strip across each top corner, at opposing diagonals */
+.poster__tape--tl {
+  top: 4px;
+  left: -22px;
+  transform: rotate(-42deg);
+}
+.poster__tape--tr {
+  top: 4px;
+  right: -22px;
+  transform: rotate(42deg);
+}
+
+.poster__tape--washi-blue  { --tape-color: #8fb6d8; }
+.poster__tape--washi-gold  { --tape-color: #f0cd7e; }
+.poster__tape--washi-rose  { --tape-color: #e6a08f; }
+.poster__tape--washi-green { --tape-color: #aec48c; }
+
+/* ===== TORN BOTTOM EDGE =====
+   A ragged tear instead of a cut edge.
+
+   The mask is two layers unioned: a plain block covering everything above the
+   tear, and the tear itself as a strip of fixed pixel height pinned to the
+   bottom. Stretching one full-sheet mask instead -- as this used to do --
+   scales the wave with the card, so a tall poster got a deep scallop that ate
+   into the last line of text. At a fixed --tear the wave is the same few
+   pixels on every card, and the matching padding below keeps content clear of
+   it whatever the card's height. */
+.poster--torn .poster__sheet {
+  --tear: 14px;
+  -webkit-mask-image: linear-gradient(#000, #000), var(--torn-edge);
+  mask-image: linear-gradient(#000, #000), var(--torn-edge);
+  -webkit-mask-size: 100% calc(100% - var(--tear)), 100% var(--tear);
+  mask-size: 100% calc(100% - var(--tear)), 100% var(--tear);
+  -webkit-mask-position: left top, left bottom;
+  mask-position: left top, left bottom;
+  -webkit-mask-repeat: no-repeat;
+  mask-repeat: no-repeat;
+  padding-bottom: calc(var(--poster-margin) + var(--tear));
+}
+/* the keyline follows the padding, so it stays above the tear too */
+
+:root {
+  --torn-edge: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' preserveAspectRatio='none' viewBox='0 0 300 14'%3E%3Cpath d='M0 0h300v9c-10 2-20 4-30 3c-10-1-20-2-30-3c-10 3-20 1-30 2c-10-2-20 1-30-2c-10 2-20 4-30 3c-10-1-20-2-30-3c-10 3-20 1-30 2c-10-2-20 1-30-2c-10 2-20 4-30 3c-10-1-20-2-30-3z' fill='%23fff'/%3E%3C/svg%3E");
+}
+
+/* ===== STICKY NOTE =====
+   A small square note stuck to a lower corner of the poster, holding a
+   snapshot of the thing the poster is about. It sits on its own slight angle
+   and lifts with the sheet, so it reads as attached rather than layered in. */
+.poster__sticky {
+  position: absolute;
+  z-index: 3;
+  /* hangs off the corner, but stays inside the page gutter so the outermost
+     card in a row is never clipped */
+  right: 10px;
+  bottom: -14px;
+  width: 100px;
+  padding: 7px 7px 20px;
+  background: var(--sticky-color);
+  transform: rotate(var(--sticky-angle, 4deg));
+  transform-origin: 50% 0;
+  box-shadow: 0 4px 10px -2px rgba(24, 14, 30, 0.4);
+  transition: transform 0.35s cubic-bezier(0.2, 0.7, 0.3, 1);
+}
+.poster:hover .poster__sticky {
+  transform: rotate(calc(var(--sticky-angle, 4deg) * 0.3)) translateY(-2px);
+}
+
+/* the strip of adhesive along the top of the note */
+.poster__sticky::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 12%;
+  right: 12%;
+  height: 12px;
+  background: linear-gradient(rgba(255, 255, 255, 0.5), transparent);
+  pointer-events: none;
+}
+
+.poster__sticky img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 1;
+  object-fit: cover;
+  background: rgba(0, 0, 0, 0.06);
+}
+
+.poster__sticky--yellow { --sticky-color: #f6e08a; }
+.poster__sticky--pink   { --sticky-color: #f4bcc4; }
+.poster__sticky--mint   { --sticky-color: #bcdcc0; }
+.poster__sticky--blue   { --sticky-color: #b9cfe8; }
+
+html[data-theme="night"] .poster__sticky {
+  filter: brightness(0.82) saturate(0.9);
+}
+
+@media (max-width: 640px) {
+  .poster__sticky { width: 82px; right: -14px; bottom: -26px; }
+}
+
+/* ===== TAKING IT OFF THE WALL ===== */
+.poster--lifting {
+  z-index: 5;
+  animation: posterOffWall 380ms cubic-bezier(0.33, 0.9, 0.4, 1) forwards;
+}
+.poster--lifting .poster__pin {
+  animation: pinPop 220ms cubic-bezier(0.3, 1.4, 0.5, 1) forwards;
+}
+.poster--lifting .poster__paper {
+  animation: posterShadowGrow 380ms ease-out forwards;
+}
+.poster--lifting .poster__tape {
+  animation: tapePeel 260ms ease-out forwards;
+}
+
+@keyframes posterOffWall {
+  0%   { transform: rotate(var(--tilt)) translateY(0) scale(1); }
+  30%  { transform: rotate(calc(var(--tilt) * 0.35)) translateY(-8px) scale(1.02); }
+  100% { transform: rotate(0deg) translateY(-30px) scale(1.09); }
+}
+@keyframes pinPop {
+  0%   { transform: translateX(-50%) translateY(0) scale(1); opacity: 1; }
+  100% { transform: translateX(-50%) translateY(-18px) scale(0.6); opacity: 0; }
+}
+@keyframes posterShadowGrow {
+  to {
+    filter:
+      drop-shadow(0 3px 4px rgba(24, 14, 30, 0.18))
+      drop-shadow(0 30px 34px rgba(24, 14, 30, 0.36));
+  }
+}
+@keyframes tapePeel {
+  to { transform: translateX(-50%) rotate(-14deg) translateY(-12px); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .poster,
+  .poster__sheet,
+  .poster__paper,
+  .poster__sticky,
+  .poster__pin { transition: none; }
+  .poster--lifting,
+  .poster--lifting .poster__pin,
+  .poster--lifting .poster__tape,
+  .poster--lifting .poster__paper { animation: none; }
+  .poster:hover { --lift: 0px; --tilt: var(--tilt); }
+}
+
+/* Straighten everything on small screens -- leaning cards waste width and
+   clip against the viewport edge. */
+@media (max-width: 640px) {
+  .poster { --tilt: 0deg; }
+}

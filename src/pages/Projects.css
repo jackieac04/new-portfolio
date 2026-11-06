@@ -1,0 +1,96 @@
+.projects-page { padding-bottom: 80px; }
+
+.projects-header { padding: 48px 0 8px; }
+
+.projects-filters {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 40px;
+}
+
+/* Sizing only -- the sticker rim, lift and shadow come from index.css. */
+.filter-btn {
+  padding: 8px 20px;
+  font-size: 0.82rem;
+  letter-spacing: 0.04em;
+}
+
+/* Masonry */
+.masonry-grid {
+  display: flex;
+  gap: 24px;
+  width: 100%;
+}
+.masonry-grid__col {
+  display: flex;
+  flex-direction: column;
+  /* extra row gap leaves room for the pin head above each sheet */
+  gap: 40px;
+}
+
+/* Project Card */
+/* Project Card — the pinned sheet; Poster.css owns pin, lean and shadow */
+
+/* The card's colour is the poster trim now (see --poster-accent in
+   Poster.css), so there is no separate bar inside the sheet. */
+
+.project-card__body {
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.project-card__badge {
+  display: inline-block;
+  padding: 3px 10px;
+  border-radius: 50px;
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  background: var(--poster-accent, var(--blush));
+  color: var(--warm-brown);
+  align-self: flex-start;
+}
+
+.project-card__title {
+  font-family: var(--font-hand);
+  font-size: 1.15rem;
+  letter-spacing: 0.01em;
+  color: var(--warm-brown);
+}
+
+.project-card__desc {
+  font-size: 0.88rem;
+  color: var(--muted);
+  line-height: 1.7;
+}
+
+.project-card__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.project-card__links {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin-top: 4px;
+}
+
+.project-card__link {
+  font-size: 0.85rem;
+  color: var(--muted);
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  transition: color 0.2s;
+}
+.project-card__link:hover { color: var(--rose); }
+.project-card__link--primary {
+  color: var(--rose);
+  font-weight: 500;
+}
